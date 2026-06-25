@@ -2,7 +2,7 @@ export interface Member {
   id: string;
   name: string;
   position: string;         // "Chairperson" | "Vice Chairperson" | etc.
-  category: "officeBearer" | "ugRep" | "pgRep" | "ladiesRep" | "scstRep";
+  category: "officeBearer" | "ugRep" | "pgRep" | "ladiesRep" | "scstRep" | "generalCaptain";
   department: string;       // "CSE" | "ECE" | "EEE" | "ME" | "CE" | "AE"
   semester: number;
   photo: string;            // Cloudinary URL

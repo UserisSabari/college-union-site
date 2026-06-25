@@ -114,5 +114,276 @@
       "instagram": "n"
     },
     "year": "2026-27"
+  },
+  {
+    "id": "member-006",
+    "name": "Aisha Fahma",
+    "position": "UUC 1",
+    "category": "officeBearer",
+    "department": "ECE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/joint_secretary.jpg",
+    "bio": "Representing GEC Palakkad student community at the University Union level.",
+    "responsibilities": [
+      "Attending University Union general body assemblies",
+      "Representing local campus concerns to technological university authorities",
+      "Co-ordinating inter-collegiate student meets"
+    ],
+    "vision": "To foster a supportive space where student opinions are actively heard and acted upon.",
+    "contact": {
+      "email": "aishafahma@gecskp.ac.in"
+    },
+    "socials": {
+      "instagram": "aisha_fahma"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-007",
+    "name": "Gautham Nair",
+    "position": "UUC 2",
+    "category": "officeBearer",
+    "department": "EEE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/treasurer.jpg",
+    "bio": "Advocating for campus welfare and engineering student resources at the technological university.",
+    "responsibilities": [
+      "Participating in technological university union decision conferences",
+      "Liaising between university delegates and local union executives",
+      "Assisting in university-level cultural and sports coordinations"
+    ],
+    "vision": "Ensuring optimal and transparent utilization of student funds for welfare and campus improvements.",
+    "contact": {
+      "email": "gauthamnair@gecskp.ac.in",
+      "phone": "+919876543212"
+    },
+    "socials": {
+      "linkedin": "gautham-nair-treasurer"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-008",
+    "name": "Hrudya K.",
+    "position": "Arts Club Secretary",
+    "category": "officeBearer",
+    "department": "CE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/arts_secretary.jpg",
+    "bio": "Dedicated to highlighting the artistic capabilities of students and organizing Dyuthi '26.",
+    "responsibilities": [
+      "Planning and executing the annual arts festival (Dyuthi)",
+      "Co-ordinating college teams for University arts competitions",
+      "Managing cultural clubs and workshops on campus"
+    ],
+    "vision": "To create platforms where every student feels confident to showcase their artistic talents.",
+    "contact": {
+      "email": "hrudyak@gecskp.ac.in"
+    },
+    "socials": {
+      "instagram": "hrudya_k"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-009",
+    "name": "Sreehari P.",
+    "position": "Magazine Editor",
+    "category": "officeBearer",
+    "department": "ME",
+    "semester": 8,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/magazine_editor.jpg",
+    "bio": "Fostering literature, thoughts, and artistic expressions in the annual union magazine.",
+    "responsibilities": [
+      "Editing and compiling content for the college magazine",
+      "Forming the student editorial board",
+      "Co-ordinating publication and print cycles"
+    ],
+    "vision": "To document the campus zeitgeist through bold and creative literary expression.",
+    "contact": {
+      "email": "sreeharip@gecskp.ac.in"
+    },
+    "socials": {
+      "github": "sreehari-editor"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-010",
+    "name": "Alan Joseph",
+    "position": "General Captain",
+    "category": "generalCaptain",
+    "department": "AE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/sports_secretary.jpg",
+    "bio": "Promoting sportsmanship, physical fitness, and inter-collegiate tournament victories.",
+    "responsibilities": [
+      "Organizing the annual sports meet and inter-department games",
+      "Procuring and maintaining sports goods for the gym and grounds",
+      "Co-ordinating college teams for technological university events"
+    ],
+    "vision": "Fostering a healthy, active lifestyle and securing victory cups for GEC Palakkad.",
+    "contact": {
+      "email": "alanjoseph@gecskp.ac.in",
+      "phone": "+919876543213"
+    },
+    "socials": {
+      "instagram": "alan_joseph_sports"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-011",
+    "name": "Jithin Dev",
+    "position": "EEE Representative",
+    "category": "ugRep",
+    "department": "EEE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/eee_rep.jpg",
+    "bio": "Working to address class facility queries and project lab extensions for electrical students.",
+    "responsibilities": [
+      "Gathering department complaints",
+      "Representing EEE student issues in union panels"
+    ],
+    "vision": "Enhance hands-on electrical workshops and safety setups.",
+    "contact": {
+      "email": "jithindev@gecskp.ac.in"
+    },
+    "socials": {
+      "linkedin": "jithin-dev-eee"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-012",
+    "name": "Akhil Raj",
+    "position": "ME Representative",
+    "category": "ugRep",
+    "department": "ME",
+    "semester": 4,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/me_rep.jpg",
+    "bio": "Representing ME department students and advocating for garage and lab updates.",
+    "responsibilities": [
+      "Sharing ME mechanical concerns",
+      "Co-ordinating departmental technical seminars"
+    ],
+    "vision": "Provide industry-relevant tool exposures and industrial visits.",
+    "contact": {
+      "email": "akhilraj@gecskp.ac.in"
+    },
+    "socials": {
+      "instagram": "akhil_raj_me"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-013",
+    "name": "Devika M.",
+    "position": "CE Representative",
+    "category": "ugRep",
+    "department": "CE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ce_rep.jpg",
+    "bio": "Passionate about structural engineering workshops and representing Civil department concerns.",
+    "responsibilities": [
+      "Interfacing between CE students and the union",
+      "Organizing field surveying and drafting modules"
+    ],
+    "vision": "Promote sustainable campus civil designs and site visit plans.",
+    "contact": {
+      "email": "devikam@gecskp.ac.in"
+    },
+    "socials": {
+      "linkedin": "devika-m-ce"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-014",
+    "name": "Rohith K.",
+    "position": "PG Representative",
+    "category": "pgRep",
+    "department": "ECE",
+    "semester": 2,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/pg_rep.jpg",
+    "bio": "Bridging postgraduate PG research needs with the campus college union.",
+    "responsibilities": [
+      "Co-ordinating lab access timings for PG researchers",
+      "Providing academic assistance and thesis guidelines"
+    ],
+    "vision": "Enhancing researcher representation and digital library hours.",
+    "contact": {
+      "email": "rohithk@gecskp.ac.in"
+    },
+    "socials": {
+      "github": "rohith-ece-pg"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-015",
+    "name": "Ananya Sen",
+    "position": "Ladies Representative",
+    "category": "ladiesRep",
+    "department": "CSE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ladies_rep1.jpg",
+    "bio": "Working to improve female student welfare and support desks on campus.",
+    "responsibilities": [
+      "Resolving ladies hostel infrastructure issues",
+      "Conducting women health, self-defense, and tech seminars"
+    ],
+    "vision": "Equal opportunities, campus safety, and leadership inclusion for all female engineers.",
+    "contact": {
+      "email": "ananyasen@gecskp.ac.in"
+    },
+    "socials": {
+      "instagram": "ananya_sen"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-016",
+    "name": "Farha Sherin",
+    "position": "Ladies Representative",
+    "category": "ladiesRep",
+    "department": "CE",
+    "semester": 4,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ladies_rep2.jpg",
+    "bio": "Committed to fostering a welcoming environment and raising female student issues.",
+    "responsibilities": [
+      "Managing ladies amenity center requirements",
+      "Co-ordinating hostel sports meets"
+    ],
+    "vision": "A friendly campus environment where every voice receives equal attention.",
+    "contact": {
+      "email": "farhasherin@gecskp.ac.in"
+    },
+    "socials": {
+      "linkedin": "farha-sherin"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-017",
+    "name": "Vignesh A.",
+    "position": "SC/ST Representative",
+    "category": "scstRep",
+    "department": "ME",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/scst_rep.jpg",
+    "bio": "Ensuring SC/ST student benefits, scholarships, and academic support desks are accessible.",
+    "responsibilities": [
+      "Tracking state and university scholarship delays",
+      "Providing textbook loans and digital study resources"
+    ],
+    "vision": "Absolute equal representation and smooth financial aid disbursement for marginalized students.",
+    "contact": {
+      "email": "vignesha@gecskp.ac.in"
+    },
+    "socials": {
+      "github": "vignesh-me-scst"
+    },
+    "year": "2026-27"
   }
 ]
