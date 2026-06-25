@@ -2,8 +2,24 @@
   {
     "id": "init-001",
     "title": "Campus Wi-Fi & Digital Infrastructure Upgrades",
-    "description": "An initiative to upgrade internet bandwidth and coverage in academic block lobbies, corridors, and the student amenity center.",
-    "status": "ongoing",
+    "description": "An initiative to upgrade internet bandwidth and coverage in academic block lobbies, corridors, and the student amenity center. We are installing high-speed router nodes to support digital classrooms and laptop work hubs.",
+    "status": "active",
+    "impactMetrics": [
+      "2,500+ Students Connected",
+      "12 Router Nodes Installed",
+      "50 Mbps Bandwidth Boost"
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&q=80&w=400"
+    ],
+    "documents": [
+      {
+        "name": "Wi-Fi Node Installation Map & Plan.pdf",
+        "url": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/wifi_proposal.pdf",
+        "size": "1.2 MB"
+      }
+    ],
     "year": "2024-25"
   },
   {
@@ -11,6 +27,44 @@
     "title": "Union Student Welfare Aid Fund",
     "description": "Establishing a scholarship and immediate financial aid pool funded by union alumni and well-wishers to support economically backward students for academic expenses.",
     "status": "completed",
+    "impactMetrics": [
+      "Rs. 2.5 Lakhs Disbursed",
+      "45 Students Supported",
+      "100% Transparency Audited"
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=400"
+    ],
+    "documents": [
+      {
+        "name": "Welfare Fund Audit Report 2024-25.pdf",
+        "url": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/welfare_audit.pdf",
+        "size": "850 KB"
+      }
+    ],
+    "year": "2024-25"
+  },
+  {
+    "id": "init-003",
+    "title": "Eco-Campus Solar Charging Kiosks",
+    "description": "Planning the setup of 3 solar-powered outdoor benches where students can recharge electronic devices using green energy. Benches will be built from sustainable woods and metals.",
+    "status": "planned",
+    "impactMetrics": [
+      "3 Solar Benches Planned",
+      "12 Charging Ports",
+      "Zero Carbon Footprint"
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=400"
+    ],
+    "documents": [
+      {
+        "name": "Solar Bench Proposal & Mockups.pdf",
+        "url": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/solar_bench_proposal.pdf",
+        "size": "3.1 MB"
+      }
+    ],
     "year": "2024-25"
   }
 ]
