@@ -6,7 +6,7 @@
     "category": "event",
     "isPinned": true,
     "isImportant": true,
-    "publishedAt": "2026-06-20T10:00:00Z",
+    "publishedAt": "2026-06-25T10:00:00Z",
     "attachment": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/dyuthi_rules.pdf",
     "tags": ["Arts", "Dyuthi", "Registration"],
     "year": "2024-25"
@@ -32,6 +32,85 @@
     "isImportant": false,
     "publishedAt": "2026-06-18T14:30:00Z",
     "tags": ["Magazine", "Creativity", "Submissions"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-004",
+    "title": "GEC Palakkad Wins First Prize in KTU Zonal Football Tournament",
+    "body": "In a spectacular display of sportsmanship and teamwork, the GEC Palakkad Football Team has clinched the first prize at the KTU Zonal Football Tournament held at GEC Thrissur. Congratulations to our champions!",
+    "category": "achievement",
+    "isPinned": true,
+    "isImportant": false,
+    "publishedAt": "2026-06-23T16:00:00Z",
+    "tags": ["Sports", "Football", "Achievement"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-005",
+    "title": "Placement Drive: TCS Ninja Hiring for 2026 Batch",
+    "body": "The Career Guidance and Placement Cell (CGPC) is organizing a campus recruitment drive by Tata Consultancy Services (TCS) for the TCS Ninja role. Interested students from CSE, ECE, EEE, and AE must register before June 28, 2026.",
+    "category": "notice",
+    "isPinned": false,
+    "isImportant": true,
+    "publishedAt": "2026-06-22T11:00:00Z",
+    "attachment": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/tcs_hiring_details.pdf",
+    "tags": ["Placements", "CGPC", "Jobs"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-006",
+    "title": "Workshop: Hands-on Introduction to Internet of Things (IoT)",
+    "body": "Join the IEEE Student Branch and the Department of ECE for a 2-day workshop on IoT. Gain practical knowledge on working with Arduino, ESP32, and basic cloud integration. Hardware kits will be provided to registered groups.",
+    "category": "event",
+    "isPinned": false,
+    "isImportant": false,
+    "publishedAt": "2026-06-21T10:00:00Z",
+    "tags": ["Workshop", "IoT", "IEEE", "ECE"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-007",
+    "title": "GEC Palakkad coding club members win Smart India Hackathon (SIH)",
+    "body": "Our student developers team 'ByteBuilders' has won the prestigious Smart India Hackathon 2026 hardware edition under the ministry of agriculture theme. The team has been awarded a cash prize of Rs. 1 Lakh.",
+    "category": "achievement",
+    "isPinned": false,
+    "isImportant": true,
+    "publishedAt": "2026-06-19T08:30:00Z",
+    "tags": ["Hackathon", "SIH", "Coding", "Achievement"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-008",
+    "title": "Identity Card Compulsory on Campus",
+    "body": "All students are strictly advised to wear their college identity cards at all times while on campus. Security personnel and department staff have been directed to verify cards at entry points.",
+    "category": "notice",
+    "isPinned": false,
+    "isImportant": false,
+    "publishedAt": "2026-06-17T09:00:00Z",
+    "tags": ["Campus", "Discipline", "IDCard"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-009",
+    "title": "Blood Donation Drive Organized by NSS GEC Palakkad",
+    "body": "In association with District Blood Bank Palakkad, the NSS Units 117 & 180 of GEC Palakkad are organizing a voluntary blood donation drive in the college auditorium on June 29, 2026 from 9:30 AM.",
+    "category": "event",
+    "isPinned": false,
+    "isImportant": false,
+    "publishedAt": "2026-06-16T10:00:00Z",
+    "tags": ["NSS", "SocialService", "BloodDonation"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-010",
+    "title": "Revised Academic Calendar for KTU Odd Semesters",
+    "body": "KTU has released the revised academic calendar for the upcoming odd semesters (S3, S5, S7) of B.Tech courses. The commencement of classes is rescheduled to August 1, 2026. Download the official calendar PDF below.",
+    "category": "notice",
+    "isPinned": false,
+    "isImportant": false,
+    "publishedAt": "2026-06-15T15:00:00Z",
+    "attachment": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/ktu_academic_calendar_2026_revised.pdf",
+    "tags": ["KTU", "AcademicCalendar", "BTech"],
     "year": "2024-25"
   }
 ]
