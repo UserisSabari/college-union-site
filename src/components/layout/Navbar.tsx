@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import SearchModal from '../../features/search/SearchModal';
 
 const NAV_LINKS = [
   { path: '/', label: 'Home' },
@@ -18,9 +19,22 @@ const NAV_LINKS = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  // Global listener for Ctrl+K / Cmd+K shortcuts
+  useEffect(() => {
+    const handleShortcut = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleShortcut);
+    return () => window.removeEventListener('keydown', handleShortcut);
+  }, []);
 
   // Monitor scroll for shadow effect
   useEffect(() => {
@@ -144,6 +158,17 @@ export const Navbar = () => {
 
           {/* CTA & Mobile Hamburger */}
           <div className="flex items-center space-x-4">
+            {/* Search Icon Trigger */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-textSecondary hover:text-crimson transition-colors focus:outline-none focus:ring-2 focus:ring-crimson rounded-button"
+              aria-label="Search website content"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+
             {/* Student Voice CTA Button (Desktop) */}
             <Link
               to="/student-voice"
@@ -231,6 +256,7 @@ export const Navbar = () => {
           )}
         </AnimatePresence>
       </header>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 };
