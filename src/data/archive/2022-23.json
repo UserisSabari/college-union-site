@@ -1,0 +1,42 @@
+{
+  "year": "2022-23",
+  "chairperson": {
+    "name": "Naveen Kumar",
+    "department": "Computer Science & Engineering",
+    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300"
+  },
+  "stats": {
+    "members": 14,
+    "events": 9,
+    "initiatives": 6
+  },
+  "members": [
+    {
+      "id": "arch-m-201",
+      "name": "Naveen Kumar",
+      "position": "Chairperson",
+      "department": "CSE",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300",
+      "bio": "Working on digitalization, smart labs, and student grievance cells.",
+      "contact": {},
+      "socials": {}
+    }
+  ],
+  "events": [
+    {
+      "id": "arch-e-201",
+      "title": "Advaya Arts Festival 2023",
+      "date": "2023-02-20",
+      "venue": "Main Arena Stage"
+    }
+  ],
+  "documents": {
+    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_22_23.pdf",
+    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_22_23.pdf",
+    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_22.pdf"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=400"
+  ]
+}

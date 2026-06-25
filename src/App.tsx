@@ -12,6 +12,7 @@ import Downloads from './pages/Downloads';
 import StudentVoice from './pages/StudentVoice';
 import Contact from './pages/Contact';
 import Archive from './pages/Archive';
+import ArchiveYear from './pages/ArchiveYear';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
             <Route path="/student-voice" element={<StudentVoice />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/archive" element={<Archive />} />
-            <Route path="/archive/:year" element={<Archive />} />
+            <Route path="/archive/:year" element={<ArchiveYear />} />
           </Routes>
         </div>
       </PageWrapper>

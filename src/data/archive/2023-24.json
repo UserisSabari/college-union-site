@@ -1,12 +1,60 @@
 {
   "year": "2023-24",
-  "chairperson": "Abhinav T.",
-  "members": [],
-  "events": [],
-  "highlights": [
-    "Successfully conducted the 'Advaya' Cultural Festival 2024",
-    "Completed installation of incinerators in women's hostels",
-    "Introduced dynamic student grievance redressal portal"
+  "chairperson": {
+    "name": "Midhun Murali",
+    "department": "Electrical Engineering",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300"
+  },
+  "stats": {
+    "members": 10,
+    "events": 6,
+    "initiatives": 3
+  },
+  "members": [
+    {
+      "id": "arch-m-101",
+      "name": "Midhun Murali",
+      "position": "Chairperson",
+      "department": "EEE",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300",
+      "bio": "Passionate about academic-industry partnerships and sports facilities.",
+      "contact": {},
+      "socials": {}
+    },
+    {
+      "id": "arch-m-102",
+      "name": "Priya Nair",
+      "position": "General Secretary",
+      "department": "CE",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300",
+      "bio": "Fostering arts and campus sustainability projects.",
+      "contact": {},
+      "socials": {}
+    }
   ],
-  "magazinePdf": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_23_24.pdf"
+  "events": [
+    {
+      "id": "arch-e-101",
+      "title": "Dyuthi Arts Festival 2024",
+      "date": "2024-02-15",
+      "venue": "Main Stadium Stage"
+    },
+    {
+      "id": "arch-e-102",
+      "title": "College Sports Meet '24",
+      "date": "2023-11-10",
+      "venue": "Athletics Ground"
+    }
+  ],
+  "documents": {
+    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_23_24.pdf",
+    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_23_24.pdf",
+    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_23.pdf"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=400"
+  ]
 }

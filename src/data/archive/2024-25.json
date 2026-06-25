@@ -1,10 +1,78 @@
 {
-  "year": "2026-27",
-  "chairperson": "Ajmal V B",
-  "members": [],
-  "events": [],
-  "highlights": [
-    "Scaffolded college union permanent digital platform",
-    "Proposed Union Student Welfare Aid Fund"
+  "year": "2024-25",
+  "chairperson": {
+    "name": "Abhinav T.",
+    "department": "Mechanical Engineering",
+    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300"
+  },
+  "stats": {
+    "members": 12,
+    "events": 8,
+    "initiatives": 5
+  },
+  "members": [
+    {
+      "id": "arch-m-001",
+      "name": "Abhinav T.",
+      "position": "Chairperson",
+      "department": "ME",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300",
+      "bio": "Committed to technical excellence and cross-departmental dialogue.",
+      "contact": {},
+      "socials": {}
+    },
+    {
+      "id": "arch-m-002",
+      "name": "Ananya K.",
+      "position": "Vice Chairperson",
+      "department": "ECE",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+      "bio": "Focused on women empowerment and tech collaborations.",
+      "contact": {},
+      "socials": {}
+    },
+    {
+      "id": "arch-m-003",
+      "name": "Siddharth P.",
+      "position": "General Secretary",
+      "department": "CSE",
+      "semester": 6,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300",
+      "bio": "Organizing and digitizing campus workflows for faster clearance.",
+      "contact": {},
+      "socials": {}
+    }
+  ],
+  "events": [
+    {
+      "id": "arch-e-001",
+      "title": "Advaya Arts Festival 2025",
+      "date": "2025-02-12",
+      "venue": "Main Auditorium"
+    },
+    {
+      "id": "arch-e-002",
+      "title": "Inter-Collegiate Tech Summit",
+      "date": "2025-03-05",
+      "venue": "ECE Seminar Hall"
+    },
+    {
+      "id": "arch-e-003",
+      "title": "NSS Clean Campus Drive",
+      "date": "2024-10-02",
+      "venue": "Campus Grounds"
+    }
+  ],
+  "documents": {
+    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_24_25.pdf",
+    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_24.pdf",
+    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_24.pdf"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=400"
   ]
 }

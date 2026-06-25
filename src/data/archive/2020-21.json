@@ -1,0 +1,42 @@
+{
+  "year": "2020-21",
+  "chairperson": {
+    "name": "Arjun Swaminathan",
+    "department": "Applied Electronics & Instrumentation",
+    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300"
+  },
+  "stats": {
+    "members": 11,
+    "events": 5,
+    "initiatives": 3
+  },
+  "members": [
+    {
+      "id": "arch-m-401",
+      "name": "Arjun Swaminathan",
+      "position": "Chairperson",
+      "department": "AE",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300",
+      "bio": "Steered online union webinars, welfare desks, and hybrid fests.",
+      "contact": {},
+      "socials": {}
+    }
+  ],
+  "events": [
+    {
+      "id": "arch-e-401",
+      "title": "Dyuthi Online Festival 2021",
+      "date": "2021-04-10",
+      "venue": "Digital Platforms"
+    }
+  ],
+  "documents": {
+    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_20_21.pdf",
+    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_20_21.pdf",
+    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_20.pdf"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=400"
+  ]
+}

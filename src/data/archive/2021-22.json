@@ -1,0 +1,42 @@
+{
+  "year": "2021-22",
+  "chairperson": {
+    "name": "Gopika Mohan",
+    "department": "Civil Engineering",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300"
+  },
+  "stats": {
+    "members": 12,
+    "events": 7,
+    "initiatives": 4
+  },
+  "members": [
+    {
+      "id": "arch-m-301",
+      "name": "Gopika Mohan",
+      "position": "Chairperson",
+      "department": "CE",
+      "semester": 8,
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+      "bio": "Championed green campus projects and digital fee submissions.",
+      "contact": {},
+      "socials": {}
+    }
+  ],
+  "events": [
+    {
+      "id": "arch-e-301",
+      "title": "Dyuthi Arts Festival 2022",
+      "date": "2022-03-05",
+      "venue": "Open Stage Arena"
+    }
+  ],
+  "documents": {
+    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_21_22.pdf",
+    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_21_22.pdf",
+    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_21.pdf"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400"
+  ]
+}
