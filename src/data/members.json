@@ -1,0 +1,118 @@
+[
+  {
+    "id": "member-001",
+    "name": "Siddharth K.",
+    "position": "Chairperson",
+    "category": "officeBearer",
+    "department": "CSE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/chairperson.jpg",
+    "bio": "Dedicated to building an inclusive and progressive campus environment at GEC Palakkad.",
+    "responsibilities": [
+      "Leading union executive meetings",
+      "Representing students in college senate and official administrative bodies",
+      "Overseeing overall planning of campus events and student support services"
+    ],
+    "vision": "To establish GEC Palakkad as a hub of academic excellence, creative freedom, and active student-welfare initiatives.",
+    "contact": {
+      "email": "chairperson.union@gecpalakkad.ac.in",
+      "phone": "+919876543210"
+    },
+    "socials": {
+      "instagram": "siddharth_k",
+      "linkedin": "siddharth-k-gec"
+    },
+    "year": "2024-25"
+  },
+  {
+    "id": "member-002",
+    "name": "Anjana Nair",
+    "position": "Vice Chairperson",
+    "category": "officeBearer",
+    "department": "ECE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/vice_chairperson.jpg",
+    "bio": "Passionate about advocacy, equality, and developing leadership skills among female engineering students.",
+    "responsibilities": [
+      "Assisting the chairperson in overall governance",
+      "Directing activities for women empowerment and representing student concerns",
+      "Co-ordinating inter-departmental interactions"
+    ],
+    "vision": "Ensuring gender equality, active participation of female students in co-curricular fields, and a safer campus space for all.",
+    "contact": {
+      "email": "vicechairperson.union@gecpalakkad.ac.in"
+    },
+    "socials": {
+      "instagram": "anjana_nair_ece"
+    },
+    "year": "2024-25"
+  },
+  {
+    "id": "member-003",
+    "name": "Adithyan P.",
+    "position": "General Secretary",
+    "category": "officeBearer",
+    "department": "ME",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/general_secretary.jpg",
+    "bio": "Committed to organized execution of union decisions and bridging communication between college authority and the students.",
+    "responsibilities": [
+      "Managing minutes and documentation of union assemblies",
+      "Co-ordinating union budget and official communications",
+      "Organizing the annual arts and sports festivals"
+    ],
+    "vision": "Streamlining administrative processes for student activities and introducing digital channels for student transparency.",
+    "contact": {
+      "email": "gensec.union@gecpalakkad.ac.in",
+      "phone": "+919876543211"
+    },
+    "socials": {
+      "linkedin": "adithyan-p-gensec"
+    },
+    "year": "2024-25"
+  },
+  {
+    "id": "member-004",
+    "name": "Gautham Krishna",
+    "position": "CSE Representative",
+    "category": "ugRep",
+    "department": "CSE",
+    "semester": 4,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/cse_rep.jpg",
+    "bio": "Representing the interests of computer science students and promoting technical innovation.",
+    "responsibilities": [
+      "Gathering academic feedback and representing CSE student needs to the union",
+      "Organizing departmental workshops and open-source hackathons"
+    ],
+    "vision": "Creating more industry-exposure opportunities and fostering a vibrant programming culture.",
+    "contact": {
+      "email": "gautham.cse@gecpalakkad.ac.in"
+    },
+    "socials": {
+      "github": "gautham-k-cse"
+    },
+    "year": "2024-25"
+  },
+  {
+    "id": "member-005",
+    "name": "Sneha Rajesh",
+    "position": "ECE Representative",
+    "category": "ugRep",
+    "department": "ECE",
+    "semester": 4,
+    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ece_rep.jpg",
+    "bio": "Enthusiastic representative focusing on electronics hands-on workshops and academic support.",
+    "responsibilities": [
+      "Expressing concerns of ECE students in union meetings",
+      "Coordinating peer-to-peer tutoring for difficult core subjects"
+    ],
+    "vision": "Enhancing lab facilities awareness and encouraging active participation in technical symposia.",
+    "contact": {
+      "email": "sneha.ece@gecpalakkad.ac.in"
+    },
+    "socials": {
+      "instagram": "sneha_rajesh_ece"
+    },
+    "year": "2024-25"
+  }
+]

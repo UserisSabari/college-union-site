@@ -1,0 +1,37 @@
+[
+  {
+    "id": "notice-001",
+    "title": "Registration Open: Dyuthi '26 Arts Festival Competitions",
+    "body": "The Secular College Union is pleased to announce that registrations for the various offstage and onstage items for the **Dyuthi '26 Arts Festival** are officially open. Students can register through the link provided or contact their class representatives.",
+    "category": "event",
+    "isPinned": true,
+    "isImportant": true,
+    "publishedAt": "2026-06-20T10:00:00Z",
+    "attachment": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/dyuthi_rules.pdf",
+    "tags": ["Arts", "Dyuthi", "Registration"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-002",
+    "title": "Semester Examination Fee Submission Deadline Extension",
+    "body": "As per the official notification from APJ Abdul Kalam Technological University (KTU), the last date for registration and fee payment for the upcoming even-semester examinations has been extended to June 30, 2026.",
+    "category": "notice",
+    "isPinned": false,
+    "isImportant": true,
+    "publishedAt": "2026-06-24T09:00:00Z",
+    "attachment": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/ktu_notification.pdf",
+    "tags": ["KTU", "Exams", "Academic"],
+    "year": "2024-25"
+  },
+  {
+    "id": "notice-003",
+    "title": "College Union Magazine 2024-25: Call for Student Content",
+    "body": "We are welcoming articles, short stories, poems, drawings, and photograph contributions from students of all departments for the annual College Magazine. Submit your creations to the Student Magazine Editor by August 15, 2026.",
+    "category": "general",
+    "isPinned": false,
+    "isImportant": false,
+    "publishedAt": "2026-06-18T14:30:00Z",
+    "tags": ["Magazine", "Creativity", "Submissions"],
+    "year": "2024-25"
+  }
+]

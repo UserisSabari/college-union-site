@@ -1,0 +1,16 @@
+[
+  {
+    "id": "init-001",
+    "title": "Campus Wi-Fi & Digital Infrastructure Upgrades",
+    "description": "An initiative to upgrade internet bandwidth and coverage in academic block lobbies, corridors, and the student amenity center.",
+    "status": "ongoing",
+    "year": "2024-25"
+  },
+  {
+    "id": "init-002",
+    "title": "Union Student Welfare Aid Fund",
+    "description": "Establishing a scholarship and immediate financial aid pool funded by union alumni and well-wishers to support economically backward students for academic expenses.",
+    "status": "completed",
+    "year": "2024-25"
+  }
+]

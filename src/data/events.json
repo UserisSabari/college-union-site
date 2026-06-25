@@ -1,0 +1,57 @@
+[
+  {
+    "id": "event-001",
+    "title": "Inter-Departmental Sports Meet '26",
+    "description": "The annual sports tournament of GEC Palakkad showcasing talent in football, cricket, basketball, and athletics.",
+    "date": "2026-10-15",
+    "venue": "College Ground, GEC Palakkad",
+    "status": "upcoming",
+    "category": "Sports",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/sports_meet.jpg",
+    "gallery": [],
+    "registrationLink": "https://forms.gle/gecskp-sports-26",
+    "year": "2024-25"
+  },
+  {
+    "id": "event-002",
+    "title": "Dyuthi '26 Arts Festival",
+    "description": "The major cultural extravaganza featuring stage performance events, music, drama, dance, and art contests.",
+    "date": "2026-11-20",
+    "venue": "Main Auditorium & Open Stage",
+    "status": "upcoming",
+    "category": "Cultural",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/dyuthi_arts.jpg",
+    "gallery": [],
+    "registrationLink": "https://forms.gle/gecskp-dyuthi-26",
+    "year": "2024-25"
+  },
+  {
+    "id": "event-003",
+    "title": "KTU TechFest Workshop Series",
+    "description": "Pre-techfest hands-on workshops in IoT, Embedded Systems, and Web Application Security conducted by industry experts.",
+    "date": "2026-03-10",
+    "venue": "CSE Seminar Hall",
+    "status": "completed",
+    "category": "Technical",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/tech_workshop.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/workshop_photo1.jpg",
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/workshop_photo2.jpg"
+    ],
+    "year": "2024-25"
+  },
+  {
+    "id": "event-004",
+    "title": "World Environment Day Tree Plantation",
+    "description": "Eco-union initiative to plant 100 saplings around the campus boundary in association with NSS GEC Palakkad.",
+    "date": "2026-06-05",
+    "venue": "Campus Premises",
+    "status": "completed",
+    "category": "Social",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/env_day.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1/events/env_plant1.jpg"
+    ],
+    "year": "2024-25"
+  }
+]
