@@ -8,7 +8,7 @@ export const fadeIn = {
     opacity: 1,
     transition: { duration: isReducedMotion ? 0 : 0.4, ease: 'easeOut' }
   }
-};
+} as const;
 
 export const fadeUp = {
   hidden: { opacity: 0, y: isReducedMotion ? 0 : 20 },
@@ -17,7 +17,7 @@ export const fadeUp = {
     y: 0,
     transition: { duration: isReducedMotion ? 0 : 0.5, ease: 'easeOut' }
   }
-};
+} as const;
 
 export const slideInLeft = {
   hidden: { opacity: 0, x: isReducedMotion ? 0 : -30 },
@@ -26,7 +26,7 @@ export const slideInLeft = {
     x: 0,
     transition: { duration: isReducedMotion ? 0 : 0.5, ease: 'easeOut' }
   }
-};
+} as const;
 
 export const slideInRight = {
   hidden: { opacity: 0, x: isReducedMotion ? 0 : 30 },
@@ -35,7 +35,7 @@ export const slideInRight = {
     x: 0,
     transition: { duration: isReducedMotion ? 0 : 0.5, ease: 'easeOut' }
   }
-};
+} as const;
 
 export const staggerContainer = {
   hidden: {},
@@ -44,4 +44,5 @@ export const staggerContainer = {
       staggerChildren: isReducedMotion ? 0 : 0.1
     }
   }
-};
+} as const;
+

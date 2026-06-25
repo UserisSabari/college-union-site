@@ -60,3 +60,12 @@ export interface ArchiveYear {
   reportPdf?: string;
   galleryAlbum?: string;
 }
+
+export interface Initiative {
+  id: string;
+  title: string;
+  description: string;
+  status: "ongoing" | "completed";
+  year: string;
+}
+
