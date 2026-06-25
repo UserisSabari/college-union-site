@@ -125,9 +125,9 @@ export const Home = () => {
 
   return (
     <div className="space-y-0 text-textPrimary">
-      
+
       {/* SECTION 1: HERO */}
-      <section 
+      <section
         className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 text-center select-none"
         style={{
           backgroundColor: '#ffffff',
@@ -155,7 +155,7 @@ export const Home = () => {
             variants={fadeUp}
             className="text-base sm:text-lg md:text-xl text-textSecondary font-body font-medium tracking-wide max-w-2xl"
           >
-            Secular College Union <span className="text-gold mx-1.5">•</span> 2024–25 <span className="text-gold mx-1.5">•</span> Government Engineering College, Palakkad
+            Secular College Union <span className="text-gold mx-1.5">•</span> 2026–27 <span className="text-gold mx-1.5">•</span> Government Engineering College, Palakkad
           </motion.p>
 
           {/* CTAs */}
@@ -211,10 +211,10 @@ export const Home = () => {
       {/* SECTION 2: CURRENT UNION BANNER */}
       <section className="bg-navy text-white py-4 border-y border-gold/20 select-none">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm md:text-base font-body tracking-wide font-medium">
-          2024–25 Secular College Union — Currently Serving{' '}
+          2026–27 Secular College Union — Currently Serving{' '}
           <span className="text-gold mx-2">|</span>{' '}
           <span className="text-gold font-semibold">
-            {chairperson?.name || 'Siddharth K.'}
+            {chairperson?.name || 'Ajmal V B'}
           </span>
           , Chairperson
         </div>
@@ -254,12 +254,11 @@ export const Home = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${
-                      ann.category === 'notice' ? 'bg-blue-50 text-blue-800 border-blue-200' :
+                    <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${ann.category === 'notice' ? 'bg-blue-50 text-blue-800 border-blue-200' :
                       ann.category === 'event' ? 'bg-emerald-50 text-emerald-800 border-emerald-200' :
-                      ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200' :
-                      'bg-slate-100 text-slate-800 border-slate-200'
-                    }`}>
+                        ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200' :
+                          'bg-slate-100 text-slate-800 border-slate-200'
+                      }`}>
                       {ann.category}
                     </span>
                     {ann.isPinned && (
@@ -445,11 +444,10 @@ export const Home = () => {
                     <h3 className="font-body font-bold text-lg text-navy line-clamp-1">
                       {init.title}
                     </h3>
-                    <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${
-                      init.status === 'completed' 
-                        ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
-                        : 'bg-blue-50 text-blue-800 border-blue-200'
-                    }`}>
+                    <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${init.status === 'completed'
+                      ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                      : 'bg-blue-50 text-blue-800 border-blue-200'
+                      }`}>
                       {init.status}
                     </span>
                   </div>

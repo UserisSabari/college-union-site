@@ -1,11 +1,11 @@
 [
   {
     "id": "member-001",
-    "name": "Siddharth K.",
+    "name": "Ajmal V B",
     "position": "Chairperson",
     "category": "officeBearer",
     "department": "CSE",
-    "semester": 6,
+    "semester": 8,
     "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/chairperson.jpg",
     "bio": "Dedicated to building an inclusive and progressive campus environment at GEC Palakkad.",
     "responsibilities": [
@@ -15,22 +15,22 @@
     ],
     "vision": "To establish GEC Palakkad as a hub of academic excellence, creative freedom, and active student-welfare initiatives.",
     "contact": {
-      "email": "chairperson.union@gecpalakkad.ac.in",
-      "phone": "+919876543210"
+      "email": "ajmalbadaru14@gmail.com",
+      "phone": "+917994134028"
     },
     "socials": {
-      "instagram": "siddharth_k",
-      "linkedin": "siddharth-k-gec"
+      "instagram": "hey_ajmal",
+      "linkedin": "aju14"
     },
-    "year": "2024-25"
+    "year": "2026-27"
   },
   {
     "id": "member-002",
-    "name": "Anjana Nair",
+    "name": "Diya Betcy",
     "position": "Vice Chairperson",
     "category": "officeBearer",
-    "department": "ECE",
-    "semester": 6,
+    "department": "CSE",
+    "semester": 8,
     "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/vice_chairperson.jpg",
     "bio": "Passionate about advocacy, equality, and developing leadership skills among female engineering students.",
     "responsibilities": [
@@ -43,13 +43,13 @@
       "email": "vicechairperson.union@gecpalakkad.ac.in"
     },
     "socials": {
-      "instagram": "anjana_nair_ece"
+      "instagram": "diya_betcy"
     },
-    "year": "2024-25"
+    "year": "2026-27"
   },
   {
     "id": "member-003",
-    "name": "Adithyan P.",
+    "name": "Adwaith Ashok",
     "position": "General Secretary",
     "category": "officeBearer",
     "department": "ME",
@@ -67,17 +67,17 @@
       "phone": "+919876543211"
     },
     "socials": {
-      "linkedin": "adithyan-p-gensec"
+      "linkedin": "adwaithashok"
     },
-    "year": "2024-25"
+    "year": "2026-27"
   },
   {
     "id": "member-004",
-    "name": "Gautham Krishna",
+    "name": "Sabari S",
     "position": "CSE Representative",
     "category": "ugRep",
     "department": "CSE",
-    "semester": 4,
+    "semester": 6,
     "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/cse_rep.jpg",
     "bio": "Representing the interests of computer science students and promoting technical innovation.",
     "responsibilities": [
@@ -86,16 +86,16 @@
     ],
     "vision": "Creating more industry-exposure opportunities and fostering a vibrant programming culture.",
     "contact": {
-      "email": "gautham.cse@gecpalakkad.ac.in"
+      "email": "pkd23cs055@gecskp.ac.in"
     },
     "socials": {
-      "github": "gautham-k-cse"
+      "github": "userissabari"
     },
-    "year": "2024-25"
+    "year": "2026-27"
   },
   {
     "id": "member-005",
-    "name": "Sneha Rajesh",
+    "name": "Muhammed Nihal M",
     "position": "ECE Representative",
     "category": "ugRep",
     "department": "ECE",
@@ -108,11 +108,11 @@
     ],
     "vision": "Enhancing lab facilities awareness and encouraging active participation in technical symposia.",
     "contact": {
-      "email": "sneha.ece@gecpalakkad.ac.in"
+      "email": "pkd23ec042@gecskp.ac.in"
     },
     "socials": {
-      "instagram": "sneha_rajesh_ece"
+      "instagram": "n"
     },
-    "year": "2024-25"
+    "year": "2026-27"
   }
 ]
