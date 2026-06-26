@@ -62,7 +62,7 @@ export const Downloads = () => {
   const FileIcon = ({ type }: { type: 'pdf' | 'doc' }) => {
     if (type === 'pdf') {
       return (
-        <div className="p-2.5 bg-red-50 text-red-600 rounded select-none">
+        <div className="p-2.5 bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 rounded select-none">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
@@ -70,7 +70,7 @@ export const Downloads = () => {
       );
     }
     return (
-      <div className="p-2.5 bg-blue-50 text-blue-600 rounded select-none">
+      <div className="p-2.5 bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 rounded select-none">
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
@@ -83,7 +83,7 @@ export const Downloads = () => {
       <SEO title="Documents & Downloads" description="Download GEC Palakkad College Union constitution, annual reports, meeting minutes, election notifications, magazines, and forms." />
       
       {/* Page Hero */}
-      <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Documents & Downloads
@@ -104,7 +104,7 @@ export const Downloads = () => {
             placeholder="Search documents by title..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-border rounded-button text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all duration-200"
+            className="w-full pl-10 pr-4 py-2.5 border border-border dark:border-darkBorder bg-white dark:bg-darkCard text-textPrimary dark:text-darkText rounded-button text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all duration-200"
           />
           <svg
             className="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 select-none"
@@ -139,18 +139,18 @@ export const Downloads = () => {
           return (
             <div
               key={category}
-              className="bg-white border border-border rounded-card overflow-hidden shadow-2xs"
+              className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-2xs"
             >
               {/* Accordion Trigger Header */}
               <button
                 onClick={() => toggleSection(category)}
-                className="w-full px-6 py-4 flex justify-between items-center bg-slate-50 hover:bg-slate-100/75 transition-colors focus:outline-none select-none"
+                className="w-full px-6 py-4 flex justify-between items-center bg-slate-50 dark:bg-darkSurface hover:bg-slate-100/75 dark:hover:bg-darkSurface/90 transition-colors focus:outline-none select-none"
               >
                 <div className="flex items-center space-x-3">
-                  <h3 className="font-display font-bold text-navy text-sm sm:text-base text-left">
+                  <h3 className="font-display font-bold text-navy dark:text-white text-sm sm:text-base text-left">
                     {category}
                   </h3>
-                  <span className="px-2 py-0.5 bg-slate-200 text-slate-700 text-3xs font-semibold rounded-full font-body">
+                  <span className="px-2 py-0.5 bg-slate-200 dark:bg-darkBg text-slate-700 dark:text-slate-300 text-3xs font-semibold rounded-full font-body">
                     {catDocs.length} {catDocs.length === 1 ? 'file' : 'files'}
                   </span>
                 </div>
@@ -177,7 +177,7 @@ export const Downloads = () => {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 divide-y divide-border">
+                    <div className="p-6 divide-y divide-border dark:divide-darkBorder">
                       {catDocs.length > 0 ? (
                         catDocs.map((doc) => (
                           <div
@@ -188,10 +188,10 @@ export const Downloads = () => {
                             <div className="flex items-center space-x-4">
                               <FileIcon type={doc.fileType} />
                               <div>
-                                <h4 className="font-body font-bold text-navy text-xs sm:text-sm leading-snug">
+                                <h4 className="font-body font-bold text-navy dark:text-white text-xs sm:text-sm leading-snug">
                                   {doc.title}
                                 </h4>
-                                <div className="flex items-center space-x-2 text-3xs text-textSecondary font-body select-none mt-1">
+                                <div className="flex items-center space-x-2 text-3xs text-textSecondary dark:text-slate-400 font-body select-none mt-1">
                                   <span>{formatDate(doc.publishedAt)}</span>
                                   <span>•</span>
                                   <span>Size: {doc.fileSize}</span>
@@ -220,7 +220,7 @@ export const Downloads = () => {
                           </div>
                         ))
                       ) : (
-                        <div className="text-center py-6 text-textSecondary text-xs font-body select-none">
+                        <div className="text-center py-6 text-textSecondary dark:text-slate-400 text-xs font-body select-none">
                           No documents uploaded under this category yet.
                         </div>
                       )}
@@ -234,12 +234,12 @@ export const Downloads = () => {
 
         {/* Global Empty Search State */}
         {filteredDocuments.length === 0 && (
-          <div className="text-center py-20 border border-dashed border-border rounded-card select-none">
+          <div className="text-center py-20 border border-dashed border-border dark:border-darkBorder rounded-card select-none">
             <svg className="w-12 h-12 text-slate-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <h3 className="font-display font-bold text-navy text-base mb-1">No Documents Found</h3>
-            <p className="text-textSecondary text-xs font-body max-w-xs mx-auto">
+            <h3 className="font-display font-bold text-navy dark:text-white text-base mb-1">No Documents Found</h3>
+            <p className="text-textSecondary dark:text-slate-400 text-xs font-body max-w-xs mx-auto">
               We couldn't find any documents matching "{searchQuery}".
             </p>
           </div>

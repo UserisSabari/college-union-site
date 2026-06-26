@@ -8,7 +8,7 @@ interface PageWrapperProps {
 
 export const PageWrapper: React.FC<PageWrapperProps> = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen bg-white text-textPrimary">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-darkBg text-textPrimary dark:text-darkText transition-colors duration-200">
       {/* Header / Navigation */}
       <Navbar />
 

@@ -49,7 +49,7 @@ export const StudentVoice = () => {
 
   // Modern SVG Icons Mapper
   const getCategoryIcon = (category: CategoryType, isActive: boolean) => {
-    const strokeColor = isActive ? 'stroke-crimson' : 'stroke-slate-400 group-hover:stroke-navy transition-colors';
+    const strokeColor = isActive ? 'stroke-crimson' : 'stroke-slate-400 group-hover:stroke-navy dark:group-hover:stroke-white transition-colors';
     switch (category) {
       case 'suggestion':
         return (
@@ -171,7 +171,7 @@ export const StudentVoice = () => {
               
               {/* Category selector grid */}
               <div className="space-y-4">
-                <label className="text-xs font-bold text-navy uppercase tracking-wider font-body select-none">
+                <label className="text-xs font-bold text-navy dark:text-slate-200 uppercase tracking-wider font-body select-none">
                   Select Submission Category
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -186,7 +186,7 @@ export const StudentVoice = () => {
                         className={`p-6 border rounded-card flex flex-col items-center justify-center space-y-3 text-center transition-all duration-300 relative overflow-hidden group ${
                           isActive
                             ? 'border-crimson bg-crimson/5 text-crimson shadow-sm scale-102 font-bold'
-                            : 'border-border bg-white text-textSecondary hover:border-navy hover:text-navy hover:shadow-xs hover:scale-101'
+                            : 'border-border dark:border-darkBorder bg-white dark:bg-darkCard text-textSecondary dark:text-slate-400 hover:border-navy dark:hover:border-white hover:text-navy dark:hover:text-white hover:shadow-xs hover:scale-101'
                         }`}
                       >
                         {isActive && (
@@ -203,18 +203,18 @@ export const StudentVoice = () => {
               </div>
 
               {/* Form container */}
-              <form onSubmit={handleSubmit} className="bg-white border border-border p-6 sm:p-8 rounded-card space-y-6 shadow-sm">
+              <form onSubmit={handleSubmit} className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 sm:p-8 rounded-card space-y-6 shadow-sm">
                 
                 {/* Department Dropdown */}
                 <div className="space-y-2">
-                  <label htmlFor="dept" className="text-2xs font-bold text-navy uppercase tracking-wider font-body select-none">
+                  <label htmlFor="dept" className="text-2xs font-bold text-navy dark:text-slate-200 uppercase tracking-wider font-body select-none">
                     Target Department
                   </label>
                   <select
                     id="dept"
                     value={department}
                     onChange={(e) => setDepartment(e.target.value)}
-                    className="w-full px-4 py-2.5 border border-border rounded-button text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all bg-white shadow-2xs"
+                    className="w-full px-4 py-2.5 border border-border dark:border-darkBorder rounded-button text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all bg-white dark:bg-darkSurface text-textPrimary dark:text-darkText shadow-2xs"
                   >
                     <option value="General">All Departments / General</option>
                     <option value="CSE">Computer Science (CSE)</option>
@@ -228,7 +228,7 @@ export const StudentVoice = () => {
 
                 {/* Subject Input */}
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-2xs font-bold text-navy uppercase tracking-wider font-body select-none">
+                  <label htmlFor="subject" className="text-2xs font-bold text-navy dark:text-slate-200 uppercase tracking-wider font-body select-none">
                     Subject Brief
                   </label>
                   <input
@@ -238,14 +238,14 @@ export const StudentVoice = () => {
                     placeholder="E.g., Hostels Wi-Fi disruption / Canteen menu suggestion"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    className="w-full px-4 py-2.5 border border-border rounded-button text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all shadow-2xs"
+                    className="w-full px-4 py-2.5 border border-border dark:border-darkBorder bg-white dark:bg-darkSurface text-textPrimary dark:text-darkText rounded-button text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all shadow-2xs"
                   />
                 </div>
 
                 {/* Detailed Feedback with circular progress ring */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center select-none">
-                    <label htmlFor="msg" className="text-2xs font-bold text-navy uppercase tracking-wider font-body">
+                    <label htmlFor="msg" className="text-2xs font-bold text-navy dark:text-slate-200 uppercase tracking-wider font-body">
                       Detailed Message / Feedback
                     </label>
                     
@@ -285,7 +285,7 @@ export const StudentVoice = () => {
                     placeholder="Provide as much context as possible. Remember to exclude any personal details if you want to remain 100% anonymous..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-4 py-3 border border-border rounded-card text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all resize-y shadow-2xs"
+                    className="w-full px-4 py-3 border border-border dark:border-darkBorder bg-white dark:bg-darkSurface text-textPrimary dark:text-darkText rounded-card text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition-all resize-y shadow-2xs"
                   />
                 </div>
 
@@ -311,14 +311,14 @@ export const StudentVoice = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white border border-border p-8 rounded-card text-center space-y-6 shadow-sm"
+              className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-8 rounded-card text-center space-y-6 shadow-sm"
             >
               {/* spring checkmark animation */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: [0, 1.2, 1] }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto select-none border border-green-100 shadow-2xs"
+                className="w-16 h-16 bg-green-50 dark:bg-green-950/20 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto select-none border border-green-100 dark:border-green-900 shadow-2xs"
               >
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -326,10 +326,10 @@ export const StudentVoice = () => {
               </motion.div>
               
               <div className="space-y-2">
-                <h3 className="font-display font-extrabold text-navy text-xl">
+                <h3 className="font-display font-extrabold text-navy dark:text-white text-xl">
                   Feedback Submitted
                 </h3>
-                <p className="text-textSecondary text-xs sm:text-sm font-body leading-relaxed max-w-md mx-auto">
+                <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm font-body leading-relaxed max-w-md mx-auto">
                   Your voice has been heard. Thank you for helping make GEC Palakkad better.
                 </p>
               </div>
@@ -348,8 +348,8 @@ export const StudentVoice = () => {
       </div>
 
       {/* Redesigned Accordion FAQ */}
-      <section className="max-w-3xl mx-auto pt-10 border-t border-border space-y-6">
-        <h3 className="font-display font-bold text-lg sm:text-xl text-navy text-center select-none">
+      <section className="max-w-3xl mx-auto pt-10 border-t border-border dark:border-darkBorder space-y-6">
+        <h3 className="font-display font-bold text-lg sm:text-xl text-navy dark:text-white text-center select-none">
           Frequently Asked Questions
         </h3>
         
@@ -359,15 +359,15 @@ export const StudentVoice = () => {
             return (
               <div
                 key={index}
-                className={`bg-white border rounded-card overflow-hidden shadow-2xs transition-all duration-300 ${
-                  isExpanded ? 'border-l-4 border-l-crimson border-y border-r border-border' : 'border-border'
+                className={`bg-white dark:bg-darkCard border rounded-card overflow-hidden shadow-2xs transition-all duration-300 ${
+                  isExpanded ? 'border-l-4 border-l-crimson border-y border-r border-border dark:border-y-darkBorder dark:border-r-darkBorder' : 'border-border dark:border-darkBorder'
                 }`}
               >
                 <button
                   onClick={() => setExpandedFaq(isExpanded ? null : index)}
-                  className="w-full px-6 py-4 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none select-none text-left"
+                  className="w-full px-6 py-4 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-[#1a2032]/50 transition-colors focus:outline-none select-none text-left"
                 >
-                  <span className="font-body font-bold text-navy text-xs sm:text-sm">
+                  <span className="font-body font-bold text-navy dark:text-white text-xs sm:text-sm">
                     {faq.question}
                   </span>
                   <svg
@@ -390,7 +390,7 @@ export const StudentVoice = () => {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-5 text-xs sm:text-sm text-textSecondary font-body leading-relaxed pt-2 border-t border-slate-50">
+                      <div className="px-6 pb-5 text-xs sm:text-sm text-textSecondary dark:text-slate-400 font-body leading-relaxed pt-2 border-t border-slate-50 dark:border-darkBorder">
                         {faq.answer}
                       </div>
                     </motion.div>

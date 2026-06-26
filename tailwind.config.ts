@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -17,6 +18,11 @@ export default {
         textPrimary: '#1A1A1A',
         textSecondary: '#6E6E73',
         border: '#E5E5EA',
+        darkBg: '#0F1219',
+        darkSurface: '#1A2032',
+        darkCard: '#1E2640',
+        darkText: '#F0F0F5',
+        darkBorder: '#2A3050',
       },
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],

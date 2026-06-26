@@ -88,11 +88,11 @@ export const Gallery = () => {
     return (
       <div
         onClick={onClick}
-        className="relative break-inside-avoid mb-4 rounded-card overflow-hidden group cursor-pointer border border-border bg-slate-50 select-none shadow-sm hover:shadow-subtle transition-all duration-300"
+        className="relative break-inside-avoid mb-4 rounded-card overflow-hidden group cursor-pointer border border-border dark:border-darkBorder bg-slate-50 dark:bg-darkCard select-none shadow-sm hover:shadow-subtle transition-all duration-300"
       >
         {/* Shimmer Placeholder */}
         {!loaded && (
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 animate-pulse min-h-[200px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 animate-pulse min-h-[200px]" />
         )}
         
         <img
@@ -108,7 +108,7 @@ export const Gallery = () => {
         />
 
         {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4">
+        <div className="absolute inset-0 bg-navy/80 dark:bg-navy/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4">
           <div className="flex justify-end">
             <div className="p-2 bg-white/10 text-white rounded-full backdrop-blur-2xs">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -136,7 +136,7 @@ export const Gallery = () => {
       <SEO title="Photo Gallery" description="Browse highlight pictures, arts festivals albums, sports events meets photos, and campus activities folders at GEC Palakkad." />
       
       {/* Page Hero */}
-      <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Photo Gallery
@@ -150,10 +150,10 @@ export const Gallery = () => {
       </section>
 
       {/* Double Decker Filter Bar */}
-      <div className="bg-white border-y border-border py-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 select-none">
+      <div className="bg-white dark:bg-darkCard border-y border-border dark:border-darkBorder py-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 select-none">
         <div className="max-w-7xl mx-auto space-y-3.5">
           {/* Main Filter Group Selection */}
-          <div className="flex space-x-1.5 border-b border-slate-100 pb-3">
+          <div className="flex space-x-1.5 border-b border-slate-100 dark:border-darkBorder pb-3">
             <button
               onClick={() => {
                 setActiveFilterGroup('all');
@@ -161,8 +161,8 @@ export const Gallery = () => {
               }}
               className={`px-4 py-1 rounded-full text-xs font-body font-bold transition-all ${
                 activeFilterGroup === 'all'
-                  ? 'bg-navy text-white'
-                  : 'bg-surface text-textSecondary hover:text-navy hover:bg-slate-100'
+                  ? 'bg-navy dark:bg-crimson text-white'
+                  : 'bg-surface dark:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkSurface'
               }`}
             >
               All Images
@@ -171,8 +171,8 @@ export const Gallery = () => {
               onClick={() => setActiveFilterGroup('event')}
               className={`px-4 py-1 rounded-full text-xs font-body font-bold transition-all ${
                 activeFilterGroup === 'event'
-                  ? 'bg-navy text-white'
-                  : 'bg-surface text-textSecondary hover:text-navy hover:bg-slate-100'
+                  ? 'bg-navy dark:bg-crimson text-white'
+                  : 'bg-surface dark:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkSurface'
               }`}
             >
               Filter By Event
@@ -181,8 +181,8 @@ export const Gallery = () => {
               onClick={() => setActiveFilterGroup('year')}
               className={`px-4 py-1 rounded-full text-xs font-body font-bold transition-all ${
                 activeFilterGroup === 'year'
-                  ? 'bg-navy text-white'
-                  : 'bg-surface text-textSecondary hover:text-navy hover:bg-slate-100'
+                  ? 'bg-navy dark:bg-crimson text-white'
+                  : 'bg-surface dark:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkSurface'
               }`}
             >
               Filter By Year
@@ -197,7 +197,7 @@ export const Gallery = () => {
                 className={`px-3 py-1 rounded text-2xs font-body font-semibold transition-all ${
                   activeFilterValue === 'all'
                     ? 'bg-crimson text-white'
-                    : 'bg-slate-50 text-textSecondary hover:text-navy hover:bg-slate-100'
+                    : 'bg-slate-50 dark:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkSurface'
                 }`}
               >
                 Show All {activeFilterGroup === 'event' ? 'Events' : 'Years'}
@@ -211,7 +211,7 @@ export const Gallery = () => {
                     className={`px-3 py-1 rounded text-2xs font-body font-semibold whitespace-nowrap transition-all ${
                       activeFilterValue === ev
                         ? 'bg-crimson text-white'
-                        : 'bg-slate-50 text-textSecondary hover:text-navy hover:bg-slate-100'
+                        : 'bg-slate-50 dark:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkSurface'
                     }`}
                   >
                     {ev}
@@ -226,7 +226,7 @@ export const Gallery = () => {
                     className={`px-3 py-1 rounded text-2xs font-body font-semibold whitespace-nowrap transition-all ${
                       activeFilterValue === yr
                         ? 'bg-crimson text-white'
-                        : 'bg-slate-50 text-textSecondary hover:text-navy hover:bg-slate-100'
+                        : 'bg-slate-50 dark:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-darkSurface'
                     }`}
                   >
                     {yr}
@@ -250,19 +250,19 @@ export const Gallery = () => {
               />
             ))
           ) : (
-            <div className="col-span-full py-20 text-center text-textSecondary border border-dashed border-border rounded-card select-none">
+            <div className="col-span-full py-20 text-center text-textSecondary dark:text-slate-400 border border-dashed border-border dark:border-darkBorder rounded-card select-none">
               No photos found matching the selected filter query.
             </div>
           )}
         </section>
 
         {/* Horizontal scroll albums section */}
-        <section className="space-y-6 pt-10 border-t border-border">
+        <section className="space-y-6 pt-10 border-t border-border dark:border-darkBorder">
           <div className="select-none">
-            <h2 className="font-display font-bold text-lg sm:text-xl text-navy">
+            <h2 className="font-display font-bold text-lg sm:text-xl text-navy dark:text-white">
               Campus Event Albums
             </h2>
-            <p className="text-textSecondary text-xs font-body mt-1">
+            <p className="text-textSecondary dark:text-slate-400 text-xs font-body mt-1">
               Select an album to see categorized photo collections.
             </p>
           </div>
@@ -275,10 +275,10 @@ export const Gallery = () => {
                   setActiveFilterGroup('event');
                   setActiveFilterValue(album.eventName);
                 }}
-                className="w-48 sm:w-56 flex-shrink-0 bg-white border border-border rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300 cursor-pointer group"
+                className="w-48 sm:w-56 flex-shrink-0 bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300 cursor-pointer group"
               >
                 {/* Album Cover */}
-                <div className="h-32 overflow-hidden bg-slate-100 relative">
+                <div className="h-32 overflow-hidden bg-slate-100 dark:bg-darkBg relative">
                   <img
                     src={album.cover}
                     alt={album.eventName}
@@ -287,17 +287,17 @@ export const Gallery = () => {
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute top-2 right-2 bg-navy/95 text-white px-2 py-0.5 rounded text-4xs font-bold font-body">
+                  <div className="absolute top-2 right-2 bg-navy/95 dark:bg-crimson/95 text-white px-2 py-0.5 rounded text-4xs font-bold font-body">
                     {album.count} Photos
                   </div>
                 </div>
 
                 {/* Album Details */}
                 <div className="p-4">
-                  <h4 className="font-display font-bold text-navy text-xs sm:text-sm truncate group-hover:text-crimson transition-colors">
+                  <h4 className="font-display font-bold text-navy dark:text-white text-xs sm:text-sm truncate group-hover:text-crimson transition-colors">
                     {album.eventName}
                   </h4>
-                  <p className="text-textSecondary text-4xs font-body mt-1">View collection</p>
+                  <p className="text-textSecondary dark:text-slate-400 text-4xs font-body mt-1">View collection</p>
                 </div>
               </div>
             ))}

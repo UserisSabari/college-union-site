@@ -78,7 +78,7 @@ export const Archive = () => {
       <SEO title="Union Archive" description="Every year's College Union term is preserved here permanently. Browse past members lists, events, annual reports, magazines, and initiatives history." />
       
       {/* Page Hero */}
-      <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Union Archive — A Living History
@@ -100,20 +100,20 @@ export const Archive = () => {
           {ARCHIVE_YEARS.map((item) => (
             <div
               key={item.year}
-              className="bg-white border border-border p-6 rounded-card shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
+              className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-5">
                 {/* Year Header */}
-                <h3 className="font-display font-bold text-navy text-3xl sm:text-4xl border-b border-border pb-3">
+                <h3 className="font-display font-bold text-navy dark:text-white text-3xl sm:text-4xl border-b border-border dark:border-darkBorder pb-3">
                   {item.year.replace('-', '–')}
                 </h3>
                 
                 {/* Chairperson Info */}
                 <div className="text-xs font-body">
-                  <span className="text-textSecondary uppercase tracking-widest text-3xs font-bold block mb-1">
+                  <span className="text-textSecondary dark:text-slate-400 uppercase tracking-widest text-3xs font-bold block mb-1">
                     Union Chairperson
                   </span>
-                  <span className="text-navy font-bold text-sm">
+                  <span className="text-navy dark:text-white font-bold text-sm">
                     {item.chairperson}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export const Archive = () => {
                   {item.thumbnails.map((src, i) => (
                     <div
                       key={i}
-                      className="w-16 h-12 rounded overflow-hidden bg-slate-100 border border-slate-200"
+                      className="w-16 h-12 rounded overflow-hidden bg-slate-100 dark:bg-darkBg border border-slate-200 dark:border-darkBorder"
                     >
                       <img
                         src={src}
@@ -138,18 +138,18 @@ export const Archive = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-2 border-t border-border pt-4 text-center">
-                  <div className="border-r border-slate-200 last:border-0 p-1">
+                <div className="grid grid-cols-3 gap-2 border-t border-border dark:border-darkBorder pt-4 text-center">
+                  <div className="border-r border-slate-200 dark:border-darkBorder last:border-0 p-1">
                     <p className="text-sm font-bold text-crimson font-body">{item.stats.members}</p>
-                    <p className="text-4xs text-textSecondary uppercase font-medium tracking-wider">Members</p>
+                    <p className="text-4xs text-textSecondary dark:text-slate-400 uppercase font-medium tracking-wider">Members</p>
                   </div>
-                  <div className="border-r border-slate-200 last:border-0 p-1">
+                  <div className="border-r border-slate-200 dark:border-darkBorder last:border-0 p-1">
                     <p className="text-sm font-bold text-crimson font-body">{item.stats.events}</p>
-                    <p className="text-4xs text-textSecondary uppercase font-medium tracking-wider">Events</p>
+                    <p className="text-4xs text-textSecondary dark:text-slate-400 uppercase font-medium tracking-wider">Events</p>
                   </div>
                   <div className="last:border-0 p-1">
                     <p className="text-sm font-bold text-crimson font-body">{item.stats.initiatives}</p>
-                    <p className="text-4xs text-textSecondary uppercase font-medium tracking-wider">Projects</p>
+                    <p className="text-4xs text-textSecondary dark:text-slate-400 uppercase font-medium tracking-wider">Projects</p>
                   </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export const Archive = () => {
                   variant="outline"
                   size="sm"
                   fullWidth={true}
-                  className="border-navy text-navy hover:bg-navy hover:text-white"
+                  className="border-navy dark:border-darkBorder text-navy dark:text-darkText hover:bg-navy dark:hover:bg-darkBorder hover:text-white"
                 >
                   View Full Year Archive
                 </Button>

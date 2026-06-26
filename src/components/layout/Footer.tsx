@@ -17,7 +17,7 @@ const QUICK_LINKS = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-navy border-t-2 border-gold text-slate-300 font-body">
+    <footer className="bg-navy dark:bg-darkSurface border-t-2 border-gold dark:border-gold/30 text-slate-300 dark:text-slate-400 font-body transition-colors duration-200">
       {/* Top 4-Column Grid Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -45,7 +45,7 @@ export const Footer = () => {
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col space-y-4">
-            <h3 className="font-display font-bold text-white text-base tracking-wide border-b border-slate-700 pb-2">
+            <h3 className="font-display font-bold text-white text-base tracking-wide border-b border-slate-700 dark:border-darkBorder pb-2">
               Quick Links
             </h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
@@ -64,7 +64,7 @@ export const Footer = () => {
 
           {/* Column 3: Contact Details */}
           <div className="flex flex-col space-y-4">
-            <h3 className="font-display font-bold text-white text-base tracking-wide border-b border-slate-700 pb-2">
+            <h3 className="font-display font-bold text-white text-base tracking-wide border-b border-slate-700 dark:border-darkBorder pb-2">
               Office Details
             </h3>
             <ul className="space-y-3 text-sm">
@@ -97,7 +97,7 @@ export const Footer = () => {
 
           {/* Column 4: Social Connections */}
           <div className="flex flex-col space-y-4">
-            <h3 className="font-display font-bold text-white text-base tracking-wide border-b border-slate-700 pb-2">
+            <h3 className="font-display font-bold text-white text-base tracking-wide border-b border-slate-700 dark:border-darkBorder pb-2">
               Connect With Us
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -147,7 +147,7 @@ export const Footer = () => {
       </div>
 
       {/* Bottom Bar Section */}
-      <div className="bg-slate-950 border-t border-slate-800 text-slate-500 py-6">
+      <div className="bg-slate-950 dark:bg-slate-950/60 border-t border-slate-800 dark:border-darkBorder text-slate-500 py-6 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs space-y-3 md:space-y-0">
           <div>
             &copy; 2026–27 Secular College Union, GEC Palakkad. All rights reserved.

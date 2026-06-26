@@ -131,9 +131,8 @@ export const Home = () => {
 
       {/* SECTION 1: HERO */}
       <section
-        className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 text-center select-none"
+        className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 text-center select-none bg-white dark:bg-darkBg transition-colors duration-200"
         style={{
-          backgroundColor: '#ffffff',
           backgroundImage: 'linear-gradient(to right, rgba(26, 39, 68, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(26, 39, 68, 0.03) 1px, transparent 1px)',
           backgroundSize: '40px 40px'
         }}
@@ -147,7 +146,7 @@ export const Home = () => {
           {/* Display Heading */}
           <motion.h1
             variants={fadeUp}
-            className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold text-navy tracking-tight leading-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold text-navy dark:text-white tracking-tight leading-tight"
           >
             The Official Voice of <br />
             <span className="text-crimson">GEC Palakkad Students</span>
@@ -156,7 +155,7 @@ export const Home = () => {
           {/* Subheading */}
           <motion.p
             variants={fadeUp}
-            className="text-base sm:text-lg md:text-xl text-textSecondary font-body font-medium tracking-wide max-w-2xl"
+            className="text-base sm:text-lg md:text-xl text-textSecondary dark:text-slate-400 font-body font-medium tracking-wide max-w-2xl"
           >
             Secular College Union <span className="text-gold mx-1.5">•</span> 2026–27 <span className="text-gold mx-1.5">•</span> Government Engineering College, Palakkad
           </motion.p>
@@ -187,13 +186,13 @@ export const Home = () => {
             variants={fadeUp}
             className="flex flex-wrap items-center justify-center gap-3 pt-10"
           >
-            <div className="px-4 py-2 bg-surface border border-border text-xs font-semibold text-navy rounded-full uppercase tracking-wider">
+            <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
               12 Office Bearers
             </div>
-            <div className="px-4 py-2 bg-surface border border-border text-xs font-semibold text-navy rounded-full uppercase tracking-wider">
+            <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
               6 Departments
             </div>
-            <div className="px-4 py-2 bg-surface border border-border text-xs font-semibold text-navy rounded-full uppercase tracking-wider">
+            <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
               Est. Every Year Since 2001
             </div>
           </motion.div>
@@ -214,7 +213,7 @@ export const Home = () => {
       </section>
 
       {/* SECTION 2: CURRENT UNION BANNER */}
-      <section className="bg-navy text-white py-4 border-y border-gold/20 select-none">
+      <section className="bg-navy dark:bg-darkSurface text-white py-4 border-y border-gold/20 dark:border-darkBorder select-none transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm md:text-base font-body tracking-wide font-medium">
           2026–27 Secular College Union — Currently Serving{' '}
           <span className="text-gold mx-2">|</span>{' '}
@@ -226,12 +225,12 @@ export const Home = () => {
       </section>
 
       {/* SECTION 3: LATEST ANNOUNCEMENTS */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-darkBg transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Bulletin Board</p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy">Notices & Announcements</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Notices & Announcements</h2>
             </div>
             <Link
               to="/news"
@@ -255,19 +254,19 @@ export const Home = () => {
               <motion.article
                 key={ann.id}
                 variants={fadeUp}
-                className="bg-white border border-border rounded-card p-6 hover:shadow-subtle hover:border-slate-300 transition-all flex flex-col justify-between"
+                className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${ann.category === 'notice' ? 'bg-blue-50 text-blue-800 border-blue-200' :
-                      ann.category === 'event' ? 'bg-emerald-50 text-emerald-800 border-emerald-200' :
-                        ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200' :
-                          'bg-slate-100 text-slate-800 border-slate-200'
-                      }`}>
+                    <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${ann.category === 'notice' ? 'bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800' :
+                      ann.category === 'event' ? 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800' :
+                      ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-800' :
+                      'bg-slate-100 text-slate-800 border-slate-200'
+                    }`}>
                       {ann.category}
                     </span>
                     {ann.isPinned && (
-                      <span className="flex items-center text-xs font-semibold text-gold bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-tag">
+                      <span className="flex items-center text-xs font-semibold text-gold bg-amber-50 border border-amber-200 dark:bg-amber-900/20 dark:border-amber-800 px-2 py-0.5 rounded-tag">
                         <svg className="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" />
                         </svg>
@@ -275,14 +274,14 @@ export const Home = () => {
                       </span>
                     )}
                   </div>
-                  <h3 className="text-lg md:text-xl font-display font-bold text-navy mb-2 line-clamp-2">
+                  <h3 className="text-lg md:text-xl font-display font-bold text-navy dark:text-white mb-2 line-clamp-2">
                     {ann.title}
                   </h3>
-                  <p className="text-textSecondary text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-textSecondary dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
                     {ann.body}
                   </p>
                 </div>
-                <div className="flex items-center justify-between text-xs text-textSecondary pt-4 border-t border-border">
+                <div className="flex items-center justify-between text-xs text-textSecondary dark:text-slate-400 pt-4 border-t border-border dark:border-darkBorder">
                   <span>{new Date(ann.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
                   <Link to="/news" className="font-semibold text-crimson hover:underline">
                     Read More &rarr;
@@ -294,13 +293,12 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 4: UPCOMING EVENTS */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-surface dark:bg-darkSurface transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Campus Activities</p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy">Upcoming Events</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Upcoming Events</h2>
             </div>
             <Link
               to="/events"
@@ -326,7 +324,7 @@ export const Home = () => {
                 <motion.div
                   key={evt.id}
                   variants={fadeUp}
-                  className="w-80 md:w-auto bg-white border border-border rounded-card overflow-hidden hover:shadow-subtle hover:border-slate-300 transition-all flex flex-col h-full"
+                  className="w-80 md:w-auto bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all flex flex-col h-full"
                 >
                   {/* Decorative Gradient Top Header */}
                   <div className="h-40 bg-gradient-to-br from-navy via-slate-800 to-crimson flex items-center justify-center text-white font-display font-semibold text-lg p-6 text-center select-none">
@@ -335,31 +333,31 @@ export const Home = () => {
                   <div className="p-6 flex-grow flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <span className="px-2 py-0.5 bg-crimson/10 border border-crimson/20 text-crimson rounded-tag text-2xs uppercase tracking-wider font-semibold">
+                        <span className="px-2 py-0.5 bg-crimson/10 border border-crimson/20 dark:bg-crimson/20 dark:border-crimson/30 text-crimson rounded-tag text-2xs uppercase tracking-wider font-semibold">
                           {evt.category}
                         </span>
-                        <span className="text-2xs font-semibold text-slate-500 uppercase tracking-widest flex items-center">
+                        <span className="text-2xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest flex items-center">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse" />
                           {evt.status}
                         </span>
                       </div>
-                      <h3 className="text-base md:text-lg font-body font-bold text-navy mb-2 line-clamp-2">
+                      <h3 className="text-base md:text-lg font-body font-bold text-navy dark:text-white mb-2 line-clamp-2">
                         {evt.title}
                       </h3>
-                      <p className="text-textSecondary text-xs leading-relaxed mb-6 line-clamp-2">
+                      <p className="text-textSecondary dark:text-slate-400 text-xs leading-relaxed mb-6 line-clamp-2">
                         {evt.description}
                       </p>
                     </div>
 
-                    <div className="space-y-2 text-xs text-textSecondary border-t border-border pt-4">
+                    <div className="space-y-2 text-xs text-textSecondary dark:text-slate-400 border-t border-border dark:border-darkBorder pt-4">
                       <div className="flex items-center space-x-2">
-                        <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                         <span>{new Date(evt.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         </svg>
                         <span className="truncate">{evt.venue}</span>
@@ -373,12 +371,11 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 5: QUICK LINKS */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-darkBg transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Student Portal</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-navy">Quick Access Tiles</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Quick Access Tiles</h2>
           </div>
 
           <motion.div
@@ -392,16 +389,16 @@ export const Home = () => {
               <motion.div key={tile.path} variants={fadeUp}>
                 <Link
                   to={tile.path}
-                  className="group flex items-start space-x-4 bg-white border border-border p-6 rounded-card hover:border-crimson/50 hover:shadow-subtle transition-all duration-300"
+                  className="group flex items-start space-x-4 bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card hover:border-crimson/50 dark:hover:border-crimson/80 hover:shadow-subtle transition-all duration-300"
                 >
-                  <div className="p-3 bg-surface text-navy rounded-button group-hover:bg-crimson group-hover:text-white transition-colors duration-300">
+                  <div className="p-3 bg-surface dark:bg-darkSurface text-navy dark:text-white rounded-button group-hover:bg-crimson group-hover:text-white transition-colors duration-300">
                     {tile.icon}
                   </div>
                   <div>
-                    <h3 className="font-body font-bold text-base text-navy group-hover:text-crimson transition-colors duration-300">
+                    <h3 className="font-body font-bold text-base text-navy dark:text-white group-hover:text-crimson transition-colors duration-300">
                       {tile.label}
                     </h3>
-                    <p className="text-xs text-textSecondary mt-1">
+                    <p className="text-xs text-textSecondary dark:text-slate-400 mt-1">
                       {tile.description}
                     </p>
                   </div>
@@ -412,13 +409,12 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 6: RECENT INITIATIVES */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-surface dark:bg-darkSurface transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Welfare Projects</p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy">Union Initiatives</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Union Initiatives</h2>
             </div>
             <Link
               to="/initiatives"
@@ -442,25 +438,25 @@ export const Home = () => {
               <motion.div
                 key={init.id}
                 variants={fadeUp}
-                className="bg-white border border-border p-6 rounded-card flex flex-col justify-between hover:shadow-subtle hover:border-slate-300 transition-all"
+                className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all"
               >
                 <div>
                   <div className="flex justify-between items-center mb-3">
-                    <h3 className="font-body font-bold text-lg text-navy line-clamp-1">
+                    <h3 className="font-body font-bold text-lg text-navy dark:text-white line-clamp-1">
                       {init.title}
                     </h3>
                     <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${init.status === 'completed'
-                      ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
-                      : 'bg-blue-50 text-blue-800 border-blue-200'
+                      ? 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800'
+                      : 'bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800'
                       }`}>
                       {init.status}
                     </span>
                   </div>
-                  <p className="text-textSecondary text-xs md:text-sm leading-relaxed mb-6">
+                  <p className="text-textSecondary dark:text-slate-400 text-xs md:text-sm leading-relaxed mb-6">
                     {init.description}
                   </p>
                 </div>
-                <div className="border-t border-border pt-4">
+                <div className="border-t border-border dark:border-darkBorder pt-4">
                   <Link to="/initiatives" className="text-xs font-semibold text-crimson hover:underline">
                     Learn More &rarr;
                   </Link>
@@ -472,7 +468,7 @@ export const Home = () => {
       </section>
 
       {/* SECTION 7: IMPACT NUMBERS */}
-      <section className="bg-navy text-white py-20 border-y border-gold/10 relative overflow-hidden select-none">
+      <section className="bg-navy dark:bg-darkSurface text-white py-20 border-y border-gold/10 dark:border-darkBorder relative overflow-hidden select-none transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
             <div className="space-y-2">
@@ -503,13 +499,12 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 8: GALLERY PREVIEW */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-darkBg transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Moments & Memories</p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy">Gallery Preview</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Gallery Preview</h2>
             </div>
             <Link
               to="/gallery"
@@ -547,7 +542,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="bg-crimson text-white py-20 text-center select-none">
+      <section className="bg-crimson dark:bg-crimson/95 text-white py-20 text-center select-none transition-colors duration-200">
         <div className="max-w-4xl mx-auto px-4 space-y-6">
           <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
             Have something to say?

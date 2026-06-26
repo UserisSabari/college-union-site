@@ -25,11 +25,11 @@ export const Representatives = () => {
 
   // Card component for consistency
   const RepCard = ({ rep }: { rep: Member }) => (
-    <div className="bg-white border border-border p-6 rounded-card flex flex-col justify-between hover:shadow-subtle transition-all duration-300">
+    <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between hover:shadow-subtle transition-all duration-300">
       <div className="space-y-4">
         {/* Photo and Header */}
         <div className="flex items-center space-x-4 select-none">
-          <div className="w-14 h-14 rounded-full border border-slate-200 overflow-hidden bg-slate-100 flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy text-lg">
+          <div className="w-14 h-14 rounded-full border border-slate-200 dark:border-darkBorder overflow-hidden bg-slate-100 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-lg">
             {rep.photo ? (
               <img
                 src={rep.photo}
@@ -47,23 +47,23 @@ export const Representatives = () => {
             )}
           </div>
           <div>
-            <h4 className="font-body font-bold text-navy text-sm sm:text-base leading-tight">
+            <h4 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base leading-tight">
               {rep.name}
             </h4>
-            <p className="text-textSecondary text-2xs mt-1">
-              Semester {rep.semester} <span className="text-slate-300 mx-1">•</span> {rep.department}
+            <p className="text-textSecondary dark:text-slate-400 text-2xs mt-1">
+              Semester {rep.semester} <span className="text-slate-300 dark:text-slate-600 mx-1">•</span> {rep.department}
             </p>
           </div>
         </div>
 
         {/* Bio */}
-        <p className="text-textSecondary text-xs leading-relaxed font-body line-clamp-3">
+        <p className="text-textSecondary dark:text-slate-300 text-xs leading-relaxed font-body line-clamp-3">
           {rep.bio}
         </p>
       </div>
 
       {/* Social / Contact Grid Footer */}
-      <div className="pt-4 border-t border-border mt-4 flex justify-between items-center select-none">
+      <div className="pt-4 border-t border-border dark:border-darkBorder mt-4 flex justify-between items-center select-none">
         <span className="text-2xs font-semibold text-crimson uppercase tracking-wider">
           {rep.position}
         </span>
@@ -71,7 +71,7 @@ export const Representatives = () => {
           {rep.contact.email && (
             <a
               href={`mailto:${rep.contact.email}`}
-              className="text-slate-400 hover:text-crimson transition-colors"
+              className="text-slate-400 dark:text-slate-500 hover:text-crimson transition-colors"
               aria-label="Email Address"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +84,7 @@ export const Representatives = () => {
               href={`https://instagram.com/${rep.socials.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-crimson transition-colors"
+              className="text-slate-400 dark:text-slate-500 hover:text-crimson transition-colors"
               aria-label="Instagram Profile"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ export const Representatives = () => {
               href={`https://linkedin.com/in/${rep.socials.linkedin}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-crimson transition-colors"
+              className="text-slate-400 dark:text-slate-500 hover:text-crimson transition-colors"
               aria-label="LinkedIn Profile"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@ export const Representatives = () => {
               href={`https://github.com/${rep.socials.github}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-crimson transition-colors"
+              className="text-slate-400 dark:text-slate-500 hover:text-crimson transition-colors"
               aria-label="GitHub Profile"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ export const Representatives = () => {
       <SEO title="Class & Department Representatives" description="Meet the class, PG, and specialized department representatives of the Secular College Union at GEC Palakkad." />
       
       {/* Page Hero */}
-      <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Student Representatives — 2026–27
@@ -143,11 +143,11 @@ export const Representatives = () => {
 
       {/* UG Department Representatives - Tabbed View */}
       <section className="space-y-8">
-        <div className="border-b border-border select-none">
+        <div className="border-b border-border dark:border-darkBorder select-none">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 pb-4">
             <div>
               <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Academic Branches</p>
-              <h2 className="text-2xl font-display font-bold text-navy">Undergraduate Representatives</h2>
+              <h2 className="text-2xl font-display font-bold text-navy dark:text-white">Undergraduate Representatives</h2>
             </div>
             
             {/* Scrollable Tabs */}
@@ -157,7 +157,7 @@ export const Representatives = () => {
                   key={dept}
                   onClick={() => setActiveTab(dept)}
                   className={`relative px-4 py-2 text-xs sm:text-sm font-body font-semibold transition-colors focus:outline-none rounded-button ${
-                    activeTab === dept ? 'text-crimson bg-surface' : 'text-textSecondary hover:text-navy'
+                    activeTab === dept ? 'text-crimson bg-surface dark:bg-darkCard' : 'text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white'
                   }`}
                 >
                   {dept}
@@ -189,7 +189,7 @@ export const Representatives = () => {
               {activeUgReps.length > 0 ? (
                 activeUgReps.map((rep) => <RepCard key={rep.id} rep={rep} />)
               ) : (
-                <div className="col-span-full py-16 text-center text-textSecondary font-body text-sm select-none border border-dashed border-border rounded-card">
+                <div className="col-span-full py-16 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
                   No representatives listed for the {activeTab} department yet.
                 </div>
               )}
@@ -199,16 +199,16 @@ export const Representatives = () => {
       </section>
 
       {/* PG Representatives Section */}
-      <section className="space-y-6 pt-8 border-t border-border">
+      <section className="space-y-6 pt-8 border-t border-border dark:border-darkBorder">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display font-bold text-xl text-navy select-none mb-6">
+          <h3 className="font-display font-bold text-xl text-navy dark:text-white select-none mb-6">
             Postgraduate Representatives
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pgReps.length > 0 ? (
               pgReps.map((rep) => <RepCard key={rep.id} rep={rep} />)
             ) : (
-              <div className="col-span-full py-10 text-center text-textSecondary font-body text-sm select-none border border-dashed border-border rounded-card">
+              <div className="col-span-full py-10 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
                 No postgraduate representatives listed yet.
               </div>
             )}
@@ -217,16 +217,16 @@ export const Representatives = () => {
       </section>
 
       {/* Ladies Representatives Section */}
-      <section className="space-y-6 pt-8 border-t border-border">
+      <section className="space-y-6 pt-8 border-t border-border dark:border-darkBorder">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display font-bold text-xl text-navy select-none mb-6">
+          <h3 className="font-display font-bold text-xl text-navy dark:text-white select-none mb-6">
             Ladies Representatives
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ladiesReps.length > 0 ? (
               ladiesReps.map((rep) => <RepCard key={rep.id} rep={rep} />)
             ) : (
-              <div className="col-span-full py-10 text-center text-textSecondary font-body text-sm select-none border border-dashed border-border rounded-card">
+              <div className="col-span-full py-10 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
                 No ladies representatives listed yet.
               </div>
             )}
@@ -235,16 +235,16 @@ export const Representatives = () => {
       </section>
 
       {/* SC/ST Representatives Section */}
-      <section className="space-y-6 pt-8 border-t border-border">
+      <section className="space-y-6 pt-8 border-t border-border dark:border-darkBorder">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display font-bold text-xl text-navy select-none mb-6">
+          <h3 className="font-display font-bold text-xl text-navy dark:text-white select-none mb-6">
             SC/ST Representative
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {scstReps.length > 0 ? (
               scstReps.map((rep) => <RepCard key={rep.id} rep={rep} />)
             ) : (
-              <div className="col-span-full py-10 text-center text-textSecondary font-body text-sm select-none border border-dashed border-border rounded-card">
+              <div className="col-span-full py-10 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
                 No SC/ST representatives listed yet.
               </div>
             )}
@@ -253,16 +253,16 @@ export const Representatives = () => {
       </section>
 
       {/* General Captain Section */}
-      <section className="space-y-6 pt-8 border-t border-border">
+      <section className="space-y-6 pt-8 border-t border-border dark:border-darkBorder">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display font-bold text-xl text-navy select-none mb-6">
+          <h3 className="font-display font-bold text-xl text-navy dark:text-white select-none mb-6">
             General Captain
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {generalCaptainReps.length > 0 ? (
               generalCaptainReps.map((rep) => <RepCard key={rep.id} rep={rep} />)
             ) : (
-              <div className="col-span-full py-10 text-center text-textSecondary font-body text-sm select-none border border-dashed border-border rounded-card">
+              <div className="col-span-full py-10 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
                 No General Captain listed yet.
               </div>
             )}

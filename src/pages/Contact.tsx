@@ -29,46 +29,46 @@ export const Contact = () => {
   };
 
   return (
-    <div className="space-y-0 text-textPrimary">
+    <div className="space-y-0 text-textPrimary dark:text-darkText transition-colors duration-200">
       <SEO
         title="Contact Us"
         description="Get in touch with the 2026-27 College Union of Government Engineering College Palakkad. Reach office bearers, view location, or submit feedback."
       />
 
       {/* Hero Section */}
-      <section className="bg-surface py-16 md:py-20 text-center select-none border-b border-border">
+      <section className="bg-surface dark:bg-darkSurface py-16 md:py-20 text-center select-none border-b border-border dark:border-darkBorder transition-colors duration-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-navy tracking-tight leading-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-navy dark:text-white tracking-tight leading-tight mb-4">
             Get in Touch
           </h1>
-          <p className="text-base sm:text-lg text-textSecondary font-body max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-textSecondary dark:text-slate-400 font-body max-w-xl mx-auto">
             Have questions, feedback, or complaints? Reach out to the College Union office or get in touch directly with our officers.
           </p>
         </div>
       </section>
 
       {/* Two-Column Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white dark:bg-darkBg transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column: Office Details */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-navy mb-6">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-navy dark:text-white mb-6">
                   Office Location & Details
                 </h2>
-                <div className="bg-card border border-border p-6 rounded-card shadow-3xs space-y-6">
+                <div className="bg-card dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card shadow-3xs space-y-6">
                   {/* Address */}
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-navy/5 text-navy rounded-button">
+                    <div className="p-3 bg-navy/5 dark:bg-navy/20 text-navy dark:text-white rounded-button flex-shrink-0">
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-body font-bold text-navy text-sm">College Union Office</h3>
-                      <p className="text-textSecondary text-xs sm:text-sm mt-1 leading-relaxed">
+                      <h3 className="font-body font-bold text-navy dark:text-white text-sm">College Union Office</h3>
+                      <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
                         Amenity Center, Government Engineering College, Palakkad<br />
                         Sreekrishnapuram, Palakkad District, Kerala, India - 678633
                       </p>
@@ -90,20 +90,20 @@ export const Contact = () => {
                     </a>
                   </div>
 
-                  <hr className="border-border" />
+                  <hr className="border-border dark:border-darkBorder" />
 
                   {/* Contact Info */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Email */}
                     <div className="flex items-start space-x-3">
-                      <div className="p-2 bg-navy/5 text-navy rounded-button">
+                      <div className="p-2 bg-navy/5 dark:bg-navy/20 text-navy dark:text-white rounded-button flex-shrink-0">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-body font-bold text-navy text-xs">Email</h4>
-                        <a href="mailto:union@gecpalakkad.ac.in" className="text-textSecondary text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
+                        <h4 className="font-body font-bold text-navy dark:text-white text-xs">Email</h4>
+                        <a href="mailto:union@gecpalakkad.ac.in" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
                           union@gecpalakkad.ac.in
                         </a>
                       </div>
@@ -111,14 +111,14 @@ export const Contact = () => {
 
                     {/* Office Hours */}
                     <div className="flex items-start space-x-3">
-                      <div className="p-2 bg-navy/5 text-navy rounded-button">
+                      <div className="p-2 bg-navy/5 dark:bg-navy/20 text-navy dark:text-white rounded-button flex-shrink-0">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-body font-bold text-navy text-xs">Office Hours</h4>
-                        <p className="text-textSecondary text-xs sm:text-sm mt-0.5 leading-relaxed">
+                        <h4 className="font-body font-bold text-navy dark:text-white text-xs">Office Hours</h4>
+                        <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm mt-0.5 leading-relaxed">
                           Monday – Friday<br />
                           9:00 AM – 5:00 PM
                         </p>
@@ -126,16 +126,16 @@ export const Contact = () => {
                     </div>
                   </div>
 
-                  <hr className="border-border" />
+                  <hr className="border-border dark:border-darkBorder" />
 
                   {/* Social links */}
                   <div className="flex items-center space-x-4">
-                    <span className="font-body text-navy text-xs font-semibold">Social Channels:</span>
+                    <span className="font-body text-navy dark:text-white text-xs font-semibold">Social Channels:</span>
                     <a
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-textSecondary hover:text-crimson transition-colors"
+                      className="text-textSecondary dark:text-slate-400 hover:text-crimson dark:hover:text-crimson transition-colors"
                       aria-label="Instagram"
                     >
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@ export const Contact = () => {
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-textSecondary hover:text-navy transition-colors"
+                      className="text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white transition-colors"
                       aria-label="LinkedIn"
                     >
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -161,19 +161,19 @@ export const Contact = () => {
             {/* Right Column: Contact Form */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-navy mb-6">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-navy dark:text-white mb-6">
                   Send a Message
                 </h2>
-                <div className="bg-card border border-border p-6 sm:p-8 rounded-card shadow-3xs">
+                <div className="bg-card dark:bg-darkCard border border-border dark:border-darkBorder p-6 sm:p-8 rounded-card shadow-3xs">
                   {isSubmitted ? (
                     <div className="text-center py-8 space-y-4">
-                      <div className="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto border border-green-200">
+                      <div className="w-12 h-12 bg-green-50 dark:bg-green-950/20 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto border border-green-200 dark:border-green-900 shadow-2xs">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <h3 className="font-body font-bold text-navy text-base">Message Sent Successfully</h3>
-                      <p className="text-textSecondary text-sm max-w-sm mx-auto">
+                      <h3 className="font-body font-bold text-navy dark:text-white text-base">Message Sent Successfully</h3>
+                      <p className="text-textSecondary dark:text-slate-400 text-sm max-w-sm mx-auto">
                         Message received. We'll respond within 2 working days.
                       </p>
                       <div className="pt-4">
@@ -186,7 +186,7 @@ export const Contact = () => {
                     <form onSubmit={handleSubmit} className="space-y-5 font-body">
                       {/* Name */}
                       <div>
-                        <label htmlFor="name" className="block text-xs font-semibold text-navy mb-1.5">
+                        <label htmlFor="name" className="block text-xs font-semibold text-navy dark:text-white mb-1.5">
                           Full Name
                         </label>
                         <input
@@ -196,14 +196,14 @@ export const Contact = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-2 border border-border bg-white rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson"
+                          className="w-full px-4 py-2 border border-border dark:border-darkBorder bg-white dark:bg-darkBg text-textPrimary dark:text-darkText rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson"
                           placeholder="Your full name"
                         />
                       </div>
 
                       {/* Email */}
                       <div>
-                        <label htmlFor="email" className="block text-xs font-semibold text-navy mb-1.5">
+                        <label htmlFor="email" className="block text-xs font-semibold text-navy dark:text-white mb-1.5">
                           Email Address
                         </label>
                         <input
@@ -213,14 +213,14 @@ export const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-2 border border-border bg-white rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson"
+                          className="w-full px-4 py-2 border border-border dark:border-darkBorder bg-white dark:bg-darkBg text-textPrimary dark:text-darkText rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson"
                           placeholder="your.email@example.com"
                         />
                       </div>
 
                       {/* Category */}
                       <div>
-                        <label htmlFor="category" className="block text-xs font-semibold text-navy mb-1.5">
+                        <label htmlFor="category" className="block text-xs font-semibold text-navy dark:text-white mb-1.5">
                           Category
                         </label>
                         <select
@@ -228,7 +228,7 @@ export const Contact = () => {
                           name="category"
                           value={formData.category}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-border bg-white rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson"
+                          className="w-full px-4 py-2 border border-border dark:border-darkBorder bg-white dark:bg-darkBg text-textPrimary dark:text-darkText rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson"
                         >
                           <option value="General">General Query</option>
                           <option value="Complaint">Complaint</option>
@@ -240,7 +240,7 @@ export const Contact = () => {
 
                       {/* Message */}
                       <div>
-                        <label htmlFor="message" className="block text-xs font-semibold text-navy mb-1.5">
+                        <label htmlFor="message" className="block text-xs font-semibold text-navy dark:text-white mb-1.5">
                           Message
                         </label>
                         <textarea
@@ -250,7 +250,7 @@ export const Contact = () => {
                           onChange={handleChange}
                           required
                           rows={4}
-                          className="w-full px-4 py-2 border border-border bg-white rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson resize-none"
+                          className="w-full px-4 py-2 border border-border dark:border-darkBorder bg-white dark:bg-darkBg text-textPrimary dark:text-darkText rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-crimson focus:border-crimson resize-none"
                           placeholder="Write your message here..."
                         />
                       </div>
@@ -271,56 +271,56 @@ export const Contact = () => {
       </section>
 
       {/* Emergency Contacts Section */}
-      <section className="py-16 md:py-20 bg-surface border-t border-border">
+      <section className="py-16 md:py-20 bg-surface dark:bg-darkSurface border-t border-border dark:border-darkBorder transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-navy mb-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-navy dark:text-white mb-8 text-center">
             Emergency & Quick Help Contacts
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {/* Contact 1 */}
-            <div className="bg-white border border-border p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-crimson/5 text-crimson flex items-center justify-center">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
+              <div className="w-10 h-10 rounded-full bg-crimson/5 dark:bg-crimson/20 text-crimson flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
               <div className="space-y-1">
-                <h3 className="font-body font-bold text-navy text-sm sm:text-base">Union Chairperson</h3>
-                <p className="text-textSecondary text-xs">For general representations & core concerns</p>
+                <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">Union Chairperson</h3>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">For general representations & core concerns</p>
               </div>
-              <a href="tel:+919876543210" className="text-crimson font-body font-bold text-xs sm:text-sm hover:underline">
+              <a href="tel:+919876543210" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
                 +91 98765 43210
               </a>
             </div>
 
             {/* Contact 2 */}
-            <div className="bg-white border border-border p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-navy/5 text-navy flex items-center justify-center">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
+              <div className="w-10 h-10 rounded-full bg-navy/5 dark:bg-navy/20 text-navy dark:text-white flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
               <div className="space-y-1">
-                <h3 className="font-body font-bold text-navy text-sm sm:text-base">College Office Help Desk</h3>
-                <p className="text-textSecondary text-xs">For academic files & certificates</p>
+                <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">College Office Help Desk</h3>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">For academic files & certificates</p>
               </div>
-              <a href="tel:+914662260350" className="text-navy font-body font-bold text-xs sm:text-sm hover:underline">
+              <a href="tel:+914662260350" className="text-navy dark:text-white font-body font-bold text-xs sm:text-sm hover:underline">
                 +91 466 2260350
               </a>
             </div>
 
             {/* Contact 3 */}
-            <div className="bg-white border border-border p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-crimson/5 text-crimson flex items-center justify-center">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
+              <div className="w-10 h-10 rounded-full bg-crimson/5 dark:bg-crimson/20 text-crimson flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
               <div className="space-y-1">
-                <h3 className="font-body font-bold text-navy text-sm sm:text-base">Student Grievance Cell</h3>
-                <p className="text-textSecondary text-xs">For formal complaints & support cell</p>
+                <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">Student Grievance Cell</h3>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">For formal complaints & support cell</p>
               </div>
-              <a href="tel:+919876543211" className="text-crimson font-body font-bold text-xs sm:text-sm hover:underline">
+              <a href="tel:+919876543211" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
                 +91 98765 43211
               </a>
             </div>

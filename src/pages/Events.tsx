@@ -125,7 +125,7 @@ export const Events = () => {
       <SEO title="Events & Programs" description="Discover upcoming, ongoing, and completed events, arts festivals, sports meets, and workshops organized by GEC Palakkad College Union." />
       
       {/* Page Hero */}
-      <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Events & Programs
@@ -139,14 +139,14 @@ export const Events = () => {
       </section>
 
       {/* Tabs Bar */}
-      <div className="border-b border-border select-none">
+      <div className="border-b border-border dark:border-darkBorder select-none">
         <div className="max-w-7xl mx-auto flex space-x-6">
           {(['upcoming', 'ongoing', 'completed'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`relative pb-4 text-sm font-body font-bold uppercase tracking-wider transition-colors focus:outline-none ${
-                activeTab === tab ? 'text-crimson' : 'text-textSecondary hover:text-navy'
+                activeTab === tab ? 'text-crimson' : 'text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white'
               }`}
             >
               {tab} Events
@@ -168,7 +168,7 @@ export const Events = () => {
           <>
             {/* Featured Event Card */}
             {featuredEvent && (
-              <section className="bg-white border border-border rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300">
+              <section className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   {/* Featured Cover */}
                   <div className="lg:col-span-7 h-64 sm:h-80 md:h-[400px]">
@@ -198,12 +198,12 @@ export const Events = () => {
                         )}
                       </div>
                       
-                      <h2 className="font-display font-bold text-navy text-xl sm:text-2xl lg:text-3xl leading-tight">
+                      <h2 className="font-display font-bold text-navy dark:text-white text-xl sm:text-2xl lg:text-3xl leading-tight">
                         {featuredEvent.title}
                       </h2>
                       
                       {/* Date & Venue Details row */}
-                      <div className="space-y-2 text-xs text-textSecondary font-body select-none">
+                      <div className="space-y-2 text-xs text-textSecondary dark:text-slate-400 font-body select-none">
                         <div className="flex items-center space-x-2">
                           <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -219,7 +219,7 @@ export const Events = () => {
                         </div>
                       </div>
 
-                      <p className="text-textSecondary text-xs sm:text-sm leading-relaxed font-body">
+                      <p className="text-textSecondary dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-body">
                         {featuredEvent.description}
                       </p>
                     </div>
@@ -246,7 +246,7 @@ export const Events = () => {
                   return (
                     <div
                       key={event.id}
-                      className="bg-white border border-border rounded-card overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-subtle transition-all duration-300"
+                      className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-subtle transition-all duration-300"
                     >
                       <div>
                         {/* Cover image container */}
@@ -258,7 +258,7 @@ export const Events = () => {
                           />
                           
                           {/* Floating Date Badge */}
-                          <div className="absolute top-3 left-3 bg-white text-navy font-display font-extrabold flex flex-col items-center justify-center p-2 rounded shadow-sm leading-tight text-center min-w-[50px] select-none">
+                          <div className="absolute top-3 left-3 bg-white dark:bg-darkBg text-navy dark:text-white font-display font-extrabold flex flex-col items-center justify-center p-2 rounded shadow-sm leading-tight text-center min-w-[50px] select-none">
                             <span className="text-sm font-extrabold">{dateInfo.day}</span>
                             <span className="text-4xs uppercase tracking-wider text-crimson font-bold font-body">{dateInfo.month}</span>
                           </div>
@@ -267,7 +267,7 @@ export const Events = () => {
                         {/* Card Details */}
                         <div className="p-6 space-y-3">
                           <div className="flex items-center space-x-2 select-none">
-                            <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-4xs font-bold uppercase tracking-wider rounded">
+                            <span className="px-2 py-0.5 bg-slate-100 dark:bg-darkBg text-slate-600 dark:text-slate-400 text-4xs font-bold uppercase tracking-wider rounded">
                               {event.category}
                             </span>
                             {activeTab === 'ongoing' && (
@@ -278,13 +278,13 @@ export const Events = () => {
                           </div>
                           
                           <h3
-                            className="font-display font-bold text-navy text-base leading-snug hover:text-crimson cursor-pointer transition-colors"
+                            className="font-display font-bold text-navy dark:text-white text-base leading-snug hover:text-crimson cursor-pointer transition-colors"
                             onClick={() => setSelectedEvent(event)}
                           >
                             {event.title}
                           </h3>
                           
-                          <p className="text-textSecondary text-xs leading-relaxed font-body line-clamp-3">
+                          <p className="text-textSecondary dark:text-slate-400 text-xs leading-relaxed font-body line-clamp-3">
                             {event.description}
                           </p>
                         </div>
@@ -296,7 +296,7 @@ export const Events = () => {
                           variant="outline"
                           size="sm"
                           fullWidth={true}
-                          className="border-navy text-navy hover:bg-navy hover:text-white"
+                          className="border-navy dark:border-darkBorder text-navy dark:text-darkText hover:bg-navy dark:hover:bg-darkBorder hover:text-white"
                         >
                           {activeTab === 'completed' ? 'View Highlights' : 'Register / Learn More'}
                         </Button>
@@ -307,12 +307,12 @@ export const Events = () => {
             )}
           </>
         ) : (
-          <div className="text-center py-20 border border-dashed border-border rounded-card select-none">
+          <div className="text-center py-20 border border-dashed border-border dark:border-darkBorder rounded-card select-none">
             <svg className="w-12 h-12 text-slate-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <h3 className="font-display font-bold text-navy text-base mb-1">No Events Found</h3>
-            <p className="text-textSecondary text-xs font-body max-w-xs mx-auto">
+            <h3 className="font-display font-bold text-navy dark:text-white text-base mb-1">No Events Found</h3>
+            <p className="text-textSecondary dark:text-slate-400 text-xs font-body max-w-xs mx-auto">
               There are no {activeTab} events registered in this term currently.
             </p>
           </div>
@@ -334,7 +334,7 @@ export const Events = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-              className="bg-white max-w-3xl w-full rounded-card overflow-hidden shadow-premium flex flex-col max-h-[90vh]"
+              className="bg-white dark:bg-darkCard max-w-3xl w-full rounded-card overflow-hidden shadow-premium flex flex-col max-h-[90vh]"
             >
               {/* Modal Cover Image banner */}
               <div className="h-48 sm:h-64 relative overflow-hidden select-none">
@@ -362,19 +362,19 @@ export const Events = () => {
                   <span className="px-2 py-0.5 bg-crimson/10 text-crimson text-3xs font-bold uppercase tracking-wider rounded">
                     {selectedEvent.category} Event
                   </span>
-                  <h2 className="font-display font-extrabold text-navy text-xl sm:text-2xl mt-2 leading-snug">
+                  <h2 className="font-display font-extrabold text-navy dark:text-white text-xl sm:text-2xl mt-2 leading-snug">
                     {selectedEvent.title}
                   </h2>
                 </div>
 
                 {/* Logistics Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-border py-4 text-xs font-body text-textSecondary select-none bg-slate-50 px-4 rounded-card">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-border dark:border-darkBorder py-4 text-xs font-body text-textSecondary dark:text-slate-400 select-none bg-slate-50 dark:bg-darkBg px-4 rounded-card">
                   <div className="flex items-center space-x-2">
                     <svg className="w-4.5 h-4.5 text-crimson" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <div>
-                      <h4 className="font-bold text-navy">Date & Time</h4>
+                      <h4 className="font-bold text-navy dark:text-white">Date & Time</h4>
                       <p>{formatDate(selectedEvent.date)}</p>
                     </div>
                   </div>
@@ -384,17 +384,17 @@ export const Events = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <div>
-                      <h4 className="font-bold text-navy">Venue Location</h4>
+                      <h4 className="font-bold text-navy dark:text-white">Venue Location</h4>
                       <p>{selectedEvent.venue}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Description Body */}
-                <div className="space-y-4 font-body text-sm text-textSecondary leading-relaxed">
+                <div className="space-y-4 font-body text-sm text-textSecondary dark:text-slate-300 leading-relaxed">
                   <p>{selectedEvent.description}</p>
                   {(selectedEvent as any).body && (
-                    <p className="whitespace-pre-line text-xs font-light text-slate-500">
+                    <p className="whitespace-pre-line text-xs font-light text-slate-500 dark:text-slate-400">
                       {(selectedEvent as any).body}
                     </p>
                   )}
@@ -402,8 +402,8 @@ export const Events = () => {
 
                 {/* Thumbnail Gallery for Completed */}
                 {selectedEvent.gallery && selectedEvent.gallery.length > 0 && (
-                  <div className="space-y-3 pt-4 border-t border-border">
-                    <h4 className="font-display font-bold text-sm text-navy uppercase tracking-wider select-none">
+                  <div className="space-y-3 pt-4 border-t border-border dark:border-darkBorder">
+                    <h4 className="font-display font-bold text-navy dark:text-white uppercase tracking-wider select-none">
                       Event Photo Highlights
                     </h4>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -413,7 +413,7 @@ export const Events = () => {
                           href={photo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="h-20 sm:h-24 rounded overflow-hidden border border-border shadow-2xs block bg-slate-100 hover:opacity-90 transition-opacity"
+                          className="h-20 sm:h-24 rounded overflow-hidden border border-border dark:border-darkBorder shadow-2xs block bg-slate-100 dark:bg-darkBg hover:opacity-90 transition-opacity"
                         >
                           <img
                             src={photo}
