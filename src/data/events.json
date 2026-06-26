@@ -1,74 +1,65 @@
 [
   {
     "id": "event-001",
-    "title": "Inter-Departmental Sports Meet '26",
-    "description": "The annual sports tournament of GEC Palakkad showcasing talent in football, cricket, basketball, and athletics.",
-    "date": "2026-10-15",
-    "venue": "College Ground, GEC Palakkad",
-    "status": "upcoming",
+    "title": "FIFA Worldcup 2026 - Prediction Contest",
+    "description": "⚽ World Cup Prediction Contest is here! Predict. Compete. Win. 🏆",
+    "date": "2026-07-20",
+    "venue": "Online",
+    "status": "ongoing",
     "category": "Sports",
-    "coverImage": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/cover image.jpg",
     "gallery": [],
-    "registrationLink": "https://forms.gle/gecskp-sports-26",
-    "year": "2024-25"
+    "registrationLink": " https://forms.gle/UBhrny1rbP1T3rSg7",
+    "year": "2026-27"
   },
   {
     "id": "event-002",
-    "title": "Dyuthi '26 Arts Festival (On-Stage Items)",
-    "description": "The major cultural extravaganza featuring stage performance events, music, drama, dance, and art contests.",
-    "date": "2026-11-20",
-    "venue": "Main Auditorium & Open Stage",
-    "status": "upcoming",
-    "category": "Cultural",
-    "coverImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
-    "gallery": [],
-    "registrationLink": "https://forms.gle/gecskp-dyuthi-26",
-    "year": "2024-25"
-  },
-  {
-    "id": "event-003",
-    "title": "Hack-GEC: 24-Hour National Hackathon",
-    "body": "A 24-hour non-stop coding hackathon organized by the College Union in association with coding club. Mentors from top tech companies are participating. Team selection is complete, and the main competition is happening right now in the Central Library Hub.",
-    "description": "24-hour national hackathon for student developers seeking to build innovative tech prototypes under hardware/software themes.",
-    "date": "2026-06-25",
-    "venue": "Central Library Hub, GEC Palakkad",
-    "status": "ongoing",
-    "category": "Technical",
-    "coverImage": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-    "gallery": [
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600"
-    ],
-    "registrationLink": "https://hackgec.union.gecpalakkad.ac.in",
-    "year": "2024-25"
-  },
-  {
-    "id": "event-004",
-    "title": "KTU TechFest Workshop Series",
-    "description": "Pre-techfest hands-on workshops in IoT, Embedded Systems, and Web Application Security conducted by industry experts.",
-    "date": "2026-03-10",
-    "venue": "CSE Seminar Hall",
-    "status": "completed",
-    "category": "Technical",
-    "coverImage": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
-    "gallery": [
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
-    ],
-    "year": "2024-25"
-  },
-  {
-    "id": "event-005",
-    "title": "World Environment Day Tree Plantation",
-    "description": "Eco-union initiative to plant 100 saplings around the campus boundary in association with NSS GEC Palakkad.",
-    "date": "2026-06-05",
+    "title": "Union Day'26",
+    "description": "Union Day and Ethnic Day were celebrated with vibrant cultural performances, traditional attire, music, dance, and enthusiastic student participation. The celebrations concluded with an exciting pro show, making it a memorable occasion for the entire campus community.",
+    "date": "2026-17-03",
     "venue": "Campus Premises",
     "status": "completed",
     "category": "Social",
-    "coverImage": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800",
-    "gallery": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600"
-    ],
-    "year": "2024-25"
+    "coverImage": "/cover image.jpg",
+    "gallery": [],
+    "year": "2026-27"
+  },
+  {
+    "id": "event-003",
+    "title": "Year Wise Football Tournament",
+    "description": "The stage is set. The rivalry is real. Witness the clash of champions at Year-Wise Football Tournament 2026",
+    "date": "2026-03-09",
+    "venue": "College Ground",
+    "status": "completed",
+    "category": "Sports",
+    "coverImage": "/cover image.jpg",
+    "gallery": [],
+    "registrationLink": " https://forms.gle/UBhrny1rbP1T3rSg7",
+    "year": "2026-27"
+  },
+   {
+    "id": "event-003",
+    "title": "Women's Day",
+    "description": "To honor the spirit of women in leadership, we are proud to host Ms. Anjana B, who achieved Rank 222 in the Civil Services Examination.",
+    "date": "2026-03-09",
+    "venue": "EDUSAT Room",
+    "status": "completed",
+    "category": "Social",
+    "coverImage": "/cover image.jpg",
+    "gallery": [],
+    "year": "2026-27"
+
+   },
+   {
+    "id": "event-004",
+    "title": "Holi",
+    "description": "Eco-union initiative to plant 100 saplings around the campus boundary in association with NSS GEC Palakkad.",
+    "date": "2026-03-10",
+    "venue": "Campus Entrance",
+    "status": "completed",
+    "category": "Social",
+    "coverImage": "/cover image.jpg",
+    "gallery": [],
+    "year": "2026-27"
   }
 ]

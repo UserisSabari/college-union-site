@@ -1,70 +1,53 @@
 [
   {
     "id": "init-001",
-    "title": "Campus Wi-Fi & Digital Infrastructure Upgrades",
-    "description": "An initiative to upgrade internet bandwidth and coverage in academic block lobbies, corridors, and the student amenity center. We are installing high-speed router nodes to support digital classrooms and laptop work hubs.",
-    "status": "active",
-    "impactMetrics": [
-      "2,500+ Students Connected",
-      "12 Router Nodes Installed",
-      "50 Mbps Bandwidth Boost"
-    ],
+    "title": "Examination Rescheduled",
+    "description": "Due to the College Union's intervention regarding a clash of two examinations scheduled on 16 May, the S1 (S, FE) 2019 Scheme SLOT A (FN) examination has been rescheduled to 18 May. Students are advised to take note of the revised examination date and plan accordingly.",
+    "status": "completed",
     "gallery": [
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&q=80&w=400"
-    ],
-    "documents": [
-      {
-        "name": "Wi-Fi Node Installation Map & Plan.pdf",
-        "url": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/wifi_proposal.pdf",
-        "size": "1.2 MB"
-      }
-    ],
-    "year": "2024-25"
+  "/Exam Rearrangement.png"
+],
+    "year": "2026-27"
   },
   {
     "id": "init-002",
-    "title": "Union Student Welfare Aid Fund",
-    "description": "Establishing a scholarship and immediate financial aid pool funded by union alumni and well-wishers to support economically backward students for academic expenses.",
+    "title": "S6 Examination Rescheduled",
+    "description": "Due to the statewide hartal declared on 28 May, and following the intervention of the College Union, the S6 examination originally scheduled for 28 May has been rescheduled to 29 May. Students are advised to take note of the revised examination date and make the necessary arrangements accordingly.",
     "status": "completed",
-    "impactMetrics": [
-      "Rs. 2.5 Lakhs Disbursed",
-      "45 Students Supported",
-      "100% Transparency Audited"
-    ],
     "gallery": [
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=400"
-    ],
-    "documents": [
-      {
-        "name": "Welfare Fund Audit Report 2024-25.pdf",
-        "url": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/welfare_audit.pdf",
-        "size": "850 KB"
-      }
-    ],
-    "year": "2024-25"
+  "/Strike.png"
+],
+    "year": "2026-27"
   },
   {
     "id": "init-003",
-    "title": "Eco-Campus Solar Charging Kiosks",
-    "description": "Planning the setup of 3 solar-powered outdoor benches where students can recharge electronic devices using green energy. Benches will be built from sustainable woods and metals.",
-    "status": "planned",
-    "impactMetrics": [
-      "3 Solar Benches Planned",
-      "12 Charging Ports",
-      "Zero Carbon Footprint"
-    ],
+    "title": "S6 Examination Rescheduled Due to NPTEL Examination",
+    "description": "n view of the NPTEL examination scheduled on 24 May, and following the intervention of the College Union, the S6 examination originally scheduled for the same day has been rescheduled. Students are advised to follow the revised examination schedule announced by the university.",
+    "status": "completed",
     "gallery": [
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=400"
-    ],
-    "documents": [
-      {
-        "name": "Solar Bench Proposal & Mockups.pdf",
-        "url": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/solar_bench_proposal.pdf",
-        "size": "3.1 MB"
-      }
-    ],
-    "year": "2024-25"
+  "/nptel.png"
+],
+    "year": "2026-27"
+  },
+  {
+    "id": "init-004",
+    "title": "Memorandum Submitted to Address LPG Shortage in Hostels",
+    "description": "In response to the ongoing LPG shortage in the college hostels, the College Union submitted a memorandum to the University requesting immediate intervention to resolve the issue and ensure uninterrupted cooking facilities for students. The initiative was taken considering the difficulties faced by hostel residents.",
+    "status": "completed",
+    "gallery": [
+  "/lpg issue.png"
+],
+    "year": "2026-27"
+
+  },
+  {
+    "id": "init-005",
+    "title": "Memorandum Submitted for Library Book Support",
+    "description": "To promote the creative and academic development of students, the College Union submitted a memorandum to Hon. MLA Adv. K. Premkumar requesting the provision of essential books and learning resources for the college library.",
+    "status": "completed",
+    "gallery": [
+  "/books.png"
+],
+    "year": "2026-27"
   }
 ]
