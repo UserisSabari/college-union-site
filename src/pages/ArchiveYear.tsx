@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 
 interface Chairperson {
   name: string;
@@ -140,14 +141,12 @@ export const ArchiveYear = () => {
             {error || 'The requested year archive does not exist.'}
           </p>
         </div>
-        <div className="pt-2">
-          <Link
+          <Button
             to="/archive"
-            className="px-6 py-2.5 bg-navy hover:bg-crimson text-white text-xs font-semibold rounded-button shadow-sm transition-colors uppercase tracking-wider"
+            variant="primary"
           >
             Back to Archives list
-          </Link>
-        </div>
+          </Button>
       </div>
     );
   }

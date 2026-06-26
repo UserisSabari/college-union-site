@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { fadeUp, staggerContainer } from '../animations/variants';
 
 const COLLEGE_HISTORY = [
@@ -198,17 +199,16 @@ export const About = () => {
             The Secular College Union functions in strict compliance with the bylaws approved by the APJ Abdul Kalam Technological University (KTU) and GEC Palakkad Senate. The constitution safeguards student democracy, defines executive roles, and mandates financial regulations.
           </p>
           <div className="pt-4">
-            <a
+            <Button
               href="https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/union_constitution.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-navy hover:bg-opacity-95 text-white font-body font-semibold text-sm rounded-button transition-all focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
+              variant="primary"
+              size="lg"
             >
               <svg className="w-5 h-5 mr-2 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               Download Constitution PDF
-            </a>
+            </Button>
           </div>
         </div>
       </section>

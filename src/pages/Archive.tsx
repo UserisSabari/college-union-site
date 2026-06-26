@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 
 interface YearCardData {
   year: string;
@@ -154,14 +155,15 @@ export const Archive = () => {
               </div>
 
               {/* Action trigger */}
-              <div className="pt-6">
-                <Link
+                <Button
                   to={`/archive/${item.yearPath}`}
-                  className="inline-block w-full text-center px-4 py-2 border border-navy text-navy hover:bg-navy hover:text-white text-xs font-bold rounded-button transition-colors uppercase tracking-wider"
+                  variant="outline"
+                  size="sm"
+                  fullWidth={true}
+                  className="border-navy text-navy hover:bg-navy hover:text-white"
                 >
                   View Full Year Archive
-                </Link>
-              </div>
+                </Button>
             </div>
           ))}
         </div>

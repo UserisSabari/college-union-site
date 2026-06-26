@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import eventsData from '../data/events.json';
 import type { Event } from '../types';
@@ -223,14 +224,15 @@ export const Events = () => {
                       </p>
                     </div>
 
-                    <div className="pt-6 border-t border-border mt-6 select-none">
-                      <button
+                      <Button
                         onClick={() => setSelectedEvent(featuredEvent)}
-                        className="w-full sm:w-auto px-6 py-2.5 bg-navy text-white text-xs font-semibold rounded-button shadow-sm hover:bg-crimson transition-all duration-300"
+                        variant="primary"
+                        size="md"
+                        fullWidth={true}
+                        className="sm:w-auto"
                       >
                         {activeTab === 'completed' ? 'View Gallery & Highlights' : 'Explore Event Details'}
-                      </button>
-                    </div>
+                      </Button>
                   </div>
                 </div>
               </section>
@@ -289,14 +291,15 @@ export const Events = () => {
                       </div>
 
                       {/* Card Actions Footer */}
-                      <div className="px-6 pb-6 pt-3 border-t border-border select-none">
-                        <button
+                        <Button
                           onClick={() => setSelectedEvent(event)}
-                          className="w-full text-center px-4 py-2 border border-navy text-navy text-xs font-semibold rounded-button hover:bg-navy hover:text-white transition-all duration-300"
+                          variant="outline"
+                          size="sm"
+                          fullWidth={true}
+                          className="border-navy text-navy hover:bg-navy hover:text-white"
                         >
                           {activeTab === 'completed' ? 'View Highlights' : 'Register / Learn More'}
-                        </button>
-                      </div>
+                        </Button>
                     </div>
                   );
                 })}
@@ -428,16 +431,14 @@ export const Events = () => {
 
                 {/* Action button inside modal */}
                 {selectedEvent.status !== 'completed' && selectedEvent.registrationLink && (
-                  <div className="pt-4 border-t border-border select-none">
-                    <a
+                    <Button
                       href={selectedEvent.registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block w-full text-center py-2.5 bg-crimson hover:bg-navy text-white text-xs font-semibold rounded-button transition-colors shadow-sm uppercase tracking-wider"
+                      variant="secondary"
+                      size="md"
+                      fullWidth={true}
                     >
                       Open Registration Form
-                    </a>
-                  </div>
+                    </Button>
                 )}
               </div>
             </motion.div>

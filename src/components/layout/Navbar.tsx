@@ -138,7 +138,9 @@ export const Navbar = () => {
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4 2xl:space-x-6">
             {NAV_LINKS.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = link.path === '/'
+                ? location.pathname === '/'
+                : location.pathname === link.path || location.pathname.startsWith(link.path + '/');
               return (
                 <Link
                   key={link.path}
@@ -230,7 +232,9 @@ export const Navbar = () => {
             >
               <div className="px-4 pt-3 pb-6 space-y-1">
                 {NAV_LINKS.map((link) => {
-                  const isActive = location.pathname === link.path;
+                  const isActive = link.path === '/'
+                    ? location.pathname === '/'
+                    : location.pathname === link.path || location.pathname.startsWith(link.path + '/');
                   return (
                     <Link
                       key={link.path}

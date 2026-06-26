@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import membersData from '../data/members.json';
 import type { Member } from '../types';
 
@@ -224,12 +225,13 @@ export const OfficeBearers = () => {
               </div>
 
               <div className="pt-6 border-t border-border mt-6 flex justify-between items-center">
-                <button
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => setSelectedMember(member)}
-                  className="px-4 py-2 border border-border hover:border-crimson text-navy hover:text-crimson font-body font-semibold text-xs rounded-button transition-colors focus:outline-none focus:ring-2 focus:ring-crimson"
                 >
                   View Profile
-                </button>
+                </Button>
                 {/* Mini socials */}
                 <div className="flex items-center space-x-2">
                   {member.socials.instagram && (

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { motion, useInView } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../animations/variants';
 import membersData from '../data/members.json';
@@ -165,18 +166,20 @@ export const Home = () => {
             variants={fadeUp}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto"
           >
-            <Link
+            <Button
               to="/office-bearers"
-              className="w-full sm:w-auto px-8 py-3.5 bg-navy hover:bg-opacity-95 text-white font-body font-semibold text-sm rounded-button shadow-subtle hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
+              variant="primary"
+              size="lg"
             >
               Meet the Team
-            </Link>
-            <Link
+            </Button>
+            <Button
               to="/student-voice"
-              className="w-full sm:w-auto px-8 py-3.5 bg-crimson hover:bg-opacity-95 text-white font-body font-semibold text-sm rounded-button shadow-subtle hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-crimson focus:ring-offset-2"
+              variant="secondary"
+              size="lg"
             >
               Student Voice
-            </Link>
+            </Button>
           </motion.div>
 
           {/* Stat Pills */}
@@ -544,8 +547,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 9: STUDENT VOICE CTA */}
-      <section className="bg-crimson text-white py-16 text-center select-none">
+      <section className="bg-crimson text-white py-20 text-center select-none">
         <div className="max-w-4xl mx-auto px-4 space-y-6">
           <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
             Have something to say?
@@ -554,12 +556,13 @@ export const Home = () => {
             Share your ideas, suggestions, or concerns anonymously with the Secular College Union. Your voice shapes GEC Palakkad.
           </p>
           <div className="pt-2">
-            <Link
+            <Button
               to="/student-voice"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-navy hover:bg-slate-900 text-white font-body font-bold text-sm rounded-button shadow-subtle hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
+              variant="primary"
+              size="lg"
             >
               Submit Anonymously
-            </Link>
+            </Button>
           </div>
         </div>
       </section>

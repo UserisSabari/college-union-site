@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import downloadsData from '../data/downloads.json';
 
@@ -200,21 +201,21 @@ export const Downloads = () => {
 
                             {/* Document Action triggers */}
                             <div className="flex items-center space-x-2 select-none sm:justify-end">
-                              <a
+                              <Button
                                 href={doc.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-3.5 py-1.5 border border-slate-200 text-slate-600 hover:text-navy hover:bg-slate-50 text-3xs font-bold rounded-button uppercase tracking-wider transition-colors"
+                                variant="outline"
+                                size="sm"
                               >
                                 Preview
-                              </a>
-                              <a
+                              </Button>
+                              <Button
                                 href={doc.url}
-                                download
-                                className="px-3.5 py-1.5 bg-crimson hover:bg-navy text-white text-3xs font-bold rounded-button uppercase tracking-wider transition-colors"
+                                download={true}
+                                variant="secondary"
+                                size="sm"
                               >
                                 Download
-                              </a>
+                              </Button>
                             </div>
                           </div>
                         ))

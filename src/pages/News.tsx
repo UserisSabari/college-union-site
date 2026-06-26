@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import announcementsData from '../data/announcements.json';
 import type { Announcement } from '../types';
@@ -375,12 +376,13 @@ export const News = () => {
           {/* Load More Button */}
           {feedAnnouncements.length > visibleLimit && (
             <div className="flex justify-center pt-8 select-none">
-              <button
+              <Button
                 onClick={() => setVisibleLimit((prev) => prev + 6)}
-                className="px-6 py-2.5 bg-navy text-white text-xs font-semibold rounded-button shadow-sm hover:bg-crimson transition-all duration-300 hover:shadow-subtle"
+                variant="primary"
+                size="md"
               >
                 Load More Updates
-              </button>
+              </Button>
             </div>
           )}
         </section>
@@ -454,14 +456,13 @@ export const News = () => {
                         <p className="text-3xs text-textSecondary">PDF Document Format</p>
                       </div>
                     </div>
-                    <a
+                    <Button
                       href={selectedNotice.attachment}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-1.5 bg-crimson hover:bg-navy text-white text-3xs font-bold rounded-button transition-colors uppercase tracking-wider"
+                      variant="secondary"
+                      size="sm"
                     >
                       Download PDF
-                    </a>
+                    </Button>
                   </div>
                 )}
 

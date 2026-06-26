@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import initiativesData from '../data/initiatives.json';
 
@@ -211,14 +212,13 @@ export const Initiatives = () => {
                                     <span className="font-bold text-navy truncate max-w-[200px]">{doc.name}</span>
                                     {doc.size && <span className="text-textSecondary">({doc.size})</span>}
                                   </div>
-                                  <a
+                                  <Button
                                     href={doc.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-3 py-1 bg-crimson hover:bg-navy text-white font-bold rounded-button uppercase tracking-wider text-4xs transition-colors"
+                                    variant="secondary"
+                                    size="sm"
                                   >
                                     Download
-                                  </a>
+                                  </Button>
                                 </div>
                               ))}
                             </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type CategoryType = 'suggestion' | 'complaint' | 'idea' | 'feedback';
@@ -290,17 +291,15 @@ export const StudentVoice = () => {
 
                 {/* Submit button */}
                 <div className="pt-2 select-none">
-                  <button
+                  <Button
                     type="submit"
                     disabled={!selectedCategory || !subject || !isMessageValid}
-                    className={`w-full py-3 text-xs font-semibold rounded-button shadow-sm uppercase tracking-wider transition-all duration-300 ${
-                      selectedCategory && subject && isMessageValid
-                        ? 'bg-crimson hover:bg-navy hover:shadow-subtle text-white cursor-pointer'
-                        : 'bg-slate-100 text-slate-400 border border-dashed border-border cursor-not-allowed'
-                    }`}
+                    variant="secondary"
+                    fullWidth={true}
+                    className={(!selectedCategory || !subject || !isMessageValid) ? 'opacity-40 cursor-not-allowed' : ''}
                   >
                     Submit Anonymously
-                  </button>
+                  </Button>
                 </div>
 
               </form>
@@ -336,12 +335,12 @@ export const StudentVoice = () => {
               </div>
               
               <div className="pt-4 select-none">
-                <button
+                <Button
                   onClick={handleReset}
-                  className="px-6 py-2.5 bg-navy hover:bg-crimson text-white text-xs font-semibold rounded-button shadow-sm transition-colors uppercase tracking-wider"
+                  variant="primary"
                 >
                   Submit Another Feedback
-                </button>
+                </Button>
               </div>
             </motion.div>
           )}
