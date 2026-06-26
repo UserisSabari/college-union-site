@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 
 interface Chairperson {
   name: string;
@@ -153,6 +154,7 @@ export const ArchiveYear = () => {
 
   return (
     <div className="space-y-12 py-8">
+      <SEO title={`Union Archive ${year}`} description={`Explore historical records, office bearers list, events, gallery, and annual reports for GEC Palakkad College Union term ${year}.`} />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
@@ -215,6 +217,9 @@ export const ArchiveYear = () => {
                 <img
                   src={data.chairperson.photo}
                   alt={data.chairperson.name}
+                  width={96}
+                  height={96}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -266,6 +271,9 @@ export const ArchiveYear = () => {
                     <img
                       src={member.photo}
                       alt={member.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -336,7 +344,10 @@ export const ArchiveYear = () => {
                 >
                   <img
                     src={photo}
-                    alt={`Archive highlight photo ${i + 1}`}
+                    alt={`Archive highlight ${i + 1}`}
+                    width={224}
+                    height={160}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                   />
                 </a>

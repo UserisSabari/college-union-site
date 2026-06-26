@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 interface YearCardData {
   year: string;
@@ -73,6 +74,7 @@ const ARCHIVE_YEARS: YearCardData[] = [
 export const Archive = () => {
   return (
     <div className="space-y-12 py-8 relative">
+      <SEO title="Union Archive" description="Every year's College Union term is preserved here permanently. Browse past members lists, events, annual reports, magazines, and initiatives history." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
@@ -125,6 +127,9 @@ export const Archive = () => {
                       <img
                         src={src}
                         alt="Archive highlight"
+                        width={64}
+                        height={48}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </div>

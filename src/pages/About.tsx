@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import { fadeUp, staggerContainer } from '../animations/variants';
 
 const COLLEGE_HISTORY = [
@@ -74,7 +75,7 @@ const PAST_UNIONS = [
 export const About = () => {
   return (
     <div className="space-y-0 text-textPrimary">
-      
+      <SEO title="About Us" description="Learn about GEC Palakkad College Union history, core values, constitution, democratic election process, and previous terms." />
       {/* SECTION 1: HERO */}
       <section className="bg-navy text-white py-12 md:py-16 select-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

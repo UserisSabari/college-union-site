@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type CategoryType = 'suggestion' | 'complaint' | 'idea' | 'feedback';
@@ -114,6 +115,7 @@ export const StudentVoice = () => {
 
   return (
     <div className="space-y-12 py-8 relative">
+      <SEO title="Student Voice" description="Submit ideas, suggestions, complaints, or feedback anonymously to the GEC Palakkad College Union. Your privacy is guaranteed." />
       
       {/* Page Hero with premium mesh gradient design */}
       <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#1e293b] to-slate-900 text-white py-14 md:py-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 select-none shadow-md rounded-b-card">

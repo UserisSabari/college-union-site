@@ -10,6 +10,7 @@ const QUICK_LINKS = [
   { path: '/initiatives', label: 'Initiatives' },
   { path: '/gallery', label: 'Gallery' },
   { path: '/downloads', label: 'Downloads' },
+  { path: '/student-voice', label: 'Student Voice' },
   { path: '/contact', label: 'Contact' },
   { path: '/archive', label: 'Union Archive' },
 ];
@@ -149,7 +150,7 @@ export const Footer = () => {
       <div className="bg-slate-950 border-t border-slate-800 text-slate-500 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs space-y-3 md:space-y-0">
           <div>
-            &copy; 2024–25 Secular College Union, GEC Palakkad. All rights reserved.
+            &copy; 2026–27 Secular College Union, GEC Palakkad. All rights reserved.
           </div>
           <div className="flex space-x-1 items-center">
             <span>Built with care by</span>

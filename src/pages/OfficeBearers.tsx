@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '../components/SEO';
 import membersData from '../data/members.json';
 import type { Member } from '../types';
 
@@ -52,6 +53,7 @@ export const OfficeBearers = () => {
 
   return (
     <div className="space-y-16 py-8">
+      <SEO title="Office Bearers" description="Meet the executive leadership, arts club, magazine editor, and university union representatives of the Secular College Union at GEC Palakkad." />
       
       {/* Page Hero */}
       <section className="border-l-4 border-crimson pl-6 select-none">
@@ -72,6 +74,9 @@ export const OfficeBearers = () => {
               <img
                 src={chairperson.photo}
                 alt={chairperson.name}
+                width={160}
+                height={160}
+                loading="lazy"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   (e.target as HTMLElement).style.display = 'none';
@@ -188,6 +193,9 @@ export const OfficeBearers = () => {
                       <img
                         src={member.photo}
                         alt={member.name}
+                        width={64}
+                        height={64}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           (e.target as HTMLElement).style.display = 'none';
@@ -298,6 +306,9 @@ export const OfficeBearers = () => {
                       <img
                         src={selectedMember.photo}
                         alt={selectedMember.name}
+                        width={96}
+                        height={96}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           (e.target as HTMLElement).style.display = 'none';

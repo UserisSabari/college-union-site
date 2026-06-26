@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import eventsData from '../data/events.json';
 import type { Event } from '../types';
@@ -99,6 +100,9 @@ export const Events = () => {
           <img
             src={src}
             alt={alt}
+            width={600}
+            height={400}
+            loading="lazy"
             className={`${className} transition-transform duration-500 hover:scale-105 ${
               isCompleted ? 'filter grayscale brightness-90' : ''
             }`}
@@ -117,6 +121,7 @@ export const Events = () => {
 
   return (
     <div className="space-y-12 py-8 relative">
+      <SEO title="Events & Programs" description="Discover upcoming, ongoing, and completed events, arts festivals, sports meets, and workshops organized by GEC Palakkad College Union." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
@@ -409,7 +414,10 @@ export const Events = () => {
                         >
                           <img
                             src={photo}
-                            alt={`Gallery photo ${index + 1}`}
+                            alt={`Gallery highlights ${index + 1}`}
+                            width={96}
+                            height={96}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </a>

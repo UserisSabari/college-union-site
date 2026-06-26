@@ -114,7 +114,7 @@ export const Navbar = () => {
           isScrolled ? 'shadow-subtle h-14 md:h-16' : 'h-14 md:h-16'
         }`}
       >
-        <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
           {/* Logo Section */}
           <Link
             to="/"
@@ -122,23 +122,28 @@ export const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             {/* Navy Monogram Circle Logo */}
-            <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center text-white font-display font-bold text-sm tracking-wider">
+            <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center text-white font-display font-bold text-sm tracking-wider flex-shrink-0">
               CU
             </div>
-            <span className="font-body font-medium text-textPrimary text-sm md:text-base tracking-tight">
-              College Union <span className="text-textSecondary font-normal">| GEC Palakkad</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="font-body font-bold text-navy text-xs sm:text-sm md:text-base leading-none tracking-tight whitespace-nowrap">
+                College Union
+              </span>
+              <span className="font-body text-textSecondary text-[9px] sm:text-[10px] md:text-xs leading-none mt-0.5 sm:mt-1 tracking-normal whitespace-nowrap">
+                GEC Palakkad
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4 2xl:space-x-6">
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === link.path;
               return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative py-5 text-sm font-medium transition-colors hover:text-crimson focus:outline-none focus:text-crimson ${
+                  className={`relative py-5 text-xs xl:text-sm font-medium transition-colors hover:text-crimson focus:outline-none focus:text-crimson whitespace-nowrap ${
                     isActive ? 'text-crimson' : 'text-textSecondary'
                   }`}
                 >
@@ -172,7 +177,7 @@ export const Navbar = () => {
             {/* Student Voice CTA Button (Desktop) */}
             <Link
               to="/student-voice"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-crimson hover:bg-opacity-90 text-white font-medium text-sm rounded-button transition-colors focus:outline-none focus:ring-2 focus:ring-crimson focus:ring-offset-2"
+              className="hidden sm:inline-flex lg:hidden xl:inline-flex items-center justify-center px-4 py-2 bg-crimson hover:bg-opacity-90 text-white font-medium text-sm rounded-button transition-colors focus:outline-none focus:ring-2 focus:ring-crimson focus:ring-offset-2 whitespace-nowrap"
             >
               Student Voice
             </Link>

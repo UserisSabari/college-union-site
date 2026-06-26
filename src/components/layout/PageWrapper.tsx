@@ -15,6 +15,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({ children }) => {
       {/* Main Focus Area for Screen Readers & Skip Navigation */}
       <main
         id="main-content"
+        role="main"
         tabIndex={-1}
         className="flex-grow focus:outline-none"
       >

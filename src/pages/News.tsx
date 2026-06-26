@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import announcementsData from '../data/announcements.json';
 import type { Announcement } from '../types';
@@ -135,6 +136,7 @@ export const News = () => {
 
   return (
     <div className="space-y-10 py-8 relative">
+      <SEO title="News & Notices" description="Read latest notice notifications, announcements, achievement reviews, and events from GEC Palakkad College Union." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">

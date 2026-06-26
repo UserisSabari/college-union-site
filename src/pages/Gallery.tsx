@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import galleryData from '../data/gallery.json';
 
@@ -97,6 +98,8 @@ export const Gallery = () => {
         <img
           src={photo.src}
           alt={photo.eventName}
+          width={600}
+          height={400}
           loading="lazy"
           onLoad={() => setLoaded(true)}
           className={`w-full object-cover rounded-card transition-all duration-500 group-hover:scale-105 ${
@@ -130,6 +133,7 @@ export const Gallery = () => {
 
   return (
     <div className="space-y-12 py-8 relative">
+      <SEO title="Photo Gallery" description="Browse highlight pictures, arts festivals albums, sports events meets photos, and campus activities folders at GEC Palakkad." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
@@ -278,6 +282,9 @@ export const Gallery = () => {
                   <img
                     src={album.cover}
                     alt={album.eventName}
+                    width={224}
+                    height={128}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute top-2 right-2 bg-navy/95 text-white px-2 py-0.5 rounded text-4xs font-bold font-body">

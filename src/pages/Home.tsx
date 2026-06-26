@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, useInView } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../animations/variants';
 import membersData from '../data/members.json';
@@ -125,6 +126,7 @@ export const Home = () => {
 
   return (
     <div className="space-y-0 text-textPrimary">
+      <SEO />
 
       {/* SECTION 1: HERO */}
       <section

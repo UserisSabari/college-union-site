@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import initiativesData from '../data/initiatives.json';
 
@@ -72,6 +73,7 @@ export const Initiatives = () => {
 
   return (
     <div className="space-y-12 py-8 relative">
+      <SEO title="Union Initiatives" description="Explore active, completed, and planned college development projects and union welfare initiatives at GEC Palakkad." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
@@ -186,7 +188,7 @@ export const Initiatives = () => {
                                   rel="noopener noreferrer"
                                   className="w-20 h-16 rounded overflow-hidden border border-border shadow-3xs"
                                 >
-                                  <img src={img} alt="Initiative photo" className="w-full h-full object-cover hover:opacity-90 transition-opacity" />
+                                  <img src={img} alt="Initiative progress" width={80} height={64} loading="lazy" className="w-full h-full object-cover hover:opacity-90 transition-opacity" />
                                 </a>
                               ))}
                             </div>

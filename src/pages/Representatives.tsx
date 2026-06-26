@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import membersData from '../data/members.json';
 import type { Member } from '../types';
@@ -33,6 +34,9 @@ export const Representatives = () => {
               <img
                 src={rep.photo}
                 alt={rep.name}
+                width={56}
+                height={56}
+                loading="lazy"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   (e.target as HTMLElement).style.display = 'none';
@@ -121,6 +125,7 @@ export const Representatives = () => {
 
   return (
     <div className="space-y-16 py-8">
+      <SEO title="Class & Department Representatives" description="Meet the class, PG, and specialized department representatives of the Secular College Union at GEC Palakkad." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">

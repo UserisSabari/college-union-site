@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import downloadsData from '../data/downloads.json';
 
@@ -78,6 +79,7 @@ export const Downloads = () => {
 
   return (
     <div className="space-y-10 py-8 relative">
+      <SEO title="Documents & Downloads" description="Download GEC Palakkad College Union constitution, annual reports, meeting minutes, election notifications, magazines, and forms." />
       
       {/* Page Hero */}
       <section className="bg-navy text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
