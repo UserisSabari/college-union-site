@@ -177,7 +177,7 @@ export const Home = () => {
             className="flex flex-wrap items-center justify-center gap-3 pt-10"
           >
             <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
-              12 Office Bearers
+              21 Union Members
             </div>
             <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
               6 Departments
@@ -250,9 +250,9 @@ export const Home = () => {
                   <div className="flex items-center justify-between mb-4">
                     <span className={`px-2.5 py-0.5 rounded-tag text-2xs uppercase tracking-wider font-semibold border ${ann.category === 'notice' ? 'bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800' :
                       ann.category === 'event' ? 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800' :
-                      ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-800' :
-                      'bg-slate-100 text-slate-800 border-slate-200'
-                    }`}>
+                        ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-800' :
+                          'bg-slate-100 text-slate-800 border-slate-200'
+                      }`}>
                       {ann.category}
                     </span>
                     {ann.isPinned && (

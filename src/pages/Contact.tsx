@@ -69,7 +69,7 @@ export const Contact = () => {
                     <div>
                       <h3 className="font-body font-bold text-navy dark:text-white text-sm">College Union Office</h3>
                       <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
-                        Amenity Center, Government Engineering College, Palakkad<br />
+                        Union Room, Government Engineering College, Palakkad<br />
                         Sreekrishnapuram, Palakkad District, Kerala, India - 678633
                       </p>
                     </div>
@@ -103,8 +103,8 @@ export const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-body font-bold text-navy dark:text-white text-xs">Email</h4>
-                        <a href="mailto:union@gecpalakkad.ac.in" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
-                          union@gecpalakkad.ac.in
+                        <a href="mailto:collegeunion@gecskp.ac.in" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
+                          collegeunion@gecskp.ac.in
                         </a>
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export const Contact = () => {
                         <h4 className="font-body font-bold text-navy dark:text-white text-xs">Office Hours</h4>
                         <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm mt-0.5 leading-relaxed">
                           Monday – Friday<br />
-                          9:00 AM – 5:00 PM
+                          9:30 AM – 4:30 PM
                         </p>
                       </div>
                     </div>

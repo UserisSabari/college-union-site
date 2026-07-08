@@ -62,7 +62,7 @@ export const useSearch = (query: string) => {
           type: 'member',
           title: m.name,
           subtitle: `${m.position} • Dept of ${m.department} (Semester ${m.semester})`,
-          url: m.category === 'officeBearer' ? '/office-bearers' : '/representatives',
+          url: '/union-members',
           badge: m.position,
         })
       );
@@ -103,7 +103,7 @@ export const useSearch = (query: string) => {
           type: 'notice',
           title: a.title,
           subtitle: a.body,
-          url: '/news',
+          url: '/updates',
           date: a.publishedAt,
           badge: a.category,
         })
@@ -123,7 +123,7 @@ export const useSearch = (query: string) => {
           type: 'initiative',
           title: i.title,
           subtitle: i.description,
-          url: '/initiatives',
+          url: '/updates',
           badge: i.status,
         })
       );
