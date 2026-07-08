@@ -1,35 +1,35 @@
 [
   {
     "id": "photo-001",
-    "src": "fifa-fest.jpeg",
+    "src": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453002/union/fifa-fest.jpg",
     "eventName": "FIFA Worldcup 2026 - Prediction Contest",
     "year": "2026-27",
     "date": "july 20, 2026"
   },
   {
     "id": "photo-002",
-    "src": "union day.png",
+    "src": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453030/union/union_day.png",
     "eventName": "Union Day'26",
     "year": "2026-27",
     "date": "March 17, 2026"
   },
   {
     "id": "photo-003",
-    "src": "football tournament.png",
+    "src": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453009/union/football_tournament.png",
     "eventName": "Year Wise Football Tournament",
     "year": "2026-27",
     "date": "March 09, 2026"
   },
   {
     "id": "photo-004",
-    "src": "womens day.png",
+    "src": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453039/union/womens_day.png",
     "eventName": "Women's day",
     "year": "2026-27",
     "date": "March 09, 2026"
   },
   {
     "id": "photo-005",
-    "src": "Holi.png",
+    "src": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452883/union/Holi.png",
     "eventName": "Holi",
     "year": "2026-27",
     "date": "March 10, 2026"

@@ -7,7 +7,7 @@
     "venue": "Online",
     "status": "ongoing",
     "category": "Sports",
-    "coverImage": "/cover image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
     "gallery": [],
     "registrationLink": " https://forms.gle/UBhrny1rbP1T3rSg7",
     "year": "2026-27"
@@ -20,7 +20,7 @@
     "venue": "Campus Premises",
     "status": "completed",
     "category": "Social",
-    "coverImage": "/cover image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
     "gallery": [],
     "year": "2026-27"
   },
@@ -32,7 +32,7 @@
     "venue": "College Ground",
     "status": "completed",
     "category": "Sports",
-    "coverImage": "/cover image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
     "gallery": [],
     "registrationLink": " https://forms.gle/UBhrny1rbP1T3rSg7",
     "year": "2026-27"
@@ -45,7 +45,7 @@
     "venue": "EDUSAT Room",
     "status": "completed",
     "category": "Social",
-    "coverImage": "/cover image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
     "gallery": [],
     "year": "2026-27"
 
@@ -58,7 +58,7 @@
     "venue": "Campus Entrance",
     "status": "completed",
     "category": "Social",
-    "coverImage": "/cover image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
     "gallery": [],
     "year": "2026-27"
   }
