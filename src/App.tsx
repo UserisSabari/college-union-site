@@ -6,8 +6,7 @@ import PageLoader from './components/ui/PageLoader';
 // Route-based code splitting
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
-const OfficeBearers = React.lazy(() => import('./pages/OfficeBearers'));
-const Representatives = React.lazy(() => import('./pages/Representatives'));
+const UnionMembers = React.lazy(() => import('./pages/UnionMembers'));
 const Events = React.lazy(() => import('./pages/Events'));
 const News = React.lazy(() => import('./pages/News'));
 const Initiatives = React.lazy(() => import('./pages/Initiatives'));
@@ -27,8 +26,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/office-bearers" element={<OfficeBearers />} />
-              <Route path="/representatives" element={<Representatives />} />
+              <Route path="/union-members" element={<UnionMembers />} />
+              <Route path="/office-bearers" element={<UnionMembers />} />
               <Route path="/events" element={<Events />} />
               <Route path="/news" element={<News />} />
               <Route path="/initiatives" element={<Initiatives />} />

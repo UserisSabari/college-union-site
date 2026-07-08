@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 const QUICK_LINKS = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About the Union' },
-  { path: '/office-bearers', label: 'Office Bearers' },
-  { path: '/representatives', label: 'Representatives' },
+  { path: '/union-members', label: 'Union Members' },
   { path: '/events', label: 'Events' },
   { path: '/news', label: 'News & Notices' },
   { path: '/initiatives', label: 'Initiatives' },

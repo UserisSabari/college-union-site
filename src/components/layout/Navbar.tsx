@@ -7,8 +7,7 @@ import useTheme from '../../hooks/useTheme';
 const NAV_LINKS = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
-  { path: '/office-bearers', label: 'Office Bearers' },
-  { path: '/representatives', label: 'Representatives' },
+  { path: '/union-members', label: 'Union Members' },
   { path: '/events', label: 'Events' },
   { path: '/news', label: 'News' },
   { path: '/initiatives', label: 'Initiatives' },
