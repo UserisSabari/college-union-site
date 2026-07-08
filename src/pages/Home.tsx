@@ -8,6 +8,7 @@ import membersData from '../data/members.json';
 import eventsData from '../data/events.json';
 import announcementsData from '../data/announcements.json';
 import initiativesData from '../data/initiatives.json';
+import galleryData from '../data/gallery.json';
 import type { Member, Event, Announcement, Initiative } from '../types';
 
 // Animated Count-Up component for impact numbers
@@ -463,7 +464,7 @@ export const Home = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
             <div className="space-y-2">
               <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
-                <CountUp value={12} />
+                <CountUp value={21} />
               </p>
               <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Total Members</p>
             </div>
@@ -507,24 +508,23 @@ export const Home = () => {
             </Link>
           </div>
 
-          {/* Masonry CSS Grid */}
+          {/* Real Photo Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 select-none">
-            {[
-              { label: 'Dyuthi Arts Festival Stage', color: 'from-orange-500 to-amber-500' },
-              { label: 'KTU Sports Football Champions', color: 'from-blue-600 to-indigo-500' },
-              { label: 'World Environment Day Plantation', color: 'from-emerald-500 to-teal-500' },
-              { label: 'Coding Workshop & Hackathon', color: 'from-violet-600 to-fuchsia-600' },
-              { label: 'Annual College Assembly', color: 'from-slate-600 to-slate-800' },
-              { label: 'Department Exhibition Stalls', color: 'from-rose-500 to-pink-500' },
-            ].map((img, idx) => (
+            {galleryData.slice(0, 6).map((img) => (
               <div
-                key={idx}
-                className={`relative h-56 rounded-card overflow-hidden bg-gradient-to-br ${img.color} shadow-sm group cursor-pointer`}
+                key={img.id}
+                className="relative h-56 rounded-card overflow-hidden bg-slate-950 shadow-sm group cursor-pointer border border-border dark:border-darkBorder"
               >
-                <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-all duration-300" />
-                <div className="absolute bottom-4 left-4 z-10 text-white">
-                  <span className="text-2xs uppercase tracking-widest text-gold font-bold">Photo File</span>
-                  <h4 className="font-body font-bold text-sm sm:text-base mt-1 line-clamp-1">{img.label}</h4>
+                <img
+                  src={img.src}
+                  alt={img.eventName}
+                  loading="lazy"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-102"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-all duration-300" />
+                <div className="absolute bottom-4 left-4 z-10 text-white text-left">
+                  <span className="text-2xs uppercase tracking-widest text-gold font-bold">{img.year}</span>
+                  <h4 className="font-body font-bold text-sm sm:text-base mt-1 line-clamp-1">{img.eventName}</h4>
                 </div>
               </div>
             ))}
@@ -532,19 +532,26 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="bg-crimson dark:bg-crimson/95 text-white py-20 text-center select-none transition-colors duration-200">
-        <div className="max-w-4xl mx-auto px-4 space-y-6">
-          <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
-            Have something to say?
+      {/* Styled Student Voice Banner */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-slate-900 to-crimson/40 text-white py-20 text-center select-none border-t border-border dark:border-darkBorder transition-colors duration-200">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-crimson/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-4xl mx-auto px-4 space-y-6 z-10">
+          <span className="px-3.5 py-1 bg-crimson/20 border border-crimson/30 text-crimson dark:text-red-400 text-2xs font-extrabold rounded-full uppercase tracking-widest font-body">
+            Anonymous Suggestion Box
+          </span>
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold leading-tight tracking-tight text-white">
+            Have Something to Say?
           </h2>
-          <p className="text-sm sm:text-base text-red-100 max-w-xl mx-auto font-body">
-            Share your ideas, suggestions, or concerns anonymously with the Secular College Union. Your voice shapes GEC Palakkad.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto font-body leading-relaxed">
+            Share your ideas, suggestions, or concerns completely anonymously with the Secular College Union. Your voice shapes Government Engineering College, Palakkad.
           </p>
-          <div className="pt-2">
+          <div className="pt-4">
             <Button
               to="/student-voice"
               variant="primary"
               size="lg"
+              className="shadow-lg hover:shadow-crimson/20 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Submit Anonymously
             </Button>

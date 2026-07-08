@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
-import Button from '../components/ui/Button';
 import { fadeUp, staggerContainer } from '../animations/variants';
 
 const COLLEGE_HISTORY = [
@@ -35,6 +34,11 @@ const COLLEGE_HISTORY = [
     title: '20 Years of Academic Excellence',
     description: 'GEC Palakkad celebrated its Vigintennial (20th) anniversary of providing quality engineering education to the student community.',
   },
+  {
+    year: '2024',
+    title: 'New PG Programs & NBA Extension',
+    description: 'Launched advanced M.Tech programs in AI & Data Science and Internet of Things (IoT). The Electrical & Electronics Engineering program also secured NBA accreditation.',
+  },
 ];
 
 const ELECTION_STEPS = [
@@ -66,11 +70,9 @@ const ELECTION_STEPS = [
 ];
 
 const PAST_UNIONS = [
-  { year: '2024–25', chairperson: 'Siddharth K.', name: 'Secular Union' },
-  { year: '2023–24', chairperson: 'Abhinav T.', name: 'Advaya Union' },
-  { year: '2022–23', chairperson: 'Niveditha R.', name: 'Navodaya Union' },
-  { year: '2021–22', chairperson: 'Gokul Krishna', name: 'Sargam Union' },
-  { year: '2020–21', chairperson: 'Anjali S.', name: 'Aikya Union' },
+  { year: '2023–25', chairperson: 'Shahabas Aman', name: 'Advaya Union' },
+  { year: '2021–23', chairperson: 'Anjali S.', name: 'Aikya Union' },
+  { year: '2019–21', chairperson: 'Gokul Krishna', name: 'Sargam Union' },
 ];
 
 export const About = () => {
@@ -198,18 +200,6 @@ export const About = () => {
           <p className="text-textSecondary dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
             The Secular College Union functions in strict compliance with the bylaws approved by the APJ Abdul Kalam Technological University (KTU) and GEC Palakkad Senate. The constitution safeguards student democracy, defines executive roles, and mandates financial regulations.
           </p>
-          <div className="pt-4">
-            <Button
-              href="https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/union_constitution.pdf"
-              variant="primary"
-              size="lg"
-            >
-              <svg className="w-5 h-5 mr-2 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Download Constitution PDF
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -258,10 +248,10 @@ export const About = () => {
               <div className="flex items-center space-x-4 pt-8 border-t border-slate-200 dark:border-darkBorder mt-8">
                 {/* Principal Avatar */}
                 <div className="w-12 h-12 rounded-full bg-navy/20 dark:bg-white/10 flex items-center justify-center font-display font-bold text-navy dark:text-white select-none">
-                  PJ
+                  RB
                 </div>
                 <div>
-                  <h4 className="font-body font-bold text-sm text-navy dark:text-white">Dr. A. R. Jayan</h4>
+                  <h4 className="font-body font-bold text-sm text-navy dark:text-white">Dr. K. R. Remesh Babu</h4>
                   <p className="text-textSecondary dark:text-slate-400 text-xs">Principal, GEC Palakkad</p>
                 </div>
               </div>
@@ -278,11 +268,11 @@ export const About = () => {
               <div className="flex items-center space-x-4 pt-8 border-t border-border dark:border-darkBorder mt-8">
                 {/* Chairperson Avatar */}
                 <div className="w-12 h-12 rounded-full bg-crimson/20 dark:bg-crimson/10 flex items-center justify-center font-display font-bold text-crimson select-none">
-                  SK
+                  AV
                 </div>
                 <div>
-                  <h4 className="font-body font-bold text-sm text-navy dark:text-white">Siddharth K.</h4>
-                  <p className="text-textSecondary dark:text-slate-400 text-xs">Chairperson, Secular Union (2024-25)</p>
+                  <h4 className="font-body font-bold text-sm text-navy dark:text-white">Ajmal V. B.</h4>
+                  <p className="text-textSecondary dark:text-slate-400 text-xs">Chairperson, Secular College Union (2026-27)</p>
                 </div>
               </div>
             </div>

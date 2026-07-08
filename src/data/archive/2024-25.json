@@ -1,8 +1,8 @@
 {
-  "year": "2024-25",
+  "year": "2023-25",
   "chairperson": {
-    "name": "Abhinav T.",
-    "department": "Mechanical Engineering",
+    "name": "Shahabas Aman",
+    "department": "Electronics & Communication Engineering",
     "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300"
   },
   "stats": {
@@ -13,34 +13,34 @@
   "members": [
     {
       "id": "arch-m-001",
-      "name": "Abhinav T.",
+      "name": "Shahabas Aman",
       "position": "Chairperson",
-      "department": "ME",
+      "department": "ECE",
       "semester": 8,
       "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300",
-      "bio": "Committed to technical excellence and cross-departmental dialogue.",
+      "bio": "Committed to progressive student welfare, academic freedom, and inclusive values.",
       "contact": {},
       "socials": {}
     },
     {
       "id": "arch-m-002",
-      "name": "Ananya K.",
+      "name": "Sneha S. U.",
       "position": "Vice Chairperson",
-      "department": "ECE",
+      "department": "EEE",
       "semester": 8,
       "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
-      "bio": "Focused on women empowerment and tech collaborations.",
+      "bio": "Focused on campus safety, equal representation, and student empowerment.",
       "contact": {},
       "socials": {}
     },
     {
       "id": "arch-m-003",
-      "name": "Siddharth P.",
+      "name": "Amal Sankar C. N.",
       "position": "General Secretary",
       "department": "CSE",
       "semester": 6,
       "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300",
-      "bio": "Organizing and digitizing campus workflows for faster clearance.",
+      "bio": "Organizing college activities and coordinating campus-wide student interactions.",
       "contact": {},
       "socials": {}
     }
@@ -48,20 +48,20 @@
   "events": [
     {
       "id": "arch-e-001",
-      "title": "Advaya Arts Festival 2025",
-      "date": "2025-02-12",
+      "title": "Advaya Arts Festival 2024",
+      "date": "2024-02-12",
       "venue": "Main Auditorium"
     },
     {
       "id": "arch-e-002",
       "title": "Inter-Collegiate Tech Summit",
-      "date": "2025-03-05",
+      "date": "2024-03-05",
       "venue": "ECE Seminar Hall"
     },
     {
       "id": "arch-e-003",
       "title": "NSS Clean Campus Drive",
-      "date": "2024-10-02",
+      "date": "2023-10-02",
       "venue": "Campus Grounds"
     }
   ],

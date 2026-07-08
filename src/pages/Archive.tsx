@@ -16,9 +16,9 @@ interface YearCardData {
 
 const ARCHIVE_YEARS: YearCardData[] = [
   {
-    year: '2024-25',
+    year: '2023-25',
     yearPath: '2024-25',
-    chairperson: 'Abhinav T.',
+    chairperson: 'Shahabas Aman',
     stats: { members: 12, events: 8, initiatives: 5 },
     thumbnails: [
       'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=150',
@@ -27,9 +27,9 @@ const ARCHIVE_YEARS: YearCardData[] = [
     ],
   },
   {
-    year: '2023-24',
+    year: '2021-23',
     yearPath: '2023-24',
-    chairperson: 'Midhun Murali',
+    chairperson: 'Anjali S.',
     stats: { members: 10, events: 6, initiatives: 3 },
     thumbnails: [
       'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=150',
@@ -38,36 +38,14 @@ const ARCHIVE_YEARS: YearCardData[] = [
     ],
   },
   {
-    year: '2022-23',
-    yearPath: '2022-23',
-    chairperson: 'Naveen Kumar',
-    stats: { members: 14, events: 9, initiatives: 6 },
-    thumbnails: [
-      'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=150',
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=150',
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=150',
-    ],
-  },
-  {
-    year: '2021-22',
+    year: '2019-21',
     yearPath: '2021-22',
-    chairperson: 'Gopika Mohan',
+    chairperson: 'Gokul Krishna',
     stats: { members: 12, events: 7, initiatives: 4 },
     thumbnails: [
       'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=150',
       'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=150',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=150',
-    ],
-  },
-  {
-    year: '2020-21',
-    yearPath: '2020-21',
-    chairperson: 'Arjun Swaminathan',
-    stats: { members: 11, events: 5, initiatives: 3 },
-    thumbnails: [
-      'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=150',
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=150',
-      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=150',
     ],
   },
 ];

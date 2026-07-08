@@ -1,9 +1,9 @@
 {
-  "year": "2023-24",
+  "year": "2021-23",
   "chairperson": {
-    "name": "Midhun Murali",
-    "department": "Electrical Engineering",
-    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300"
+    "name": "Anjali S.",
+    "department": "Civil Engineering",
+    "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300"
   },
   "stats": {
     "members": 10,
@@ -13,23 +13,23 @@
   "members": [
     {
       "id": "arch-m-101",
-      "name": "Midhun Murali",
+      "name": "Anjali S.",
       "position": "Chairperson",
-      "department": "EEE",
+      "department": "CE",
       "semester": 8,
-      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300",
-      "bio": "Passionate about academic-industry partnerships and sports facilities.",
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300",
+      "bio": "Strongly advocate for student rights, hostel facilities, and eco-friendly campus projects.",
       "contact": {},
       "socials": {}
     },
     {
       "id": "arch-m-102",
-      "name": "Priya Nair",
+      "name": "Arun Kumar",
       "position": "General Secretary",
-      "department": "CE",
+      "department": "ME",
       "semester": 8,
-      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300",
-      "bio": "Fostering arts and campus sustainability projects.",
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300",
+      "bio": "Fostering arts festivals, sports organization, and departmental collaborations.",
       "contact": {},
       "socials": {}
     }
@@ -37,14 +37,14 @@
   "events": [
     {
       "id": "arch-e-101",
-      "title": "Dyuthi Arts Festival 2024",
-      "date": "2024-02-15",
+      "title": "Aikya Arts Festival 2023",
+      "date": "2023-02-15",
       "venue": "Main Stadium Stage"
     },
     {
       "id": "arch-e-102",
-      "title": "College Sports Meet '24",
-      "date": "2023-11-10",
+      "title": "College Sports Meet '22",
+      "date": "2022-11-10",
       "venue": "Athletics Ground"
     }
   ],
