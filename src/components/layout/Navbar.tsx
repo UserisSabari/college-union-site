@@ -8,11 +8,8 @@ const NAV_LINKS = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/union-members', label: 'Union Members' },
-  { path: '/events', label: 'Events' },
-  { path: '/news', label: 'News' },
-  { path: '/initiatives', label: 'Initiatives' },
-  { path: '/gallery', label: 'Gallery' },
-  { path: '/downloads', label: 'Downloads' },
+  { path: '/updates', label: 'Updates' },
+  { path: '/events', label: 'Events & Gallery' },
   { path: '/contact', label: 'Contact' },
 ];
 

@@ -7,11 +7,8 @@ import PageLoader from './components/ui/PageLoader';
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
 const UnionMembers = React.lazy(() => import('./pages/UnionMembers'));
-const Events = React.lazy(() => import('./pages/Events'));
-const News = React.lazy(() => import('./pages/News'));
-const Initiatives = React.lazy(() => import('./pages/Initiatives'));
-const Gallery = React.lazy(() => import('./pages/Gallery'));
-const Downloads = React.lazy(() => import('./pages/Downloads'));
+const EventsGallery = React.lazy(() => import('./pages/EventsGallery'));
+const UnionUpdates = React.lazy(() => import('./pages/UnionUpdates'));
 const StudentVoice = React.lazy(() => import('./pages/StudentVoice'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Archive = React.lazy(() => import('./pages/Archive'));
@@ -28,11 +25,11 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/union-members" element={<UnionMembers />} />
               <Route path="/office-bearers" element={<UnionMembers />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/initiatives" element={<Initiatives />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/downloads" element={<Downloads />} />
+              <Route path="/updates" element={<UnionUpdates />} />
+              <Route path="/news" element={<UnionUpdates />} />
+              <Route path="/initiatives" element={<UnionUpdates />} />
+              <Route path="/events" element={<EventsGallery />} />
+              <Route path="/gallery" element={<EventsGallery />} />
               <Route path="/student-voice" element={<StudentVoice />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/archive" element={<Archive />} />

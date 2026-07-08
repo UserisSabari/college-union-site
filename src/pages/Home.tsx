@@ -64,9 +64,9 @@ export const Home = () => {
   // Quick Links Schema
   const QUICK_LINKS = [
     {
-      label: 'Office Bearers',
-      path: '/office-bearers',
-      description: 'Meet the executive union team',
+      label: 'Union Members',
+      path: '/union-members',
+      description: 'Meet the executive union team & representatives',
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -74,22 +74,12 @@ export const Home = () => {
       ),
     },
     {
-      label: 'Representatives',
-      path: '/representatives',
-      description: 'Departmental representatives',
+      label: 'Union Updates',
+      path: '/updates',
+      description: 'Read announcements, notices, and initiatives',
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      ),
-    },
-    {
-      label: 'Downloads & Forms',
-      path: '/downloads',
-      description: 'Access academic notices & formats',
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
       ),
     },
@@ -104,9 +94,9 @@ export const Home = () => {
       ),
     },
     {
-      label: 'Union Gallery',
-      path: '/gallery',
-      description: 'Browse photos from arts & sports',
+      label: 'Events & Gallery',
+      path: '/events',
+      description: 'Browse schedule and event photo highlights',
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -166,7 +156,7 @@ export const Home = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto"
           >
             <Button
-              to="/office-bearers"
+              to="/union-members"
               variant="primary"
               size="lg"
             >
@@ -233,7 +223,7 @@ export const Home = () => {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Notices & Announcements</h2>
             </div>
             <Link
-              to="/news"
+              to="/updates"
               className="mt-4 sm:mt-0 inline-flex items-center text-sm font-semibold text-crimson hover:text-navy transition-colors focus:outline-none"
             >
               View All Notices
@@ -283,7 +273,7 @@ export const Home = () => {
                 </div>
                 <div className="flex items-center justify-between text-xs text-textSecondary dark:text-slate-400 pt-4 border-t border-border dark:border-darkBorder">
                   <span>{new Date(ann.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
-                  <Link to="/news" className="font-semibold text-crimson hover:underline">
+                  <Link to="/updates" className="font-semibold text-crimson hover:underline">
                     Read More &rarr;
                   </Link>
                 </div>
@@ -417,7 +407,7 @@ export const Home = () => {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Union Initiatives</h2>
             </div>
             <Link
-              to="/initiatives"
+              to="/updates"
               className="mt-4 sm:mt-0 inline-flex items-center text-sm font-semibold text-crimson hover:text-navy transition-colors focus:outline-none"
             >
               View All Initiatives
@@ -457,7 +447,7 @@ export const Home = () => {
                   </p>
                 </div>
                 <div className="border-t border-border dark:border-darkBorder pt-4">
-                  <Link to="/initiatives" className="text-xs font-semibold text-crimson hover:underline">
+                  <Link to="/updates" className="text-xs font-semibold text-crimson hover:underline">
                     Learn More &rarr;
                   </Link>
                 </div>
@@ -507,7 +497,7 @@ export const Home = () => {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">Gallery Preview</h2>
             </div>
             <Link
-              to="/gallery"
+              to="/events"
               className="mt-4 sm:mt-0 inline-flex items-center text-sm font-semibold text-crimson hover:text-navy transition-colors focus:outline-none"
             >
               View Full Gallery

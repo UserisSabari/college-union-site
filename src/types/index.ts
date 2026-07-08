@@ -48,6 +48,7 @@ export interface Event {
   registrationLink?: string;
   documents?: string[];
   year: string;
+  body?: string;
 }
 
 export interface ArchiveYear {
