@@ -22,7 +22,7 @@ export const EventsGallery = () => {
   const [pageTab, setPageTab] = useState<'schedule' | 'gallery'>('schedule');
 
   // Events State
-  const [eventTab, setEventTab] = useState<EventStatus>('upcoming');
+  const [eventTab, setEventTab] = useState<EventStatus>('ongoing');
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const eventModalRef = useRef<HTMLDivElement>(null);
 

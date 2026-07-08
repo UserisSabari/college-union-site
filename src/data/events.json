@@ -7,7 +7,7 @@
     "venue": "Online",
     "status": "ongoing",
     "category": "Sports",
-    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453002/union/fifa-fest.jpg",
     "gallery": [],
     "registrationLink": " https://forms.gle/UBhrny1rbP1T3rSg7",
     "year": "2026-27"
@@ -20,7 +20,7 @@
     "venue": "Campus Premises",
     "status": "completed",
     "category": "Social",
-    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453030/union/union_day.png",
     "gallery": [],
     "year": "2026-27"
   },
@@ -32,12 +32,12 @@
     "venue": "College Ground",
     "status": "completed",
     "category": "Sports",
-    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453009/union/football_tournament.png",
     "gallery": [],
     "registrationLink": " https://forms.gle/UBhrny1rbP1T3rSg7",
     "year": "2026-27"
   },
-   {
+  {
     "id": "event-003",
     "title": "Women's Day",
     "description": "To honor the spirit of women in leadership, we are proud to host Ms. Anjana B, who achieved Rank 222 in the Civil Services Examination.",
@@ -45,12 +45,11 @@
     "venue": "EDUSAT Room",
     "status": "completed",
     "category": "Social",
-    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783453039/union/womens_day.png",
     "gallery": [],
     "year": "2026-27"
-
-   },
-   {
+  },
+  {
     "id": "event-004",
     "title": "Holi",
     "description": "Eco-union initiative to plant 100 saplings around the campus boundary in association with NSS GEC Palakkad.",
@@ -58,7 +57,7 @@
     "venue": "Campus Entrance",
     "status": "completed",
     "category": "Social",
-    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452928/union/cover_image.jpg",
+    "coverImage": "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452883/union/Holi.png",
     "gallery": [],
     "year": "2026-27"
   }
