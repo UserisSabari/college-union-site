@@ -11,7 +11,7 @@ export const SearchResult = ({ item, query, onSelect }: SearchResultProps) => {
   // Highlight search term in title
   const renderHighlightedTitle = (text: string, highlight: string) => {
     if (!highlight.trim()) return <span>{text}</span>;
-    const regex = new RegExp(`(${highlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'gi');
+    const regex = new RegExp(`(${highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
     const parts = text.split(regex);
     return (
       <span>
