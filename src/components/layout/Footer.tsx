@@ -68,8 +68,8 @@ export const Footer = () => {
                 <svg className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:union@gecpalakkad.ac.in" className="hover:text-gold transition-colors break-all">
-                  union@gecpalakkad.ac.in
+                <a href="mailto:collegeunion@gecskp.ac.in" className="hover:text-gold transition-colors break-all">
+                  collegeunion@gecskp.ac.in
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -77,14 +77,14 @@ export const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Union Office, Amenity Center, GEC Palakkad Campus</span>
+                <span>Union Room, Government Engineering College, Palakkad</span>
               </li>
               <li className="flex items-start space-x-3">
                 <svg className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div className="space-y-0.5">
-                  <p>Mon - Fri: 9:00 AM - 4:00 PM</p>
+                  <p>Mon - Fri: 9:30 AM - 4:30 PM</p>
                   <p className="text-xs text-slate-500">During academic semesters</p>
                 </div>
               </li>
@@ -150,7 +150,9 @@ export const Footer = () => {
           </div>
           <div className="flex space-x-1 items-center">
             <span>Built with care by</span>
-            <span className="text-slate-400 font-semibold">Union Web Team</span>
+            <Link to="/developers" className="text-slate-400 font-semibold hover:text-gold transition-colors">
+              Union Web Team
+            </Link>
           </div>
         </div>
       </div>

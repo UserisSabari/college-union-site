@@ -13,6 +13,7 @@ const StudentVoice = React.lazy(() => import('./pages/StudentVoice'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Archive = React.lazy(() => import('./pages/Archive'));
 const ArchiveYear = React.lazy(() => import('./pages/ArchiveYear'));
+const Developers = React.lazy(() => import('./pages/Developers'));
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/archive" element={<Archive />} />
               <Route path="/archive/:year" element={<ArchiveYear />} />
+              <Route path="/developers" element={<Developers />} />
             </Routes>
           </Suspense>
         </div>
