@@ -42,6 +42,27 @@
     "date": "March 09, 2026"
   },
   {
+    "id": "photo-020",
+    "src": "https://res.cloudinary.com/qucel5e0/image/upload/v1784388633/best_keeper_fz9mu0.png",
+    "eventName": "Year Wise Football Tournament",
+    "year": "2026-27",
+    "date": "March 09, 2026"
+  },
+  {
+    "id": "photo-021",
+    "src": "https://res.cloudinary.com/qucel5e0/image/upload/v1784388633/best_player_l2zjlw.png",
+    "eventName": "Year Wise Football Tournament",
+    "year": "2026-27",
+    "date": "March 09, 2026"
+  },
+  {
+    "id": "photo-022",
+    "src": "https://res.cloudinary.com/qucel5e0/image/upload/v1784388634/top_scorer_wpvzfu.png",
+    "eventName": "Year Wise Football Tournament",
+    "year": "2026-27",
+    "date": "March 09, 2026"
+  }
+  {
     "id": "photo-008",
     "src": "https://res.cloudinary.com/qucel5e0/image/upload/v1784384990/cricket_poster_y5g1vu.png",
     "eventName": "Year Wise Cricket Tournament",
