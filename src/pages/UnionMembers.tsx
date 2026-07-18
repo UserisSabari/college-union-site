@@ -41,6 +41,9 @@ export const UnionMembers = () => {
 
   // Active UG reps in tab
   const activeUgReps = ugReps.filter((m) => m.department === activeTab);
+  const activePgReps = pgReps.filter(
+  (m) => m.department === activeTab
+);
 
   // Handle click outside modal to close
   useEffect(() => {
@@ -356,11 +359,13 @@ export const UnionMembers = () => {
           Postgraduate Representatives
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {pgReps.length > 0 ? (
-            pgReps.map((rep) => <MemberCard key={rep.id} member={rep} />)
-          ) : (
+          {activePgReps.length > 0 ? (
+  activePgReps.map((rep) => (
+    <MemberCard key={rep.id} member={rep} />
+  ))
+) : (
             <div className="col-span-full py-10 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
-              No postgraduate representatives listed yet (CSE, EEE, IT, ME).
+              No postgraduate representatives listed yet.
             </div>
           )}
         </div>

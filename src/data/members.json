@@ -18,7 +18,7 @@
       "phone": "+917994134028"
     },
     "socials": {
-      "instagram": "hey_ajmal"
+      "instagram": "hey__ajmal"
     },
     "year": "2026-27"
   },
@@ -92,28 +92,50 @@
   },
   {
     "id": "member-005",
-    "name": "Muhammed Nihal M",
-    "position": "ECE Representative",
-    "category": "ugRep",
-    "department": "ECE",
-    "semester": 6,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ece_rep.jpg",
-    "bio": "Enthusiastic representative focusing on electronics hands-on workshops and academic support.",
+    "name": "Abhishek GK",
+    "position": "CSE Representative",
+    "category": "pgRep",
+    "department": "CSE",
+    "semester": 2,
+    "photo": "",
+    "bio": "Representing the interests of computer science students and promoting technical innovation.",
     "responsibilities": [
-      "Expressing concerns of ECE students in union meetings",
-      "Coordinating peer-to-peer tutoring for difficult core subjects"
+      "Gathering academic feedback and representing CSE student needs to the union",
+      "Organizing departmental workshops and open-source hackathons"
     ],
-    "vision": "Enhancing lab facilities awareness and encouraging active participation in technical symposia.",
+    "vision": "Creating more industry-exposure opportunities and fostering a vibrant programming culture.",
     "contact": {
-      "email": "pkd23ec042@gecskp.ac.in"
+      "phone": "+91 83300 73782"
     },
     "socials": {
-      "instagram": "n"
+      "instagram": "_abhii___shek"
     },
     "year": "2026-27"
   },
   {
     "id": "member-006",
+    "name": "Muhammed Nihal M",
+    "position": "ECE Representative",
+    "category": "ugRep",
+    "department": "ECE",
+    "semester": 6,
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784379857/Muhammed_Nihal_M_sy85uo.jpg",
+    "bio": "Enthusiastic representative focusing on electronics hands-on workshops and academic support.",
+    "responsibilities": [
+      "Expressing concerns of ECE students in union meetings",
+      "Organizing departmental workshops and open-source hackathons"
+    ],
+    "vision": "Enhancing lab facilities awareness and encouraging active participation in technical symposia.",
+    "contact": {
+      "phone": ""
+    },
+    "socials": {
+      "instagram": "nihal_mukkath"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-007",
     "name": "Akshay K J",
     "position": "UUC",
     "category": "officeBearer",
@@ -136,7 +158,7 @@
     "year": "2026-27"
   },
   {
-    "id": "member-007",
+    "id": "member-008",
     "name": "Afthab Muhammed",
     "position": "UUC",
     "category": "officeBearer",
@@ -159,7 +181,7 @@
     "year": "2026-27"
   },
   {
-    "id": "member-008",
+    "id": "member-009",
     "name": "Muhammed Fahis M",
     "position": "Arts Club Secretary",
     "category": "officeBearer",
@@ -182,7 +204,7 @@
     "year": "2026-27"
   },
   {
-    "id": "member-009",
+    "id": "member-010",
     "name": "Shafana N P",
     "position": "Magazine Editor",
     "category": "officeBearer",
@@ -205,13 +227,13 @@
     "year": "2026-27"
   },
   {
-    "id": "member-010",
+    "id": "member-011",
     "name": "Adithyan K",
     "position": "General Captain",
     "category": "generalCaptain",
     "department": "CE",
     "semester": 6,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/sports_secretary.jpg",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/f_auto,q_auto/ADITHYAN_K_sxpe9w",
     "bio": "Promoting sportsmanship, physical fitness, and inter-collegiate tournament victories.",
     "responsibilities": [
       "Organizing the annual sports meet and inter-department games",
@@ -228,35 +250,51 @@
     "year": "2026-27"
   },
   {
-    "id": "member-011",
+    "id": "member-012",
     "name": "Adnan Rasheed",
     "position": "EEE Representative",
     "category": "ugRep",
     "department": "EEE",
     "semester": 4,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/eee_rep.jpg",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784379963/ADNAN_RASHEED_V_cpmlpl.heic",
     "bio": "Working to address class facility queries and project lab extensions for electrical students.",
     "responsibilities": [
       "Gathering department complaints",
       "Representing EEE student issues in union panels"
     ],
     "vision": "Enhance hands-on electrical workshops and safety setups.",
-    "contact": {
-      "email": "jithindev@gecskp.ac.in"
-    },
     "socials": {
-      "linkedin": "jithin-dev-eee"
+      "instagram": "adnan.rasheedv"
     },
     "year": "2026-27"
   },
   {
-    "id": "member-012",
+    "id": "member-013",
+    "name": "Amritha R",
+    "position": "EEE Representative",
+    "category": "pgRep",
+    "department": "EEE",
+    "semester": 4,
+    "photo": "",
+    "bio": "Working to address class facility queries and project lab extensions for electrical students.",
+    "responsibilities": [
+      "Gathering department complaints",
+      "Representing EEE student issues in union panels"
+    ],
+    "vision": "Enhance hands-on electrical workshops and safety setups.",
+    "socials": {
+      "instagram": "a"
+    },
+    "year": "2026-27"
+  },  
+  {
+    "id": "member-014",
     "name": "Nadir T M",
     "position": "ME Representative",
     "category": "ugRep",
     "department": "ME",
     "semester": 8,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/me_rep.jpg",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784380043/NADIR__20260712_190057_xrexsx.png",
     "bio": "Representing ME department students and advocating for garage and lab updates.",
     "responsibilities": [
       "Sharing ME mechanical concerns",
@@ -272,13 +310,35 @@
     "year": "2026-27"
   },
   {
-    "id": "member-013",
+    "id": "member-015",
+    "name": "Rahul Reji",
+    "position": "ME Representative",
+    "category": "pgRep",
+    "department": "ME",
+    "semester": 2,
+    "photo": "",
+    "bio": "Representing ME department students and advocating for garage and lab updates.",
+    "responsibilities": [
+      "Sharing ME mechanical concerns",
+      "Co-ordinating departmental technical seminars"
+    ],
+    "vision": "Provide industry-relevant tool exposures and industrial visits.",
+    "contact": {
+      "phone": "+91 "
+    },
+    "socials": {
+      "instagram": "n"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-016",
     "name": "Jiju Kennedy",
     "position": "CE Representative",
     "category": "ugRep",
     "department": "CE",
     "semester": 8,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ce_rep.jpg",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784380101/jiju_kennedy_hd58ji.jpg",
     "bio": "Passionate about structural engineering workshops and representing Civil department concerns.",
     "responsibilities": [
       "Interfacing between CE students and the union",
@@ -294,7 +354,49 @@
     "year": "2026-27"
   },
   {
-    "id": "member-015",
+    "id": "member-017",
+    "name": "Athul Jaison",
+    "position": "IT Representative",
+    "category": "ugRep",
+    "department": "IT",
+    "semester": 8,
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784383176/ATHUL_JAISON_yd5fhw.jpg",
+    "bio": "Passionate about software engineering workshops and representing IT department concerns.",
+    "responsibilities": [
+      "Interfacing between IT students and the union"
+    ],
+    "vision": "Promote sustainable campus environment for IT students.",
+    "contact": {
+      "phone": "+91 884 867 8289"
+    },
+    "socials": {
+      "instagram": "_athuulll"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-018",
+    "name": "Asim Aslah PM",
+    "position": "IT Representative",
+    "category": "pgRep",
+    "department": "IT",
+    "semester": 2,
+    "photo": "",
+    "bio": "Passionate about software engineering workshops and representing IT department concerns.",
+    "responsibilities": [
+      "Interfacing between IT students and the union"
+    ],
+    "vision": "Promote sustainable campus environment for IT students.",
+    "contact": {
+      "phone": "+91"
+    },
+    "socials": {
+      "instagram": "n"
+    },
+    "year": "2026-27"
+  },
+  {
+    "id": "member-019",
     "name": "Aiswarya P",
     "position": "Ladies Representative",
     "category": "ladiesRep",
@@ -316,29 +418,26 @@
     "year": "2026-27"
   },
   {
-    "id": "member-016",
+    "id": "member-020",
     "name": "Hameetha Nassar",
     "position": "Ladies Representative",
     "category": "ladiesRep",
     "department": "IT",
     "semester": 4,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/ladies_rep2.jpg",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784380645/Hameetha_Nassar_oke6yu.jpg",
     "bio": "Committed to fostering a welcoming environment and raising female student issues.",
     "responsibilities": [
       "Managing ladies amenity center requirements",
       "Co-ordinating hostel sports meets"
     ],
     "vision": "A friendly campus environment where every voice receives equal attention.",
-    "contact": {
-      "email": "farhasherin@gecskp.ac.in"
-    },
     "socials": {
-      "linkedin": "farha-sherin"
+      "instagram": "hameetha_nazer"
     },
     "year": "2026-27"
   },
   {
-    "id": "member-017",
+    "id": "member-021",
     "name": "Sreya V",
     "position": "SC/ST Representative",
     "category": "scstRep",

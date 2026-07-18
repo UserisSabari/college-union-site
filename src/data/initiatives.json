@@ -49,5 +49,25 @@
   "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452920/union/books.png"
 ],
     "year": "2026-27"
+  },
+  {
+    "id": "init-006",
+    "title": "Catalyst – Where Ideas Become Impact",
+    "description": "A collaborative innovation platform by Secular College Union and SFI GECP in collaboration with AGES that empowers students through workshops, mentorship, and creative problem-solving.",
+    "status": "completed",
+    "gallery": [
+  "https://res.cloudinary.com/qucel5e0/image/upload/v1784387231/catalyst_rf7vdg.png"
+],
+    "year": "2026-27"
+  },
+  {
+    "id": "init-007",
+    "title": "The Union Bench – Student Discussion Forum",
+    "description": "A dedicated space where students and union representatives come together to exchange ideas, voice concerns, propose solutions, and discuss matters that contribute to the growth and well-being of the campus community.",
+    "status": "completed",
+    "gallery": [
+  "https://res.cloudinary.com/qucel5e0/image/upload/v1784387231/catalyst_rf7vdg.png"
+],
+    "year": "2026-27"
   }
 ]
