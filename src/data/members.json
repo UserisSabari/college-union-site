@@ -98,10 +98,10 @@
     "department": "CSE",
     "semester": 2,
     "photo": "",
-    "bio": "Representing the interests of computer science students and promoting technical innovation.",
+    "bio": "Create an engaging and innovative learning community that inspires collaboration, research, and technological advancement.",
     "responsibilities": [
-      "Gathering academic feedback and representing CSE student needs to the union",
-      "Organizing departmental workshops and open-source hackathons"
+      "Represent CS PG students in union activities.",
+      "Encourage knowledge sharing and teamwork."
     ],
     "vision": "Creating more industry-exposure opportunities and fostering a vibrant programming culture.",
     "contact": {
@@ -256,13 +256,16 @@
     "category": "ugRep",
     "department": "EEE",
     "semester": 4,
-    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784379963/ADNAN_RASHEED_V_cpmlpl.heic",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784456724/adnan_2_vvu8nq.jpg",
     "bio": "Working to address class facility queries and project lab extensions for electrical students.",
     "responsibilities": [
       "Gathering department complaints",
       "Representing EEE student issues in union panels"
     ],
     "vision": "Enhance hands-on electrical workshops and safety setups.",
+    "contact": {
+      "phone": "+91 89211 86340"
+    },
     "socials": {
       "instagram": "adnan.rasheedv"
     },
@@ -275,13 +278,16 @@
     "category": "pgRep",
     "department": "EEE",
     "semester": 4,
-    "photo": "",
-    "bio": "Working to address class facility queries and project lab extensions for electrical students.",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784455797/amritha_r_htzztf.jpg",
+    "bio": "Empower postgraduate students through innovation, leadership, and opportunities for academic and professional growth",
     "responsibilities": [
-      "Gathering department complaints",
-      "Representing EEE student issues in union panels"
+      "Voice the interests of EEE PG students.",
+      "Support research initiatives and technical learning."
     ],
     "vision": "Enhance hands-on electrical workshops and safety setups.",
+    "contact": {
+      "phone": "+91 89211 86340"
+    },
     "socials": {
       "instagram": "a"
     },
@@ -317,12 +323,12 @@
     "department": "ME",
     "semester": 2,
     "photo": "",
-    "bio": "Representing ME department students and advocating for garage and lab updates.",
+    "bio": "Build a supportive environment that encourages technical excellence, innovation, and teamwork among Mechanical Engineering postgraduates.",
     "responsibilities": [
-      "Sharing ME mechanical concerns",
-      "Co-ordinating departmental technical seminars"
+      "Represent ME PG students in academic matters.",
+      "Encourage research and project collaborations."
     ],
-    "vision": "Provide industry-relevant tool exposures and industrial visits.",
+    "vision": "Build a supportive environment that encourages technical excellence, innovation, and teamwork among Mechanical Engineering postgraduates.",
     "contact": {
       "phone": "+91 "
     },
@@ -382,9 +388,10 @@
     "department": "IT",
     "semester": 2,
     "photo": "",
-    "bio": "Passionate about software engineering workshops and representing IT department concerns.",
+    "bio": "Foster a collaborative research culture by connecting postgraduate students with academic, technical, and professional opportunities.",
     "responsibilities": [
-      "Interfacing between IT students and the union"
+      "Represent the concerns of IT PG students.",
+      "Promote innovation, research, and industry interaction."
     ],
     "vision": "Promote sustainable campus environment for IT students.",
     "contact": {
@@ -443,7 +450,7 @@
     "category": "scstRep",
     "department": "CSE",
     "semester": 4,
-    "photo": "https://res.cloudinary.com/gec-palakkad/image/upload/v1/union/scst_rep.jpg",
+    "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784457464/sreya_szveas.jpg",
     "bio": "Ensuring SC/ST student benefits, scholarships, and academic support desks are accessible.",
     "responsibilities": [
       "Tracking state and university scholarship delays",
