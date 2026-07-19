@@ -132,7 +132,7 @@ export const Contact = () => {
                   <div className="flex items-center space-x-4">
                     <span className="font-body text-navy dark:text-white text-xs font-semibold">Social Channels:</span>
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/secularcollegeunion?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-textSecondary dark:text-slate-400 hover:text-crimson dark:hover:text-crimson transition-colors"
@@ -288,8 +288,8 @@ export const Contact = () => {
                 <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">Union Chairperson</h3>
                 <p className="text-textSecondary dark:text-slate-400 text-xs">For general representations & core concerns</p>
               </div>
-              <a href="tel:+919876543210" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
-                +91 98765 43210
+              <a href="tel:+91 79941 34028" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
+                +91 79941 34028
               </a>
             </div>
 
@@ -304,8 +304,8 @@ export const Contact = () => {
                 <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">College Office Help Desk</h3>
                 <p className="text-textSecondary dark:text-slate-400 text-xs">For academic files & certificates</p>
               </div>
-              <a href="tel:+914662260350" className="text-navy dark:text-white font-body font-bold text-xs sm:text-sm hover:underline">
-                +91 466 2260350
+              <a href="tel:+91 79941 34028" className="text-navy dark:text-white font-body font-bold text-xs sm:text-sm hover:underline">
+                +91 79941 34028
               </a>
             </div>
 
@@ -320,8 +320,8 @@ export const Contact = () => {
                 <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">Student Grievance Cell</h3>
                 <p className="text-textSecondary dark:text-slate-400 text-xs">For formal complaints & support cell</p>
               </div>
-              <a href="tel:+919876543211" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
-                +91 98765 43211
+              <a href="tel:+91 79941 34028" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
+                +91 79941 34028
               </a>
             </div>
           </div>
