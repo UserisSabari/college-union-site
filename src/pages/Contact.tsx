@@ -103,8 +103,8 @@ export const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-body font-bold text-navy dark:text-white text-xs">Email</h4>
-                        <a href="mailto:collegeunion@gecskp.ac.in" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
-                          collegeunion@gecskp.ac.in
+                        <a href="mailto:gecpalakkadunion@gmail.com" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
+                          gecpalakkadunion@gmail.com
                         </a>
                       </div>
                     </div>
