@@ -72,6 +72,6 @@ For step-by-step documentation on updating members, adding notices, archiving te
 ## 👥 Web & Media Committee
 
 *   **Lead Developer:** Sabari S (CSE Department) — `pkd23cs055@gecskp.ac.in`
-*   **Co-Developer:** Aiswarya P (IT Department) — `aiswarya@gecskp.ac.in`
+*   **Co-Developer:** Aiswarya P (IT Department) — `pkd24it008@gecskp.ac.in`
 
 *Created with ❤️ by the GEC Palakkad College Union Web Team.*
