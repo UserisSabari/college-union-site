@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { submitStudentVoiceForm } from '../services/formService';
 
 type CategoryType = 'suggestion' | 'complaint' | 'idea' | 'feedback';
 
@@ -35,6 +36,7 @@ export const StudentVoice = () => {
   const [department, setDepartment] = useState('General');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
@@ -78,31 +80,32 @@ export const StudentVoice = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCategory || !subject || !isMessageValid) return;
+    setIsSubmitting(true);
 
-    // Create feedback payload
     const feedbackPayload = {
-      id: `feedback-${Date.now()}`,
       category: selectedCategory,
       department,
       subject,
       message,
-      submittedAt: new Date().toISOString(),
     };
 
-    // Simulated submission to LocalStorage for Phase 1
-    // TODO: Replace with backend API in Phase 2
+    // Submit via Form Service
+    await submitStudentVoiceForm(feedbackPayload);
+
+    // Local storage backup for offline resilience
     try {
       const existing = localStorage.getItem('student_feedback_demo');
       const list = existing ? JSON.parse(existing) : [];
-      list.push(feedbackPayload);
+      list.push({ ...feedbackPayload, id: `feedback-${Date.now()}`, submittedAt: new Date().toISOString() });
       localStorage.setItem('student_feedback_demo', JSON.stringify(list));
     } catch (err) {
-      console.warn('LocalStorage error during simulation storage', err);
+      console.warn('LocalStorage error during offline storage', err);
     }
 
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -293,12 +296,12 @@ export const StudentVoice = () => {
                 <div className="pt-2 select-none">
                   <Button
                     type="submit"
-                    disabled={!selectedCategory || !subject || !isMessageValid}
+                    disabled={!selectedCategory || !subject || !isMessageValid || isSubmitting}
                     variant="secondary"
                     fullWidth={true}
-                    className={(!selectedCategory || !subject || !isMessageValid) ? 'opacity-40 cursor-not-allowed' : ''}
+                    className={(!selectedCategory || !subject || !isMessageValid || isSubmitting) ? 'opacity-40 cursor-not-allowed' : ''}
                   >
-                    Submit Anonymously
+                    {isSubmitting ? 'Submitting Feedback...' : 'Submit Anonymously'}
                   </Button>
                 </div>
 

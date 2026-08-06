@@ -446,17 +446,17 @@
   {
     "id": "member-021",
     "name": "Sreya V",
-    "position": "SC/ST Representative",
-    "category": "scstRep",
+    "position": "Executive Member",
+    "category": "officeBearer",
     "department": "CSE",
     "semester": 4,
     "photo": "https://res.cloudinary.com/qucel5e0/image/upload/v1784457464/sreya_szveas.jpg",
-    "bio": "Ensuring SC/ST student benefits, scholarships, and academic support desks are accessible.",
+    "bio": "Ensuring student benefits, scholarships, and academic support desks are accessible to all.",
     "responsibilities": [
-      "Tracking state and university scholarship delays",
+      "Tracking student support initiatives and academic desks",
       "Providing textbook loans and digital study resources"
     ],
-    "vision": "Absolute equal representation and smooth financial aid disbursement for marginalized students.",
+    "vision": "Equal representation, welfare, and smooth financial aid support for all students.",
     "contact": {
       "phone": "+91 62386 37214"
     },

@@ -43,13 +43,23 @@ To run this project locally on your machine:
     npm install
     ```
 
-3.  **Launch Dev Server:**
+3.  **Environment Variables Configuration:**
+    Copy `.env.example` to `.env`:
+    ```bash
+    cp .env.example .env
+    ```
+    Open `.env` and set your Web3Forms Access Key for contact & anonymous voice form delivery:
+    ```env
+    VITE_WEB3FORMS_KEY=your_web3forms_access_key_here
+    ```
+
+4.  **Launch Dev Server:**
     ```bash
     npm run dev
     ```
     Open your browser and navigate to `http://localhost:5173` to view the website.
 
-4.  **Lint & Code Quality Check:**
+5.  **Lint & Code Quality Check:**
     ```bash
     npm run lint
     ```

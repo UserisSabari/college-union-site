@@ -16,6 +16,24 @@ Our website is built using modern, fast, and simple web technologies:
 *   **Hosting:** Hosted on **Vercel**, which means any change you make here will be updated automatically on the live website within a minute!
 *   **Domain:** Proposed to run at `collegeunion.gecskp.ac.in` (connected to the official college domain `gecskp.ac.in`).
 
+---
+
+## 1.1 Environment Variables & Form Setup (.env)
+
+The website uses **Web3Forms** for zero-backend email delivery when students submit messages on the **Contact Us** page or **Student Voice** portal.
+
+### Steps to Configure Web3Forms Email Key:
+1. Copy `.env.example` to `.env` in the root folder:
+   ```bash
+   cp .env.example .env
+   ```
+2. Get your free access key at [web3forms.com](https://web3forms.com/) by typing `gecpalakkadunion@gmail.com`.
+3. Open `.env` and paste your key:
+   ```env
+   VITE_WEB3FORMS_KEY=your_access_key_here
+   ```
+4. **Vercel Hosting Setup:** When deploying to Vercel, navigate to **Project Settings > Environment Variables** and add `VITE_WEB3FORMS_KEY` with your key value.
+
 All the dynamic content (members, notices, events) is stored inside simple text files called **JSON files** inside the `src/data/` folder. You do not need to edit complex code files; you just need to edit these list-like files!
 
 ---
@@ -255,8 +273,8 @@ Before executing `git push`, run `npm run dev` in your terminal to see if the we
 If you run into issues, get stuck with code, or the website goes down, reach out to the previous developers or teachers-in-charge:
 
 *   **Lead Student Developer (2026-27):** Sabari S (CSE Department) — `pkd23cs055@gecskp.ac.in` | `github.com/userissabari`
-*   **Alternative Developer Contact:** [Insert Name] — `developer@gecskp.ac.in`
-*   **College Union Advisor:** [Insert Teacher Name/Designation] — `office@gecskp.ac.in`
+*   **Co-Developer & Web Team:** Aiswarya P (IT Department) — `pkd24it008@gecskp.ac.in`
+*   **College Union Official Email:** `gecpalakkadunion@gmail.com` | `principal@gecskp.ac.in`
 
 ---
 *Created with ❤️ by the GEC Palakkad College Union Web Team.*

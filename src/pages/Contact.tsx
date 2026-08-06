@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
+import { submitContactForm } from '../services/formService';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +10,17 @@ export const Contact = () => {
     category: 'General',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
+    setIsSubmitting(true);
+
+    await submitContactForm(formData);
+
+    setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({
       name: '',
@@ -257,8 +264,8 @@ export const Contact = () => {
 
                       {/* Submit */}
                       <div>
-                        <Button type="submit" variant="secondary" fullWidth={true}>
-                          Submit Message
+                        <Button type="submit" variant="secondary" fullWidth={true} disabled={isSubmitting}>
+                          {isSubmitting ? 'Sending Message...' : 'Submit Message'}
                         </Button>
                       </div>
                     </form>
@@ -273,55 +280,119 @@ export const Contact = () => {
       {/* Emergency Contacts Section */}
       <section className="py-16 md:py-20 bg-surface dark:bg-darkSurface border-t border-border dark:border-darkBorder transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-navy dark:text-white mb-8 text-center">
-            Emergency & Quick Help Contacts
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-navy dark:text-white mb-2 text-center">
+            Key Office Bearers & Help Contacts
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {/* Contact 1 */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-crimson/5 dark:bg-crimson/20 text-crimson flex items-center justify-center">
+          <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm text-center mb-10 max-w-xl mx-auto">
+            Direct helpline numbers for quick student assistance, administrative inquiries, and emergency representations.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Contact 1: Chairperson */}
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="w-11 h-11 rounded-full bg-crimson/10 dark:bg-crimson/20 text-crimson flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
               <div className="space-y-1">
-                <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">Union Chairperson</h3>
-                <p className="text-textSecondary dark:text-slate-400 text-xs">For general representations & core concerns</p>
+                <h3 className="font-body font-bold text-navy dark:text-white text-base">Union Chairperson</h3>
+                <p className="text-crimson font-medium text-xs">Ajmal V B</p>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">Core union representations & executive leadership</p>
               </div>
-              <a href="tel:+91 79941 34028" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
-                +91 79941 34028
+              <a href="tel:+917994134028" className="text-crimson dark:text-crimson/90 font-body font-bold text-xs sm:text-sm hover:underline flex items-center gap-1">
+                <span>+91 79941 34028</span>
               </a>
             </div>
 
-            {/* Contact 2 */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-navy/5 dark:bg-navy/20 text-navy dark:text-white flex items-center justify-center">
+            {/* Contact 2: General Secretary */}
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="w-11 h-11 rounded-full bg-navy/10 dark:bg-navy/20 text-navy dark:text-white flex items-center justify-center">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-body font-bold text-navy dark:text-white text-base">General Secretary</h3>
+                <p className="text-navy dark:text-slate-300 font-medium text-xs">Adwaith Ashok</p>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">Union documentation, budget & official updates</p>
+              </div>
+              <a href="tel:+919947760356" className="text-navy dark:text-white font-body font-bold text-xs sm:text-sm hover:underline flex items-center gap-1">
+                <span>+91 99477 60356</span>
+              </a>
+            </div>
+
+            {/* Contact 3: Lady Representative */}
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="w-11 h-11 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-body font-bold text-navy dark:text-white text-base">Lady Representative</h3>
+                <p className="text-pink-600 dark:text-pink-400 font-medium text-xs">Aiswarya P</p>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">Women student empowerment & campus welfare</p>
+              </div>
+              <a href="tel:+917907175906" className="text-pink-600 dark:text-pink-400 font-body font-bold text-xs sm:text-sm hover:underline flex items-center gap-1">
+                <span>+91 79071 75906</span>
+              </a>
+            </div>
+
+            {/* Contact 4: University Union Councillor (UUC) */}
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="w-11 h-11 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-body font-bold text-navy dark:text-white text-base">University Union Councillor (UUC)</h3>
+                <p className="text-amber-600 dark:text-amber-400 font-medium text-xs">Akshay K J & Afthab Muhammed</p>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">University body affairs & KTU representations</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 text-xs font-bold font-body">
+                <a href="tel:+918138961897" className="text-amber-600 dark:text-amber-400 hover:underline">
+                  +91 81389 61897
+                </a>
+                <span className="hidden sm:inline text-slate-300">|</span>
+                <a href="tel:+919744120631" className="text-amber-600 dark:text-amber-400 hover:underline">
+                  +91 97441 20631
+                </a>
+              </div>
+            </div>
+
+            {/* Contact 5: College Office Help Desk */}
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="w-11 h-11 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
               <div className="space-y-1">
-                <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">College Office Help Desk</h3>
-                <p className="text-textSecondary dark:text-slate-400 text-xs">For academic files & certificates</p>
+                <h3 className="font-body font-bold text-navy dark:text-white text-base">College Office Desk</h3>
+                <p className="text-emerald-600 dark:text-emerald-400 font-medium text-xs">Administrative Section</p>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">For academic certificates, files & official notices</p>
               </div>
-              <a href="tel:+91 79941 34028" className="text-navy dark:text-white font-body font-bold text-xs sm:text-sm hover:underline">
-                +91 79941 34028
+              <a href="tel:+914662260350" className="text-emerald-600 dark:text-emerald-400 font-body font-bold text-xs sm:text-sm hover:underline">
+                +91 466 2260350
               </a>
             </div>
 
-            {/* Contact 3 */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-crimson/5 dark:bg-crimson/20 text-crimson flex items-center justify-center">
+            {/* Contact 6: Student Grievance Cell */}
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="w-11 h-11 rounded-full bg-crimson/10 dark:bg-crimson/20 text-crimson flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
               <div className="space-y-1">
-                <h3 className="font-body font-bold text-navy dark:text-white text-sm sm:text-base">Student Grievance Cell</h3>
-                <p className="text-textSecondary dark:text-slate-400 text-xs">For formal complaints & support cell</p>
+                <h3 className="font-body font-bold text-navy dark:text-white text-base">Student Grievance Cell</h3>
+                <p className="text-crimson font-medium text-xs">Shafana N P (Magazine Editor)</p>
+                <p className="text-textSecondary dark:text-slate-400 text-xs">Formal complaints, support & emergency mediation</p>
               </div>
-              <a href="tel:+91 79941 34028" className="text-crimson dark:text-crimson/80 font-body font-bold text-xs sm:text-sm hover:underline">
-                +91 79941 34028
+              <a href="tel:+919744870272" className="text-crimson dark:text-crimson/90 font-body font-bold text-xs sm:text-sm hover:underline">
+                +91 97448 70272
               </a>
             </div>
           </div>
