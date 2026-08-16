@@ -317,8 +317,8 @@ export const Home = () => {
                   variants={fadeUp}
                   className="w-80 md:w-auto bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all flex flex-col h-full"
                 >
-                  {/* Event Cover Image with Ambient Backdrop */}
-                  <div className="aspect-[16/10] relative select-none overflow-hidden bg-slate-950 flex items-center justify-center">
+                  {/* Event Cover Image with Ambient Backdrop (4:5 Instagram Ratio) */}
+                  <div className="aspect-[4/5] relative select-none overflow-hidden bg-slate-950 flex items-center justify-center">
                     {evt.coverImage ? (
                       <>
                         <img

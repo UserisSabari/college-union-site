@@ -190,7 +190,7 @@ export const EventsGallery = () => {
     return (
       <div
         onClick={onClick}
-        className="relative aspect-[4/3] rounded-card overflow-hidden group cursor-pointer border border-border dark:border-darkBorder bg-slate-100 dark:bg-darkCard select-none shadow-sm hover:shadow-md transition-all duration-300"
+        className="relative aspect-[4/5] rounded-card overflow-hidden group cursor-pointer border border-border dark:border-darkBorder bg-slate-100 dark:bg-darkCard select-none shadow-sm hover:shadow-md transition-all duration-300"
       >
         {!loaded && (
           <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 animate-pulse" />
@@ -278,14 +278,14 @@ export const EventsGallery = () => {
             {/* Featured Event Card */}
             {featuredEvent && (
               <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm flex flex-col lg:flex-row hover:shadow-subtle transition-all duration-300">
-                <div className="lg:w-1/2 h-72 sm:h-80 md:h-96 lg:h-auto min-h-[280px] lg:min-h-[360px] relative select-none">
+                <div className="lg:w-2/5 aspect-[4/5] max-h-[520px] relative select-none">
                   <EventCoverImage src={featuredEvent.coverImage} alt={featuredEvent.title} />
                   <div className="absolute top-4 left-4 bg-navy text-white px-3.5 py-1.5 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
                     <span className="text-lg leading-none">{getDayMonth(featuredEvent.date).day}</span>
                     <span className="text-[10px] uppercase tracking-wider leading-none mt-1">{getDayMonth(featuredEvent.date).month}</span>
                   </div>
                 </div>
-                <div className="lg:w-1/2 p-6 md:p-10 flex flex-col justify-between space-y-6">
+                <div className="lg:w-3/5 p-6 md:p-10 flex flex-col justify-between space-y-6">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3 select-none">
                       <span className="px-2.5 py-0.5 bg-crimson/10 dark:bg-crimson/20 text-crimson text-3xs font-semibold rounded-full uppercase tracking-wider">
@@ -324,7 +324,7 @@ export const EventsGallery = () => {
                     key={event.id}
                     className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
                   >
-                    <div className="aspect-[16/10] relative select-none">
+                    <div className="aspect-[4/5] relative select-none">
                       <EventCoverImage src={event.coverImage} alt={event.title} />
                       <div className="absolute top-4 left-4 bg-navy text-white px-2.5 py-1 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
                         <span className="text-sm leading-none">{getDayMonth(event.date).day}</span>
