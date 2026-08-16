@@ -317,9 +317,28 @@ export const Home = () => {
                   variants={fadeUp}
                   className="w-80 md:w-auto bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all flex flex-col h-full"
                 >
-                  {/* Decorative Gradient Top Header */}
-                  <div className="h-40 bg-gradient-to-br from-navy via-slate-800 to-crimson flex items-center justify-center text-white font-display font-semibold text-lg p-6 text-center select-none">
-                    {evt.title}
+                  {/* Event Cover Image with Ambient Backdrop */}
+                  <div className="aspect-[16/10] relative select-none overflow-hidden bg-slate-950 flex items-center justify-center">
+                    {evt.coverImage ? (
+                      <>
+                        <img
+                          src={evt.coverImage}
+                          alt=""
+                          aria-hidden="true"
+                          className="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-110 select-none pointer-events-none"
+                        />
+                        <img
+                          src={evt.coverImage}
+                          alt={evt.title}
+                          loading="lazy"
+                          className="relative z-10 max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300"
+                        />
+                      </>
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-navy via-slate-800 to-crimson flex items-center justify-center text-white font-display font-semibold text-base p-4 text-center select-none">
+                        {evt.title}
+                      </div>
+                    )}
                   </div>
                   <div className="p-6 flex-grow flex flex-col justify-between">
                     <div>

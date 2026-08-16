@@ -147,30 +147,40 @@ export const EventsGallery = () => {
   const EventCoverImage = ({
     src,
     alt,
-    className = 'w-full h-full object-cover',
+    className = 'w-full h-full object-contain',
   }: {
     src: string;
     alt: string;
     className?: string;
   }) => {
     const [imageError, setImageError] = useState(false);
+    if (!src || imageError) {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy via-slate-800 to-crimson text-white/40 select-none">
+          <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+      );
+    }
+
     return (
-      <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-navy via-slate-800 to-crimson">
-        {!imageError ? (
-          <img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            className={className}
-            onError={() => setImageError(true)}
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-white/40 select-none">
-            <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-        )}
+      <div className="relative w-full h-full overflow-hidden bg-slate-950 flex items-center justify-center">
+        {/* Ambient blurred backdrop so letterboxing is colorful & natural */}
+        <img
+          src={src}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-110 select-none pointer-events-none"
+        />
+        {/* Crisp foreground uncropped poster */}
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className={`relative z-10 max-h-full max-w-full w-auto h-auto ${className} transition-transform duration-300`}
+          onError={() => setImageError(true)}
+        />
       </div>
     );
   };
@@ -180,21 +190,21 @@ export const EventsGallery = () => {
     return (
       <div
         onClick={onClick}
-        className="relative break-inside-avoid mb-4 rounded-card overflow-hidden group cursor-pointer border border-border dark:border-darkBorder bg-slate-50 dark:bg-darkCard select-none shadow-sm hover:shadow-subtle transition-all duration-300"
+        className="relative aspect-[4/3] rounded-card overflow-hidden group cursor-pointer border border-border dark:border-darkBorder bg-slate-100 dark:bg-darkCard select-none shadow-sm hover:shadow-md transition-all duration-300"
       >
         {!loaded && (
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 animate-pulse min-h-[200px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 animate-pulse" />
         )}
         <img
           src={photo.src}
           alt={photo.eventName}
           loading="lazy"
-          className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0 h-0'}`}
+          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setLoaded(true)}
           onError={() => setLoaded(true)}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end text-white text-left">
-          <p className="text-2xs font-semibold text-gold tracking-wider uppercase">{photo.year}</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end text-white text-left">
+          <p className="text-3xs font-bold text-gold tracking-wider uppercase">{photo.year}</p>
           <h4 className="font-display font-bold text-sm truncate mt-0.5">{photo.eventName}</h4>
           <p className="text-slate-300 text-3xs mt-0.5">{photo.date}</p>
         </div>
@@ -268,9 +278,9 @@ export const EventsGallery = () => {
             {/* Featured Event Card */}
             {featuredEvent && (
               <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm flex flex-col lg:flex-row hover:shadow-subtle transition-all duration-300">
-                <div className="lg:w-1/2 h-64 lg:h-auto min-h-[250px] relative select-none">
+                <div className="lg:w-1/2 h-72 sm:h-80 md:h-96 lg:h-auto min-h-[280px] lg:min-h-[360px] relative select-none">
                   <EventCoverImage src={featuredEvent.coverImage} alt={featuredEvent.title} />
-                  <div className="absolute top-4 left-4 bg-navy text-white px-3.5 py-1.5 rounded flex flex-col items-center shadow font-display font-extrabold select-none">
+                  <div className="absolute top-4 left-4 bg-navy text-white px-3.5 py-1.5 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
                     <span className="text-lg leading-none">{getDayMonth(featuredEvent.date).day}</span>
                     <span className="text-[10px] uppercase tracking-wider leading-none mt-1">{getDayMonth(featuredEvent.date).month}</span>
                   </div>
@@ -314,9 +324,9 @@ export const EventsGallery = () => {
                     key={event.id}
                     className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
                   >
-                    <div className="h-44 relative select-none">
+                    <div className="aspect-[16/10] relative select-none">
                       <EventCoverImage src={event.coverImage} alt={event.title} />
-                      <div className="absolute top-4 left-4 bg-navy text-white px-2.5 py-1 rounded flex flex-col items-center shadow font-display font-extrabold select-none">
+                      <div className="absolute top-4 left-4 bg-navy text-white px-2.5 py-1 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
                         <span className="text-sm leading-none">{getDayMonth(event.date).day}</span>
                         <span className="text-[8px] uppercase tracking-wider leading-none mt-0.5">{getDayMonth(event.date).month}</span>
                       </div>
@@ -381,7 +391,7 @@ export const EventsGallery = () => {
                     : 'bg-surface dark:bg-darkCard text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white'
                 }`}
               >
-                All Photos
+                All Moments
               </button>
               <button
                 onClick={() => setActiveFilterGroup('event')}
@@ -425,7 +435,7 @@ export const EventsGallery = () => {
           {/* Photo Grid */}
           <div className="max-w-7xl mx-auto">
             {filteredPhotos.length > 0 ? (
-              <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                 {filteredPhotos.map((photo, index) => (
                   <GalleryImage
                     key={photo.id}
@@ -460,7 +470,7 @@ export const EventsGallery = () => {
             >
               <button
                 onClick={() => setSelectedEvent(null)}
-                className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white transition-colors"
+                className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-darkBg text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white transition-colors z-20"
                 aria-label="Close modal"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -483,8 +493,12 @@ export const EventsGallery = () => {
               </div>
 
               {selectedEvent.coverImage && (
-                <div className="h-64 rounded overflow-hidden select-none">
-                  <EventCoverImage src={selectedEvent.coverImage} alt={selectedEvent.title} />
+                <div className="w-full max-h-[480px] rounded-card overflow-hidden bg-slate-950 p-2 flex items-center justify-center select-none shadow-inner border border-border dark:border-darkBorder">
+                  <img
+                    src={selectedEvent.coverImage}
+                    alt={selectedEvent.title}
+                    className="max-h-[440px] w-auto max-w-full object-contain rounded"
+                  />
                 </div>
               )}
 
