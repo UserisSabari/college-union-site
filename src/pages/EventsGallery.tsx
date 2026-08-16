@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,11 +18,23 @@ interface PhotoItem {
 }
 
 export const EventsGallery = () => {
-  // Page Tab Switcher: Schedule vs Gallery
-  const [pageTab, setPageTab] = useState<'schedule' | 'gallery'>('schedule');
+  const location = useLocation();
 
-  // Events State
-  const [eventTab, setEventTab] = useState<EventStatus>('ongoing');
+  // Page Tab Switcher: Schedule vs Gallery (route-aware)
+  const [pageTab, setPageTab] = useState<'schedule' | 'gallery'>(
+    location.pathname === '/gallery' ? 'gallery' : 'schedule'
+  );
+
+  useEffect(() => {
+    if (location.pathname === '/gallery') {
+      setPageTab('gallery');
+    } else if (location.pathname === '/events') {
+      setPageTab('schedule');
+    }
+  }, [location.pathname]);
+
+  // Events State - default to upcoming events
+  const [eventTab, setEventTab] = useState<EventStatus>('upcoming');
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const eventModalRef = useRef<HTMLDivElement>(null);
 

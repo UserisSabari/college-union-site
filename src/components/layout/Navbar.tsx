@@ -119,16 +119,20 @@ export const Navbar = () => {
             className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-crimson rounded-button"
             onClick={() => setIsOpen(false)}
           >
-            {/* Navy Monogram Circle Logo */}
-            <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center text-white font-display font-bold text-sm tracking-wider flex-shrink-0">
-              CU
-            </div>
+            {/* Official Secular College Union Logo */}
+            <img
+              src="/logo.png"
+              alt="Secular College Union Logo"
+              width={36}
+              height={36}
+              className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover shadow-xs border border-purple-500/20 flex-shrink-0"
+            />
             <div className="flex flex-col">
               <span className="font-body font-bold text-navy dark:text-white text-xs sm:text-sm md:text-base leading-none tracking-tight whitespace-nowrap">
-                College Union
+                Secular College Union
               </span>
               <span className="font-body text-textSecondary dark:text-slate-400 text-[9px] sm:text-[10px] md:text-xs leading-none mt-0.5 sm:mt-1 tracking-normal whitespace-nowrap">
-                GEC Palakkad
+                GEC Palakkad '26
               </span>
             </div>
           </Link>

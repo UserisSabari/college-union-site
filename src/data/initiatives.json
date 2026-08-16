@@ -42,12 +42,13 @@
   },
   {
     "id": "init-005",
-    "title": "Memorandum Submitted for Library Book Support",
-    "description": "To promote the creative and academic development of students, the College Union submitted a memorandum to Hon. MLA Adv. K. Premkumar requesting the provision of essential books and learning resources for the college library.",
+    "title": "Fiction & Academic Books Received for College Library",
+    "description": "Following the memorandum submitted by the College Union to Hon. MLA Adv. K. Premkumar requesting library enhancement, new fiction and reading books have been procured and delivered to the college library.",
     "status": "completed",
     "gallery": [
-  "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452920/union/books.png"
-],
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1786878803/union/impact_library_books.jpg",
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1783452920/union/books.png"
+    ],
     "year": "2026-27"
   },
   {
@@ -56,8 +57,8 @@
     "description": "A collaborative innovation platform by Secular College Union and SFI GECP in collaboration with AGES that empowers students through workshops, mentorship, and creative problem-solving.",
     "status": "completed",
     "gallery": [
-  "https://res.cloudinary.com/qucel5e0/image/upload/v1784387231/catalyst_rf7vdg.png"
-],
+      "https://res.cloudinary.com/qucel5e0/image/upload/v1784387231/catalyst_rf7vdg.png"
+    ],
     "year": "2026-27"
   },
   {
@@ -66,8 +67,28 @@
     "description": "A dedicated space where students and union representatives come together to exchange ideas, voice concerns, propose solutions, and discuss matters that contribute to the growth and well-being of the campus community.",
     "status": "completed",
     "gallery": [
-  "https://res.cloudinary.com/qucel5e0/image/upload/v1784387231/catalyst_rf7vdg.png"
-],
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1786878792/union/the_union_bench.jpg"
+    ],
+    "year": "2026-27"
+  },
+  {
+    "id": "init-008",
+    "title": "Rest Nook Established for Female Students",
+    "description": "Fulfilled the union election promise by establishing a dedicated 'Rest Nook' equipped with electric heating pads and first-aid care amenities for female students dealing with menstrual pain.",
+    "status": "completed",
+    "gallery": [
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1786878804/union/impact_rest_nook.jpg"
+    ],
+    "year": "2026-27"
+  },
+  {
+    "id": "init-009",
+    "title": "Hostel Feeder Bus Service Approved",
+    "description": "Following the persistent representation and formal submission by the College Union regarding travel difficulties faced by hostel students, the Principal has assured that a dedicated hostel feeder bus service will be arranged.",
+    "status": "completed",
+    "gallery": [
+      "https://res.cloudinary.com/gec-palakkad/image/upload/v1786878801/union/impact_hostel_bus.jpg"
+    ],
     "year": "2026-27"
   }
 ]

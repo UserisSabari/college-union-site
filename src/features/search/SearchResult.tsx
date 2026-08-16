@@ -61,27 +61,27 @@ export const SearchResult = ({ item, query, onSelect }: SearchResultProps) => {
     <Link
       to={item.url}
       onClick={onSelect}
-      className="flex items-center justify-between p-3.5 hover:bg-slate-50 transition-colors duration-200 rounded-card group"
+      className="flex items-center justify-between p-3.5 hover:bg-slate-50 dark:hover:bg-darkSurface transition-colors duration-200 rounded-card group"
     >
       <div className="flex items-center space-x-4">
         {/* Left Icon badge wrapper */}
-        <div className="p-2 bg-slate-100 rounded-button flex-shrink-0 select-none">
+        <div className="p-2 bg-slate-100 dark:bg-darkSurface rounded-button flex-shrink-0 select-none">
           {getIcon(item.type)}
         </div>
         
         {/* Texts */}
         <div className="space-y-0.5">
-          <h4 className="font-body font-bold text-navy text-xs sm:text-sm truncate max-w-[320px] sm:max-w-[420px]">
+          <h4 className="font-body font-bold text-navy dark:text-white text-xs sm:text-sm truncate max-w-[320px] sm:max-w-[420px]">
             {renderHighlightedTitle(item.title, query)}
           </h4>
-          <p className="text-textSecondary text-5xs sm:text-4xs truncate max-w-[320px] sm:max-w-[420px] font-body leading-normal">
+          <p className="text-textSecondary dark:text-slate-400 text-5xs sm:text-4xs truncate max-w-[320px] sm:max-w-[420px] font-body leading-normal">
             {item.subtitle}
           </p>
         </div>
       </div>
 
       {/* Right navigation arrow */}
-      <svg className="w-4 h-4 text-slate-400 group-hover:text-crimson group-hover:translate-x-0.5 transition-all select-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-4 h-4 text-slate-400 group-hover:text-crimson dark:group-hover:text-red-400 group-hover:translate-x-0.5 transition-all select-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
       </svg>
     </Link>

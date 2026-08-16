@@ -32,11 +32,11 @@
     }
   ],
   "documents": {
-    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_22_23.pdf",
-    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_22_23.pdf",
-    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_22.pdf"
+    "report": "",
+    "magazine": "",
+    "electionResults": ""
   },
   "gallery": [
-    "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=400"
+    "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=400"
   ]
 }

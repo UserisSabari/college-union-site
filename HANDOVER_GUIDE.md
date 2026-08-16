@@ -214,16 +214,33 @@ At the end of your tenure, you must preserve your union's achievements, members,
 
 ---
 
-## 6. How to Upload Photos & PDFs (Media Hosting)
+## 6. How to Upload Photos & Media (Automated & Manual)
 
-Do **NOT** upload images or PDFs directly into the website code repository. Doing so will make the code heavy and slow down the site. Instead, we use **Cloudinary** (a free media cloud service).
+We use **Cloudinary** for ultra-fast, CDN-cached image delivery. We have automated this process so you don't even need to open the Cloudinary dashboard!
 
-### Steps to Upload:
-1.  Log into your team's Cloudinary account. (Create a free account or ask the previous web team for the credentials).
-2.  Go to the **Media Explorer** and navigate to the `union/` folder.
-3.  Click **Upload** and drop your image or document.
-4.  **Optimize:** Before uploading, compress your images. You can use free web services like *TinyPNG* or *Squoosh*. Avoid uploading images larger than 1MB.
-5.  **Get Link:** Once uploaded, hover over the image in Cloudinary, click the **Copy Link** icon, and paste that URL into your JSON files (like the `photo` or `coverImage` field).
+### ⚡ Method A: 1-Click Automatic Media Uploader (Recommended)
+1. Drop your new raw photo files into the appropriate folder inside `raw_images/`:
+   * `raw_images/events/` — for event posters and festival banners.
+   * `raw_images/impact/` — for student welfare projects and campus amenities.
+   * `raw_images/gallery/` — for photo gallery highlights.
+2. In your terminal, run:
+   ```bash
+   npm run upload-media
+   ```
+   *(Or run `npm run upload-media -- --auto-sync` to upload and automatically append entries to `gallery.json`!)*
+3. The script will:
+   * Read your credentials from `.env`.
+   * Automatically optimize and name your photos cleanly under `union/`.
+   * Upload directly to Cloudinary.
+   * Print ready-to-use JSON blocks and clean up the raw folder.
+
+---
+
+### 🌐 Method B: Manual Cloudinary Dashboard Upload
+1. Log into your team's Cloudinary account.
+2. Navigate to the **Media Explorer** and open the `union/` folder.
+3. Click **Upload** and drop your compressed image or PDF.
+4. Hover over the uploaded asset, click **Copy Link**, and paste the URL into your data JSON files (`src/data/members.json`, `events.json`, `gallery.json`, etc.).
 
 ---
 

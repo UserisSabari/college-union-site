@@ -81,19 +81,18 @@ export const UnionMembers = () => {
       <div className="space-y-4">
         {/* Photo & Basic Details */}
         <div className="flex items-center space-x-4 select-none">
-          <div className="w-24 h-24 rounded-full border border-slate-200 dark:border-darkBorder overflow-hidden bg-slate-100 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-3xl">
-            {member.photo ? (
+          <div className="w-24 h-24 rounded-full border border-slate-200 dark:border-darkBorder overflow-hidden bg-slate-100 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-2xl relative">
+            <span className="select-none">{member.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}</span>
+            {member.photo && (
               <img
                 src={member.photo}
                 alt={member.name}
                 loading="lazy"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover absolute inset-0"
                 onError={(e) => {
                   (e.target as HTMLElement).style.display = 'none';
                 }}
               />
-            ) : (
-              member.name.split(' ').map((n) => n[0]).join('')
             )}
           </div>
           <div>
@@ -396,18 +395,17 @@ export const UnionMembers = () => {
 
               {/* Header profile info */}
               <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start select-none">
-                <div className="w-32 h-32 rounded-full border-2 border-crimson overflow-hidden bg-slate-100 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-4xl">
-                  {selectedMember.photo ? (
+                <div className="w-32 h-32 rounded-full border-2 border-crimson overflow-hidden bg-slate-100 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-3xl relative">
+                  <span className="select-none">{selectedMember.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}</span>
+                  {selectedMember.photo && (
                     <img
                       src={selectedMember.photo}
                       alt={selectedMember.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover absolute inset-0"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}
                     />
-                  ) : (
-                    selectedMember.name.split(' ').map((n) => n[0]).join('')
                   )}
                 </div>
                 <div className="text-center sm:text-left space-y-1">

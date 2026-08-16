@@ -52,12 +52,12 @@ const ARCHIVE_YEARS: YearCardData[] = [
 
 export const Archive = () => {
   return (
-    <div className="space-y-12 py-8 relative">
+    <div className="space-y-12 pb-16 relative">
       <SEO title="Union Archive" description="Every year's College Union term is preserved here permanently. Browse past members lists, events, annual reports, magazines, and initiatives history." />
       
       {/* Page Hero */}
-      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-4">
+      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Union Archive — A Living History
           </h1>
@@ -73,7 +73,7 @@ export const Archive = () => {
       </section>
 
       {/* Grid of Year Cards */}
-      <div className="max-w-7xl mx-auto select-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-none">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ARCHIVE_YEARS.map((item) => (
             <div

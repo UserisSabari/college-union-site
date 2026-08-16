@@ -66,9 +66,9 @@
     }
   ],
   "documents": {
-    "report": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/annual_report_24_25.pdf",
-    "magazine": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/magazine_24.pdf",
-    "electionResults": "https://res.cloudinary.com/gec-palakkad/raw/upload/v1/documents/election_notice_24.pdf"
+    "report": "",
+    "magazine": "",
+    "electionResults": ""
   },
   "gallery": [
     "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=400",

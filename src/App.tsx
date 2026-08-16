@@ -19,26 +19,24 @@ function App() {
   return (
     <BrowserRouter>
       <PageWrapper>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/union-members" element={<UnionMembers />} />
-              <Route path="/office-bearers" element={<UnionMembers />} />
-              <Route path="/updates" element={<UnionUpdates />} />
-              <Route path="/news" element={<UnionUpdates />} />
-              <Route path="/initiatives" element={<UnionUpdates />} />
-              <Route path="/events" element={<EventsGallery />} />
-              <Route path="/gallery" element={<EventsGallery />} />
-              <Route path="/student-voice" element={<StudentVoice />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/archive" element={<Archive />} />
-              <Route path="/archive/:year" element={<ArchiveYear />} />
-              <Route path="/developers" element={<Developers />} />
-            </Routes>
-          </Suspense>
-        </div>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/union-members" element={<UnionMembers />} />
+            <Route path="/office-bearers" element={<UnionMembers />} />
+            <Route path="/updates" element={<UnionUpdates />} />
+            <Route path="/news" element={<UnionUpdates />} />
+            <Route path="/initiatives" element={<UnionUpdates />} />
+            <Route path="/events" element={<EventsGallery />} />
+            <Route path="/gallery" element={<EventsGallery />} />
+            <Route path="/student-voice" element={<StudentVoice />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/archive" element={<Archive />} />
+            <Route path="/archive/:year" element={<ArchiveYear />} />
+            <Route path="/developers" element={<Developers />} />
+          </Routes>
+        </Suspense>
       </PageWrapper>
     </BrowserRouter>
   );

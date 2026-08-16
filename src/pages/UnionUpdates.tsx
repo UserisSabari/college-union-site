@@ -71,7 +71,7 @@ export const UnionUpdates = () => {
     isImportant: a.isImportant || false,
   }));
 
-  const mappedInitiatives: UpdateItem[] = (initiativesData as InitiativeItem[]).map((i) => ({
+  const mappedInitiatives: UpdateItem[] = ([...(initiativesData as InitiativeItem[])].reverse()).map((i) => ({
     id: i.id,
     title: i.title,
     body: i.description,

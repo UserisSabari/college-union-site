@@ -24,7 +24,7 @@ const DEVELOPERS = [
 
 export const Developers = () => {
   return (
-    <div className="space-y-12 py-8 select-none">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 py-12 md:py-16 select-none">
       <SEO title="Web Team & Developers" description="Meet the developers and creators of the GEC Palakkad College Union digital office portal." />
 
       <section className="border-l-4 border-crimson pl-6">

@@ -21,11 +21,15 @@ export const Footer = () => {
           {/* Column 1: Logo + Tagline + Address */}
           <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-navy font-display font-bold text-sm tracking-wider">
-                CU
-              </div>
+              <img
+                src="/logo.png"
+                alt="Secular College Union Logo"
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-full object-cover shadow-xs border border-purple-500/30 flex-shrink-0"
+              />
               <span className="font-body font-semibold text-white text-base tracking-tight">
-                College Union
+                Secular College Union
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
