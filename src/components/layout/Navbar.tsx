@@ -198,7 +198,7 @@ export const Navbar = () => {
             {/* Student Voice CTA Button (Desktop) */}
             <Link
               to="/student-voice"
-              className="hidden sm:inline-flex lg:hidden xl:inline-flex items-center justify-center px-4 py-2 bg-crimson hover:bg-opacity-90 text-white font-medium text-sm rounded-button transition-colors focus:outline-none focus:ring-2 focus:ring-crimson focus:ring-offset-2 whitespace-nowrap"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-crimson hover:bg-opacity-90 text-white font-medium text-xs xl:text-sm rounded-button transition-colors focus:outline-none focus:ring-2 focus:ring-crimson focus:ring-offset-2 whitespace-nowrap"
             >
               Student Voice
             </Link>
