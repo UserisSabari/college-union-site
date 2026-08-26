@@ -26,7 +26,7 @@ export const Footer = () => {
                 alt="Secular College Union Logo"
                 width={36}
                 height={36}
-                className="w-9 h-9 rounded-full object-cover shadow-xs border border-purple-500/30 flex-shrink-0"
+                className="w-9 h-9 rounded-full object-cover shadow-xs border border-gold/30 flex-shrink-0"
               />
               <span className="font-body font-semibold text-white text-base tracking-tight">
                 Secular College Union
@@ -106,7 +106,7 @@ export const Footer = () => {
             <div className="flex items-center space-x-3 pt-2">
               {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/secularcollegeunion"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
@@ -118,7 +118,7 @@ export const Footer = () => {
               </a>
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/school/government-engineering-college-sreekrishnapuram"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
@@ -130,7 +130,7 @@ export const Footer = () => {
               </a>
               {/* GitHub */}
               <a
-                href="https://github.com"
+                href="https://github.com/collegeunion-gecpkd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-gold"

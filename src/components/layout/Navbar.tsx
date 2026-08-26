@@ -125,7 +125,7 @@ export const Navbar = () => {
               alt="Secular College Union Logo"
               width={36}
               height={36}
-              className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover shadow-xs border border-purple-500/20 flex-shrink-0"
+              className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover shadow-xs border border-crimson/20 flex-shrink-0"
             />
             <div className="flex flex-col">
               <span className="font-body font-bold text-navy dark:text-white text-xs sm:text-sm md:text-base leading-none tracking-tight whitespace-nowrap">

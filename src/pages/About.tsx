@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
+import Button from '../components/ui/Button';
 import { fadeUp, staggerContainer } from '../animations/variants';
 
 const COLLEGE_HISTORY = [
@@ -80,26 +81,69 @@ export const About = () => {
     <div className="space-y-0 text-textPrimary dark:text-darkText">
       <SEO title="About Us" description="Learn about GEC Palakkad College Union history, core values, constitution, democratic election process, and previous terms." />
       {/* SECTION 1: HERO */}
-      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#17233f] to-slate-900 text-white py-14 md:py-20 select-none border-b border-border/40 dark:border-darkBorder">
+        {/* Ambient background glow effects */}
+        <div className="absolute -top-12 -left-12 w-72 h-72 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-crimson/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="space-y-4"
+            className="flex flex-col md:flex-row md:items-center justify-between gap-6"
           >
-            <motion.h1
-              variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight"
-            >
-              About the College Union
-            </motion.h1>
-            {/* Breadcrumb */}
-            <motion.nav variants={fadeUp} className="text-xs sm:text-sm font-body font-medium text-slate-400">
-              <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-              <span className="mx-2">&gt;</span>
-              <span className="text-slate-200">About</span>
-            </motion.nav>
+            <div className="space-y-4 max-w-3xl">
+              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-2xs font-semibold uppercase tracking-wider text-gold">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                History & Governance
+              </motion.div>
+              <motion.h1
+                variants={fadeUp}
+                className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight leading-tight"
+              >
+                About the <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-gold">College Union</span>
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="text-slate-300 text-xs sm:text-sm font-body leading-relaxed max-w-2xl"
+              >
+                The secular, democratic student government uniting and empowering students of Government Engineering College, Palakkad since 2001.
+              </motion.p>
+              {/* Breadcrumb */}
+              <motion.nav variants={fadeUp} className="text-xs sm:text-sm font-body font-medium text-slate-400 pt-1">
+                <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+                <span className="mx-2">&gt;</span>
+                <span className="text-slate-200">About</span>
+              </motion.nav>
+            </div>
+
+            {/* Quick stats floating card */}
+            <motion.div variants={fadeUp} className="hidden lg:flex flex-col gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-card shadow-lg min-w-[240px]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-crimson/20 flex items-center justify-center text-crimson">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white font-body">Founded in 2001</div>
+                  <div className="text-4xs text-slate-400">25+ Years of Leadership</div>
+                </div>
+              </div>
+              <div className="h-px bg-white/10" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white font-body">KTU Affiliated</div>
+                  <div className="text-4xs text-slate-400">Democratic Election System</div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -141,7 +185,7 @@ export const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* Vision - Navy Border */}
-            <div className="bg-white dark:bg-darkCard border-t-4 border-navy rounded-card p-8 hover:shadow-subtle transition-all">
+            <div className="bg-white dark:bg-darkCard border-t-4 border-navy rounded-card p-8 hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <h3 className="font-display font-bold text-xl text-navy dark:text-white mb-6">Our Vision</h3>
               <p className="text-textSecondary dark:text-slate-400 text-sm leading-relaxed mb-6">
                 To cultivate a democratic, inclusive, and vibrant student community that values secular ethics, intellectual growth, and progressive dialogue at GEC Palakkad.
@@ -157,7 +201,7 @@ export const About = () => {
             </div>
 
             {/* Mission - Crimson Border */}
-            <div className="bg-white dark:bg-darkCard border-t-4 border-crimson rounded-card p-8 hover:shadow-subtle transition-all">
+            <div className="bg-white dark:bg-darkCard border-t-4 border-crimson rounded-card p-8 hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <h3 className="font-display font-bold text-xl text-navy dark:text-white mb-6">Our Mission</h3>
               <p className="text-textSecondary dark:text-slate-400 text-sm leading-relaxed mb-6">
                 To serve as a reliable bridge between students and administration, actively supporting student welfare, academic freedom, co-curricular talents, and infrastructure updates.
@@ -173,7 +217,7 @@ export const About = () => {
             </div>
 
             {/* Objectives - Gold Border */}
-            <div className="bg-white dark:bg-darkCard border-t-4 border-gold rounded-card p-8 hover:shadow-subtle transition-all">
+            <div className="bg-white dark:bg-darkCard border-t-4 border-gold rounded-card p-8 hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <h3 className="font-display font-bold text-xl text-navy dark:text-white mb-6">Our Objectives</h3>
               <p className="text-textSecondary dark:text-slate-400 text-sm leading-relaxed mb-6">
                 Ensuring complete student engagement through organized leadership boards, support desks, publication archives, and transparent, scheduled general bodies.
@@ -213,7 +257,7 @@ export const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {ELECTION_STEPS.map((step) => (
-              <div key={step.step} className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card relative hover:shadow-subtle transition-all">
+              <div key={step.step} className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card relative hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
                 <span className="absolute top-4 right-4 font-display font-extrabold text-3xl text-gold/30 dark:text-gold/10">
                   {step.step}
                 </span>
@@ -305,7 +349,7 @@ export const About = () => {
               {PAST_UNIONS.map((union, index) => (
                 <div
                   key={index}
-                  className="w-56 bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 flex flex-col justify-between hover:shadow-subtle hover:border-slate-300 dark:hover:border-slate-600 transition-all select-none"
+                  className="w-56 bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 select-none"
                 >
                   <span className="font-display font-extrabold text-gold text-lg">
                     {union.year}
@@ -321,6 +365,29 @@ export const About = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8: BOTTOM CTA */}
+      <section className="py-16 bg-surface dark:bg-darkSurface border-t border-border dark:border-darkBorder">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 select-none">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-crimson/10 border border-crimson/20 rounded-full text-2xs font-semibold uppercase tracking-wider text-crimson">
+            Active Term 2026–27
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-navy dark:text-white">
+            Driven by the Students, For the Students
+          </h2>
+          <p className="text-textSecondary dark:text-slate-400 text-sm font-body max-w-xl mx-auto leading-relaxed">
+            Discover the student leaders serving across executive, arts, sports, and department roles this academic term.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Button to="/union-members" variant="primary" size="md">
+              Meet Current Union
+            </Button>
+            <Button to="/student-voice" variant="outline" size="md">
+              Share Your Feedback
+            </Button>
           </div>
         </div>
       </section>

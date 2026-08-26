@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
@@ -11,10 +12,24 @@ type DeptType = typeof DEPARTMENTS[number];
 export const UnionMembers = () => {
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
   const [activeTab, setActiveTab] = useState<DeptType>('CSE');
+  const [searchQuery, setSearchQuery] = useState('');
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Filter members for the active term 2026-27
   const activeMembers = (membersData as Member[]).filter((m) => m.year === '2026-27');
+
+  // Search filtered results if searchQuery is present
+  const searchedMembers = searchQuery.trim()
+    ? activeMembers.filter((m) => {
+        const q = searchQuery.toLowerCase();
+        return (
+          m.name.toLowerCase().includes(q) ||
+          m.position.toLowerCase().includes(q) ||
+          m.department.toLowerCase().includes(q) ||
+          (m.bio && m.bio.toLowerCase().includes(q))
+        );
+      })
+    : null;
 
   // Executive Committee members: officeBearer, generalCaptain, ladiesRep, scstRep
   const executiveCommittee = activeMembers.filter(
@@ -41,11 +56,8 @@ export const UnionMembers = () => {
 
   // Active UG reps in tab
   const activeUgReps = ugReps.filter((m) => m.department === activeTab);
-  const activePgReps = pgReps.filter(
-  (m) => m.department === activeTab
-);
 
-  // Handle click outside modal to close
+  // Handle click outside & Escape key for modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -57,8 +69,18 @@ export const UnionMembers = () => {
       }
     };
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && selectedMember) {
+        setSelectedMember(null);
+      }
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [selectedMember]);
 
   // Disable background scrolling when modal is open
@@ -76,7 +98,7 @@ export const UnionMembers = () => {
   // Member Card Component (Reusable for Executives & Reps)
   const MemberCard = ({ member }: { member: Member }) => (
     <div
-      className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 flex flex-col justify-between hover:shadow-md transition-all duration-300"
+      className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300"
     >
       <div className="space-y-4">
         {/* Photo & Basic Details */}
@@ -124,7 +146,7 @@ export const UnionMembers = () => {
         </Button>
         {/* Mini Socials */}
         <div className="flex items-center space-x-2 flex-shrink-0">
-          {member.socials.instagram && (
+          {member.socials?.instagram && (
             <a
               href={`https://instagram.com/${member.socials.instagram}`}
               target="_blank"
@@ -137,7 +159,7 @@ export const UnionMembers = () => {
               </svg>
             </a>
           )}
-          {member.socials.linkedin && (
+          {member.socials?.linkedin && (
             <a
               href={`https://linkedin.com/in/${member.socials.linkedin}`}
               target="_blank"
@@ -150,7 +172,7 @@ export const UnionMembers = () => {
               </svg>
             </a>
           )}
-          {member.socials.github && (
+          {member.socials?.github && (
             <a
               href={`https://github.com/${member.socials.github}`}
               target="_blank"
@@ -169,65 +191,156 @@ export const UnionMembers = () => {
   );
 
   return (
-    <div className="space-y-16 py-8">
+    <div className="space-y-12 py-8">
       <SEO title="Union Members" description="Meet the executive committee and representatives of the Secular College Union at GEC Palakkad." />
 
-      {/* Page Hero */}
-      <section className="border-l-4 border-crimson pl-6 select-none">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-navy dark:text-white">
-          Union Members — 2026–27
-        </h1>
-        <p className="text-textSecondary dark:text-slate-400 text-sm sm:text-base font-body mt-2 max-w-2xl leading-relaxed">
-          The general executive council and student representatives of the Secular College Union, Government Engineering College, Palakkad.
-        </p>
-      </section>
+      {/* Page Hero with rich gradient and ambient glow */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#192646] to-slate-900 text-white py-14 md:py-20 select-none border-b border-border/40 dark:border-darkBorder rounded-b-card shadow-md">
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-crimson/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-10 w-72 h-72 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Chairperson Feature Card */}
-      {chairperson && (
-        <section className="bg-[#F0F2F8] dark:bg-darkCard border-l-4 border-navy dark:border-crimson rounded-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start shadow-sm select-none">
-          <div className="w-40 h-40 rounded-full border-4 border-navy dark:border-crimson overflow-hidden bg-slate-200 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-5xl">
-            {chairperson.photo ? (
-              <img
-                src={chairperson.photo}
-                alt={chairperson.name}
-                loading="lazy"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
-              />
-            ) : (
-              chairperson.name.split(' ').map((n) => n[0]).join('')
-            )}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-2xs font-semibold uppercase tracking-wider text-gold">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              Elected Council 2026–27
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
+              Union <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-crimson">Leadership</span>
+            </h1>
+            <p className="text-slate-300 text-xs sm:text-sm font-body leading-relaxed">
+              The executive council, academic department representatives, and campus office bearers serving GEC Palakkad.
+            </p>
+            {/* Breadcrumb */}
+            <nav className="text-xs sm:text-sm font-body font-medium text-slate-400 pt-1">
+              <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+              <span className="mx-2">&gt;</span>
+              <span className="text-slate-200">Union Members</span>
+            </nav>
           </div>
 
-          <div className="space-y-4 flex-grow text-center md:text-left">
-            <div>
-              <span className="px-3 py-1 bg-navy dark:bg-crimson text-white text-xs font-semibold rounded-full uppercase tracking-wider">
-                {chairperson.position}
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-navy dark:text-white mt-2">
-                {chairperson.name}
+          {/* Quick stats pill */}
+          <div className="flex flex-wrap md:flex-col gap-3">
+            <div className="px-4 py-2.5 bg-white/5 border border-white/10 backdrop-blur-md rounded-card text-xs font-semibold text-white flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-crimson" />
+              <span>21 Total Members</span>
+            </div>
+            <div className="px-4 py-2.5 bg-white/5 border border-white/10 backdrop-blur-md rounded-card text-xs font-semibold text-white flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-gold" />
+              <span>6 Academic Departments</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Member Search Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-xl mx-auto">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search by name, position, or department (e.g. Ajmal, CSE, Secretary)..."
+            className="w-full pl-11 pr-10 py-3 rounded-full border border-border dark:border-darkBorder bg-white dark:bg-darkCard text-textPrimary dark:text-white placeholder-textSecondary dark:placeholder-slate-400 text-sm font-body focus:outline-none focus:ring-2 focus:ring-crimson shadow-xs transition-all"
+          />
+          <svg className="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-navy dark:hover:text-white"
+              aria-label="Clear search"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        {/* Search Results Display if Search is Active */}
+        {searchedMembers ? (
+          <section className="space-y-6">
+            <div className="flex justify-between items-center select-none">
+              <h2 className="font-display font-bold text-xl text-navy dark:text-white">
+                Search Results ({searchedMembers.length})
               </h2>
-              <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm font-medium mt-1">
-                Department of {chairperson.department} <span className="text-slate-300 dark:text-slate-600 mx-1.5">|</span> Semester {chairperson.semester}
-              </p>
+              <button
+                onClick={() => setSearchQuery('')}
+                className="text-xs font-semibold text-crimson hover:underline"
+              >
+                Clear Search
+              </button>
             </div>
-
-            <p className="text-textSecondary dark:text-slate-300 text-sm sm:text-base italic leading-relaxed font-body border-l-2 border-slate-300 dark:border-darkBorder pl-4 py-1 max-w-2xl mx-auto md:mx-0">
-              "{chairperson.vision}"
-            </p>
-
-            <div className="space-y-2">
-              <h3 className="font-body font-bold text-xs uppercase tracking-wider text-navy dark:text-white">
-                Key Responsibilities:
-              </h3>
-              <ul className="space-y-1.5 text-xs text-textSecondary dark:text-slate-400 list-disc list-inside md:list-outside md:pl-4 max-w-2xl">
-                {chairperson.responsibilities.map((resp, index) => (
-                  <li key={index}>{resp}</li>
+            {searchedMembers.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {searchedMembers.map((member) => (
+                  <MemberCard key={member.id} member={member} />
                 ))}
-              </ul>
-            </div>
+              </div>
+            ) : (
+              <div className="py-16 text-center border border-dashed border-border dark:border-darkBorder rounded-card space-y-3">
+                <svg className="w-10 h-10 text-slate-300 dark:text-slate-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <h3 className="font-display font-bold text-navy dark:text-white text-base">No Members Found</h3>
+                <p className="text-xs text-textSecondary dark:text-slate-400 max-w-sm mx-auto font-body">
+                  No union representatives match "{searchQuery}". Try searching for another name or department.
+                </p>
+              </div>
+            )}
+          </section>
+        ) : (
+          <>
+            {/* Chairperson Feature Card */}
+            {chairperson && (
+              <section className="bg-[#F0F2F8] dark:bg-darkCard border-l-4 border-navy dark:border-crimson rounded-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start shadow-sm select-none">
+                <div className="w-40 h-40 rounded-full border-4 border-navy dark:border-crimson overflow-hidden bg-slate-200 dark:bg-darkBg flex-shrink-0 flex items-center justify-center font-display font-extrabold text-navy dark:text-white text-5xl">
+                  {chairperson.photo ? (
+                    <img
+                      src={chairperson.photo}
+                      alt={chairperson.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    chairperson.name.split(' ').map((n) => n[0]).join('')
+                  )}
+                </div>
+
+                <div className="space-y-4 flex-grow text-center md:text-left">
+                  <div>
+                    <span className="px-3 py-1 bg-navy dark:bg-crimson text-white text-xs font-semibold rounded-full uppercase tracking-wider">
+                      {chairperson.position}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-display font-bold text-navy dark:text-white mt-2">
+                      {chairperson.name}
+                    </h2>
+                    <p className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm font-medium mt-1">
+                      Department of {chairperson.department} <span className="text-slate-300 dark:text-slate-600 mx-1.5">|</span> Semester {chairperson.semester}
+                    </p>
+                  </div>
+
+                  <p className="text-textSecondary dark:text-slate-300 text-sm sm:text-base italic leading-relaxed font-body border-l-2 border-slate-300 dark:border-darkBorder pl-4 py-1 max-w-2xl mx-auto md:mx-0">
+                    "{chairperson.vision}"
+                  </p>
+
+                  <div className="space-y-2">
+                    <h3 className="font-body font-bold text-xs uppercase tracking-wider text-navy dark:text-white">
+                      Key Responsibilities:
+                    </h3>
+                    <ul className="space-y-1.5 text-xs text-textSecondary dark:text-slate-400 list-disc list-inside md:list-outside md:pl-4 max-w-2xl">
+                      {chairperson.responsibilities.map((resp, index) => (
+                        <li key={index}>{resp}</li>
+                      ))}
+                    </ul>
+                  </div>
 
             {/* Social and Contact Links */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4 border-t border-slate-200 dark:border-darkBorder">
@@ -306,27 +419,37 @@ export const UnionMembers = () => {
               <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body mb-2">Academic Branches</p>
               <h2 className="text-2xl font-display font-bold text-navy dark:text-white">Undergraduate Representatives</h2>
             </div>
-            {/* Scrollable Tabs */}
+            {/* Scrollable Tabs with count badges */}
             <div className="flex space-x-1 overflow-x-auto pb-1 sm:pb-0 scrollbar-thin">
-              {DEPARTMENTS.map((dept) => (
-                <button
-                  key={dept}
-                  onClick={() => setActiveTab(dept)}
-                  className={`relative px-4 py-2 text-xs sm:text-sm font-body font-semibold transition-colors focus:outline-none rounded-button ${
-                    activeTab === dept ? 'text-crimson bg-surface dark:bg-darkCard' : 'text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white'
-                  }`}
-                >
-                  {dept}
-                  {activeTab === dept && (
-                    <motion.div
-                      layoutId="activeTabUnderline"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-crimson"
-                      initial={false}
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </button>
-              ))}
+              {DEPARTMENTS.map((dept) => {
+                const count = ugReps.filter((m) => m.department === dept).length;
+                return (
+                  <button
+                    key={dept}
+                    onClick={() => setActiveTab(dept)}
+                    className={`relative px-4 py-2 text-xs sm:text-sm font-body font-semibold transition-colors focus:outline-none rounded-button flex items-center gap-1.5 whitespace-nowrap ${
+                      activeTab === dept ? 'text-crimson bg-surface dark:bg-darkCard' : 'text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white'
+                    }`}
+                  >
+                    {dept}
+                    <span className={`inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-bold leading-none ${
+                      activeTab === dept
+                        ? 'bg-crimson text-white'
+                        : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
+                    }`}>
+                      {count}
+                    </span>
+                    {activeTab === dept && (
+                      <motion.div
+                        layoutId="activeTabUnderline"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-crimson"
+                        initial={false}
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -354,21 +477,27 @@ export const UnionMembers = () => {
 
       {/* PG Representatives Section */}
       <section className="space-y-6 pt-8 border-t border-border dark:border-darkBorder">
-        <h3 className="font-display font-bold text-xl text-navy dark:text-white select-none mb-6">
-          Postgraduate Representatives
-        </h3>
+        <div className="space-y-1">
+          <p className="text-xs uppercase tracking-widest text-crimson font-bold font-body">PG Council</p>
+          <h3 className="font-display font-bold text-xl text-navy dark:text-white select-none">
+            Postgraduate Representatives
+          </h3>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activePgReps.length > 0 ? (
-  activePgReps.map((rep) => (
-    <MemberCard key={rep.id} member={rep} />
-  ))
-) : (
+          {pgReps.length > 0 ? (
+            pgReps.map((rep) => (
+              <MemberCard key={rep.id} member={rep} />
+            ))
+          ) : (
             <div className="col-span-full py-10 text-center text-textSecondary dark:text-slate-400 font-body text-sm select-none border border-dashed border-border dark:border-darkBorder rounded-card">
               No postgraduate representatives listed yet.
             </div>
           )}
         </div>
       </section>
+          </>
+        )}
+      </div>
 
       {/* Profile Details Modal */}
       <AnimatePresence>
@@ -452,7 +581,7 @@ export const UnionMembers = () => {
 
               {/* Social and Contact Info */}
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4 border-t border-border dark:border-darkBorder">
-                {selectedMember.contact.email && (
+                {selectedMember.contact?.email && (
                   <a
                     href={`mailto:${selectedMember.contact.email}`}
                     className="text-xs text-textSecondary dark:text-slate-400 hover:text-crimson transition-colors flex items-center"
@@ -463,7 +592,7 @@ export const UnionMembers = () => {
                     {selectedMember.contact.email}
                   </a>
                 )}
-                {selectedMember.contact.phone && (
+                {selectedMember.contact?.phone && (
                   <a
                     href={`tel:${selectedMember.contact.phone}`}
                     className="text-xs text-textSecondary dark:text-slate-400 hover:text-crimson transition-colors flex items-center"
@@ -475,7 +604,7 @@ export const UnionMembers = () => {
                   </a>
                 )}
                 <div className="flex items-center space-x-3">
-                  {selectedMember.socials.instagram && (
+                  {selectedMember.socials?.instagram && (
                     <a
                       href={`https://instagram.com/${selectedMember.socials.instagram}`}
                       target="_blank"
@@ -488,7 +617,7 @@ export const UnionMembers = () => {
                       </svg>
                     </a>
                   )}
-                  {selectedMember.socials.linkedin && (
+                  {selectedMember.socials?.linkedin && (
                     <a
                       href={`https://linkedin.com/in/${selectedMember.socials.linkedin}`}
                       target="_blank"
@@ -501,7 +630,7 @@ export const UnionMembers = () => {
                       </svg>
                     </a>
                   )}
-                  {selectedMember.socials.github && (
+                  {selectedMember.socials?.github && (
                     <a
                       href={`https://github.com/${selectedMember.socials.github}`}
                       target="_blank"

@@ -51,7 +51,7 @@ export const StudentVoice = () => {
 
   // Modern SVG Icons Mapper
   const getCategoryIcon = (category: CategoryType, isActive: boolean) => {
-    const strokeColor = isActive ? 'stroke-crimson' : 'stroke-slate-400 group-hover:stroke-navy dark:group-hover:stroke-white transition-colors';
+    const strokeColor = isActive ? 'stroke-white' : 'stroke-slate-400 group-hover:stroke-crimson dark:group-hover:stroke-white transition-colors';
     switch (category) {
       case 'suggestion':
         return (
@@ -186,19 +186,27 @@ export const StudentVoice = () => {
                         key={cat}
                         type="button"
                         onClick={() => setSelectedCategory(cat)}
-                        className={`p-6 border rounded-card flex flex-col items-center justify-center space-y-3 text-center transition-all duration-300 relative overflow-hidden group ${
+                        className={`p-6 border-2 rounded-card flex flex-col items-center justify-center space-y-3 text-center transition-all duration-200 relative overflow-hidden group ${
                           isActive
-                            ? 'border-crimson bg-crimson/5 text-crimson shadow-sm scale-102 font-bold'
-                            : 'border-border dark:border-darkBorder bg-white dark:bg-darkCard text-textSecondary dark:text-slate-400 hover:border-navy dark:hover:border-white hover:text-navy dark:hover:text-white hover:shadow-xs hover:scale-101'
+                            ? 'border-crimson bg-crimson text-white shadow-card scale-[1.02]'
+                            : 'border-border dark:border-darkBorder bg-white dark:bg-darkCard text-textSecondary dark:text-slate-400 hover:border-crimson/50 dark:hover:border-crimson/50 hover:shadow-card hover:-translate-y-0.5'
                         }`}
                       >
-                        {isActive && (
-                          <div className="absolute top-0 right-0 w-3 h-3 bg-crimson rounded-bl" />
-                        )}
-                        <span className="transition-transform duration-300 group-hover:scale-110">
+                        <span className="transition-transform duration-200 group-hover:scale-110">
                           {getCategoryIcon(cat, isActive)}
                         </span>
-                        <span className="text-xs font-body font-extrabold">{label}</span>
+                        <span className={`text-xs font-body font-extrabold ${isActive ? 'text-white' : ''}`}>{label}</span>
+                        {isActive && (
+                          <motion.div
+                            layoutId="categoryActiveCheck"
+                            className="absolute top-2 right-2 w-4 h-4 bg-white/20 rounded-full flex items-center justify-center"
+                            initial={false}
+                          >
+                            <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </motion.div>
+                        )}
                       </button>
                     );
                   })}

@@ -1,7 +1,9 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import PageWrapper from './components/layout/PageWrapper';
 import PageLoader from './components/ui/PageLoader';
+import ScrollToTop from './components/layout/ScrollToTop';
+import { AnimatePresence, motion } from 'framer-motion';
 
 // Route-based code splitting
 const Home = React.lazy(() => import('./pages/Home'));
@@ -15,12 +17,27 @@ const Archive = React.lazy(() => import('./pages/Archive'));
 const ArchiveYear = React.lazy(() => import('./pages/ArchiveYear'));
 const Developers = React.lazy(() => import('./pages/Developers'));
 
-function App() {
+// Page transition wrapper — fades each route in from below
+const pageVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.28, ease: 'easeOut' as const } },
+  exit: { opacity: 0, y: -8, transition: { duration: 0.18, ease: 'easeIn' as const } },
+};
+
+function AnimatedRoutes() {
+  const location = useLocation();
   return (
-    <BrowserRouter>
-      <PageWrapper>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={location.pathname}
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="w-full"
+      >
         <Suspense fallback={<PageLoader />}>
-          <Routes>
+          <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/union-members" element={<UnionMembers />} />
@@ -37,10 +54,20 @@ function App() {
             <Route path="/developers" element={<Developers />} />
           </Routes>
         </Suspense>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <PageWrapper>
+        <AnimatedRoutes />
       </PageWrapper>
     </BrowserRouter>
   );
 }
 
 export default App;
-

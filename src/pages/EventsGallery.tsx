@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
@@ -42,6 +42,7 @@ export const EventsGallery = () => {
   const [activeFilterGroup, setActiveFilterGroup] = useState<'all' | 'event' | 'year'>('all');
   const [activeFilterValue, setActiveFilterValue] = useState<string>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   // Group and sort events
   const allEvents = eventsData as Event[];
@@ -65,8 +66,12 @@ export const EventsGallery = () => {
   const featuredEvent = activeEvents[0];
   const remainingEvents = activeEvents.slice(1);
 
-  // Gallery photos
-  const photos = galleryData as PhotoItem[];
+  // Gallery photos - sorted latest first by date
+  const photos = [...(galleryData as PhotoItem[])].sort((a, b) => {
+    const timeA = new Date(a.date).getTime() || 0;
+    const timeB = new Date(b.date).getTime() || 0;
+    return timeB - timeA;
+  });
   const uniqueEvents = Array.from(new Set(photos.map((p) => p.eventName)));
   const uniqueYears = Array.from(new Set(photos.map((p) => p.year)));
 
@@ -82,7 +87,7 @@ export const EventsGallery = () => {
     setActiveFilterValue('all');
   }, [activeFilterGroup]);
 
-  // Click outside event modal
+  // Click outside & Escape key for event modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -93,8 +98,19 @@ export const EventsGallery = () => {
         setSelectedEvent(null);
       }
     };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && selectedEvent) {
+        setSelectedEvent(null);
+      }
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [selectedEvent]);
 
   // Lightbox keyboard controls
@@ -115,6 +131,25 @@ export const EventsGallery = () => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxIndex, filteredPhotos]);
+
+  // Touch swipe handler for lightbox
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (touchStartX.current === null || lightboxIndex === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) < 50) return; // ignore tiny taps
+    if (dx < 0) {
+      // swipe left → next
+      setLightboxIndex((prev) => (prev !== null && prev < filteredPhotos.length - 1 ? prev + 1 : 0));
+    } else {
+      // swipe right → prev
+      setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : filteredPhotos.length - 1));
+    }
+    touchStartX.current = null;
+  }, [lightboxIndex, filteredPhotos.length]);
 
   // Prevent scroll on modals
   useEffect(() => {
@@ -178,19 +213,25 @@ export const EventsGallery = () => {
           src={src}
           alt={alt}
           loading="lazy"
-          className={`relative z-10 max-h-full max-w-full w-auto h-auto ${className} transition-transform duration-300`}
+          className={`relative z-10 max-h-full max-w-full w-auto h-auto transition-transform duration-300 ${className}`}
           onError={() => setImageError(true)}
         />
       </div>
     );
   };
 
-  const GalleryImage = ({ photo, onClick }: { photo: PhotoItem; onClick: () => void }) => {
+  const GalleryImage = ({
+    photo,
+    onClick,
+  }: {
+    photo: PhotoItem;
+    onClick: () => void;
+  }) => {
     const [loaded, setLoaded] = useState(false);
     return (
       <div
         onClick={onClick}
-        className="relative aspect-[4/5] rounded-card overflow-hidden group cursor-pointer border border-border dark:border-darkBorder bg-slate-100 dark:bg-darkCard select-none shadow-sm hover:shadow-md transition-all duration-300"
+        className="relative overflow-hidden rounded-card group cursor-pointer border border-border dark:border-darkBorder bg-slate-100 dark:bg-darkCard select-none shadow-sm hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300"
       >
         {!loaded && (
           <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 animate-pulse" />
@@ -199,7 +240,7 @@ export const EventsGallery = () => {
           src={photo.src}
           alt={photo.eventName}
           loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setLoaded(true)}
           onError={() => setLoaded(true)}
         />
@@ -216,17 +257,42 @@ export const EventsGallery = () => {
     <div className="space-y-12 py-8 relative">
       <SEO title="Events & Gallery" description="View campus events, programs calendar schedule, and photos gallery archive of Secular College Union GEC Palakkad." />
 
-      {/* Page Hero */}
-      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
-            Events & Gallery
-          </h1>
-          <nav className="text-xs sm:text-sm font-body font-medium text-slate-400">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span className="mx-2">&gt;</span>
-            <span className="text-slate-200">Events & Gallery</span>
-          </nav>
+      {/* Page Hero with festival / celebration ambient glow */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#1c213d] to-slate-900 text-white py-14 md:py-20 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 border-b border-border/40 dark:border-darkBorder rounded-b-card shadow-md">
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-gold/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-crimson/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-2xs font-semibold uppercase tracking-wider text-gold">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              Campus Celebrations & Schedule
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
+              Events & <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-gold">Photo Gallery</span>
+            </h1>
+            <p className="text-slate-300 text-xs sm:text-sm font-body leading-relaxed">
+              Explore upcoming fest dates, sports tournaments, technical symposiums, and visual archives of moments from GEC Palakkad.
+            </p>
+            <nav className="text-xs sm:text-sm font-body font-medium text-slate-400 pt-1">
+              <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+              <span className="mx-2">&gt;</span>
+              <span className="text-slate-200">Events & Gallery</span>
+            </nav>
+          </div>
+
+          {/* Highlights stat card */}
+          <div className="hidden lg:flex flex-col gap-2.5 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-card min-w-[220px]">
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-2xs text-slate-300 font-body uppercase tracking-wider font-semibold">Active Programs:</span>
+              <span className="text-sm font-bold text-gold font-display">{allEvents.length} Events</span>
+            </div>
+            <div className="h-px bg-white/10" />
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-2xs text-slate-300 font-body uppercase tracking-wider font-semibold">Moments Archived:</span>
+              <span className="text-sm font-bold text-crimson font-display">{photos.length} Photos</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -277,21 +343,21 @@ export const EventsGallery = () => {
           <div className="max-w-7xl mx-auto space-y-12">
             {/* Featured Event Card */}
             {featuredEvent && (
-              <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm flex flex-col lg:flex-row hover:shadow-subtle transition-all duration-300">
-                <div className="lg:w-2/5 aspect-[4/5] max-h-[520px] relative select-none">
+              <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm flex flex-col lg:flex-row hover:shadow-card dark:hover:border-slate-700 transition-all duration-300">
+                <div className="lg:w-2/5 aspect-[16/10] sm:aspect-[4/3] lg:aspect-auto min-h-[260px] relative select-none">
                   <EventCoverImage src={featuredEvent.coverImage} alt={featuredEvent.title} />
-                  <div className="absolute top-4 left-4 bg-navy text-white px-3.5 py-1.5 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
+                  <div className="absolute top-4 left-4 bg-navy/95 backdrop-blur-xs border border-white/10 text-white px-3.5 py-1.5 rounded-card flex flex-col items-center shadow font-display font-extrabold select-none z-20">
                     <span className="text-lg leading-none">{getDayMonth(featuredEvent.date).day}</span>
-                    <span className="text-[10px] uppercase tracking-wider leading-none mt-1">{getDayMonth(featuredEvent.date).month}</span>
+                    <span className="text-[10px] uppercase tracking-wider leading-none mt-1 text-gold">{getDayMonth(featuredEvent.date).month}</span>
                   </div>
                 </div>
-                <div className="lg:w-3/5 p-6 md:p-10 flex flex-col justify-between space-y-6">
+                <div className="lg:w-3/5 p-6 md:p-8 flex flex-col justify-between space-y-6">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3 select-none">
-                      <span className="px-2.5 py-0.5 bg-crimson/10 dark:bg-crimson/20 text-crimson text-3xs font-semibold rounded-full uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 bg-crimson/10 dark:bg-crimson/20 text-crimson text-2xs font-semibold rounded-full uppercase tracking-wider">
                         Featured Event
                       </span>
-                      <span className="text-3xs text-textSecondary dark:text-slate-400 font-medium">
+                      <span className="text-2xs text-textSecondary dark:text-slate-400 font-medium">
                         Venue: {featuredEvent.venue}
                       </span>
                     </div>
@@ -302,12 +368,12 @@ export const EventsGallery = () => {
                       {featuredEvent.description}
                     </p>
                   </div>
-                  <div className="flex flex-wrap gap-4 pt-4 border-t border-border dark:border-darkBorder select-none">
-                    <Button onClick={() => setSelectedEvent(featuredEvent)}>
+                  <div className="flex flex-wrap gap-3 pt-4 border-t border-border dark:border-darkBorder select-none">
+                    <Button onClick={() => setSelectedEvent(featuredEvent)} size="sm">
                       Event Details
                     </Button>
                     {featuredEvent.registrationLink && (
-                      <Button href={featuredEvent.registrationLink} variant="outline">
+                      <Button href={featuredEvent.registrationLink} variant="outline" size="sm">
                         Register Now
                       </Button>
                     )}
@@ -322,43 +388,52 @@ export const EventsGallery = () => {
                 {remainingEvents.map((event) => (
                   <div
                     key={event.id}
-                    className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
+                    className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden shadow-sm hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between"
                   >
-                    <div className="aspect-[4/5] relative select-none">
+                    <div className="aspect-[16/10] relative select-none">
                       <EventCoverImage src={event.coverImage} alt={event.title} />
-                      <div className="absolute top-4 left-4 bg-navy text-white px-2.5 py-1 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
+                      <div className="absolute top-3 left-3 bg-navy/95 backdrop-blur-xs border border-white/10 text-white px-2.5 py-1 rounded flex flex-col items-center shadow font-display font-extrabold select-none z-20">
                         <span className="text-sm leading-none">{getDayMonth(event.date).day}</span>
-                        <span className="text-[8px] uppercase tracking-wider leading-none mt-0.5">{getDayMonth(event.date).month}</span>
+                        <span className="text-[8px] uppercase tracking-wider leading-none mt-0.5 text-gold">{getDayMonth(event.date).month}</span>
                       </div>
                     </div>
                     <div className="p-5 flex-grow flex flex-col justify-between space-y-4">
                       <div className="space-y-2">
-                        <p className="text-4xs text-textSecondary dark:text-slate-400 uppercase tracking-widest font-semibold font-body select-none">
-                          {event.category} • {event.venue}
-                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-2xs text-crimson font-bold uppercase tracking-wider">
+                            {event.category}
+                          </span>
+                          <span className="text-2xs text-textSecondary dark:text-slate-400 font-medium truncate max-w-[140px]">
+                            {event.venue}
+                          </span>
+                        </div>
                         <h3 className="font-display font-bold text-navy dark:text-white text-base leading-snug line-clamp-2">
                           {event.title}
                         </h3>
-                        <p className="text-textSecondary dark:text-slate-300 text-xs font-body line-clamp-3">
+                        <p className="text-textSecondary dark:text-slate-300 text-xs font-body line-clamp-2">
                           {event.description}
                         </p>
                       </div>
-                      <div className="flex items-center space-x-3 pt-3 border-t border-border dark:border-darkBorder select-none">
+                      <div className="flex items-center justify-between pt-3 border-t border-border dark:border-darkBorder select-none gap-2">
                         <button
                           onClick={() => setSelectedEvent(event)}
-                          className="text-xs font-semibold text-crimson hover:text-navy dark:hover:text-white transition-colors"
+                          className="px-3 py-1.5 rounded-button text-xs font-semibold border border-border dark:border-darkBorder text-navy dark:text-white hover:border-crimson hover:text-crimson transition-colors"
                         >
                           View Details
                         </button>
-                        {event.registrationLink && (
+                        {event.registrationLink ? (
                           <a
                             href={event.registrationLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs font-semibold text-navy dark:text-white hover:text-crimson transition-colors"
+                            className="px-3 py-1.5 rounded-button text-xs font-semibold bg-crimson text-white hover:bg-crimson/90 transition-colors"
                           >
                             Register
                           </a>
+                        ) : (
+                          <span className="text-2xs text-slate-400 dark:text-slate-500 font-medium">
+                            No reg. required
+                          </span>
                         )}
                       </div>
                     </div>
@@ -435,13 +510,15 @@ export const EventsGallery = () => {
           {/* Photo Grid */}
           <div className="max-w-7xl mx-auto">
             {filteredPhotos.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+              /* CSS Masonry Gallery Grid */
+              <div
+                className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-0"
+                style={{ columnGap: '1rem' }}
+              >
                 {filteredPhotos.map((photo, index) => (
-                  <GalleryImage
-                    key={photo.id}
-                    photo={photo}
-                    onClick={() => setLightboxIndex(index)}
-                  />
+                  <div key={photo.id} className="break-inside-avoid mb-4">
+                    <GalleryImage photo={photo} onClick={() => setLightboxIndex(index)} />
+                  </div>
                 ))}
               </div>
             ) : (
@@ -525,7 +602,11 @@ export const EventsGallery = () => {
       {/* Gallery Lightbox Modal */}
       <AnimatePresence>
         {lightboxIndex !== null && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-95 flex flex-col justify-between p-4">
+          <div
+            className="fixed inset-0 z-50 bg-black bg-opacity-95 flex flex-col justify-between p-4"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             {/* Top Toolbar */}
             <div className="flex justify-between items-center text-white select-none">
               <div className="text-xs font-body font-medium">

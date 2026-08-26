@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const DEVELOPERS = [
@@ -24,17 +25,34 @@ const DEVELOPERS = [
 
 export const Developers = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 py-12 md:py-16 select-none">
+    <div className="space-y-12 py-8 select-none">
       <SEO title="Web Team & Developers" description="Meet the developers and creators of the GEC Palakkad College Union digital office portal." />
 
-      <section className="border-l-4 border-crimson pl-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-navy dark:text-white">
-          Union Web Team
-        </h1>
-        <p className="text-textSecondary dark:text-slate-400 text-sm sm:text-base font-body mt-2 max-w-2xl leading-relaxed">
-          The developers, designers, and administrators behind the official Secular College Union portal of Government Engineering College, Palakkad.
-        </p>
+      {/* Page Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#16233e] to-slate-900 text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 border-b border-border/40 dark:border-darkBorder rounded-b-card shadow-md">
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-crimson/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-2xs font-semibold uppercase tracking-wider text-gold">
+            <span className="w-1.5 h-1.5 rounded-full bg-crimson animate-pulse" />
+            Digital Development & Engineering
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
+            Union <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-crimson">Web Team</span>
+          </h1>
+          <p className="text-slate-300 text-xs sm:text-sm font-body max-w-2xl leading-relaxed">
+            The developers, designers, and administrators who engineered the official Secular College Union digital office portal.
+          </p>
+          <nav className="text-xs sm:text-sm font-body font-medium text-slate-400 pt-1">
+            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+            <span className="mx-2">&gt;</span>
+            <span className="text-slate-200">Developers</span>
+          </nav>
+        </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto pt-8">
         {DEVELOPERS.map((dev, idx) => (
@@ -70,6 +88,7 @@ export const Developers = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

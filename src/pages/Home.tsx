@@ -62,6 +62,11 @@ export const Home = () => {
     .filter((e) => e.status === 'upcoming' || e.status === 'ongoing')
     .slice(0, 3);
 
+  // Gallery preview sorted latest first
+  const latestGalleryPhotos = [...galleryData]
+    .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0))
+    .slice(0, 6);
+
   // Quick Links Schema
   const QUICK_LINKS = [
     {
@@ -122,17 +127,34 @@ export const Home = () => {
 
       {/* SECTION 1: HERO */}
       <section
-        className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 text-center select-none bg-white dark:bg-darkBg transition-colors duration-200"
+        className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 text-center select-none bg-white dark:bg-darkBg transition-colors duration-200 overflow-hidden"
         style={{
           backgroundImage: 'linear-gradient(to right, rgba(26, 39, 68, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(26, 39, 68, 0.03) 1px, transparent 1px)',
           backgroundSize: '40px 40px'
         }}
       >
+        {/* Animated ambient orbs */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-crimson/10 dark:bg-crimson/20 blur-3xl pointer-events-none"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full bg-gold/10 dark:bg-gold/15 blur-3xl pointer-events-none"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        />
+        <motion.div
+          className="absolute top-2/3 left-1/2 w-48 h-48 rounded-full bg-navy/5 dark:bg-navy/20 blur-3xl pointer-events-none"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        />
+
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="max-w-4xl flex flex-col items-center space-y-6"
+          className="max-w-4xl flex flex-col items-center space-y-6 relative z-10"
         >
           {/* Display Heading */}
           <motion.h1
@@ -151,7 +173,7 @@ export const Home = () => {
             Secular College Union <span className="text-gold mx-1.5">•</span> 2026–27 <span className="text-gold mx-1.5">•</span> Government Engineering College, Palakkad
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs — Primary / Outline hierarchy */}
           <motion.div
             variants={fadeUp}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto"
@@ -165,7 +187,7 @@ export const Home = () => {
             </Button>
             <Button
               to="/student-voice"
-              variant="secondary"
+              variant="outline"
               size="lg"
             >
               Student Voice
@@ -178,19 +200,19 @@ export const Home = () => {
             className="flex flex-wrap items-center justify-center gap-3 pt-10"
           >
             <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
-              21 Union Members
+              2,100+ Students Represented
             </div>
             <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
-              6 Departments
+              21 Elected Union Members
             </div>
             <div className="px-4 py-2 bg-surface dark:bg-darkSurface border border-border dark:border-darkBorder text-xs font-semibold text-navy dark:text-white rounded-full uppercase tracking-wider">
-              Est. Every Year Since 2001
+              6 Academic Departments
             </div>
           </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 hidden md:block">
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 hidden md:block z-10">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
@@ -245,7 +267,7 @@ export const Home = () => {
               <motion.article
                 key={ann.id}
                 variants={fadeUp}
-                className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all flex flex-col justify-between"
+                className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card p-6 hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -254,7 +276,7 @@ export const Home = () => {
                         ann.category === 'achievement' ? 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-800' :
                           'bg-slate-100 text-slate-800 border-slate-200'
                       }`}>
-                      {ann.category}
+                    {ann.category}
                     </span>
                     {ann.isPinned && (
                       <span className="flex items-center text-xs font-semibold text-gold bg-amber-50 border border-amber-200 dark:bg-amber-900/20 dark:border-amber-800 px-2 py-0.5 rounded-tag">
@@ -303,22 +325,23 @@ export const Home = () => {
           </div>
 
           {/* Horizontal scroll container on mobile, grid on desktop */}
-          <div className="overflow-x-auto pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-thin">
+          <div className="relative">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-100px' }}
               variants={staggerContainer}
-              className="flex md:grid md:grid-cols-3 gap-6 min-w-[850px] md:min-w-0"
+              className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory"
+              style={{ scrollbarWidth: 'none' }}
             >
               {upcomingEvents.map((evt) => (
                 <motion.div
                   key={evt.id}
                   variants={fadeUp}
-                  className="w-80 md:w-auto bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all flex flex-col h-full"
+                  className="w-80 md:w-auto bg-white dark:bg-darkCard border border-border dark:border-darkBorder rounded-card overflow-hidden hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 flex flex-col h-full snap-start flex-shrink-0"
                 >
-                  {/* Event Cover Image with Ambient Backdrop (4:5 Instagram Ratio) */}
-                  <div className="aspect-[4/5] relative select-none overflow-hidden bg-slate-950 flex items-center justify-center">
+                  {/* Event Cover Image with Ambient Backdrop (16:10 Ratio) */}
+                  <div className="aspect-[16/10] relative select-none overflow-hidden bg-slate-950 flex items-center justify-center">
                     {evt.coverImage ? (
                       <>
                         <img
@@ -377,6 +400,8 @@ export const Home = () => {
                 </motion.div>
               ))}
             </motion.div>
+            {/* Right gradient fade affordance — signals scrollability on mobile */}
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface dark:from-darkSurface to-transparent md:hidden" />
           </div>
         </div>
       </section>
@@ -399,7 +424,7 @@ export const Home = () => {
               <motion.div key={tile.path} variants={fadeUp}>
                 <Link
                   to={tile.path}
-                  className="group flex items-start space-x-4 bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card hover:border-crimson/50 dark:hover:border-crimson/80 hover:shadow-subtle transition-all duration-300"
+                  className="group flex items-start space-x-4 bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card hover:border-crimson/50 dark:hover:border-slate-700 hover:shadow-subtle transition-all duration-300"
                 >
                   <div className="p-3 bg-surface dark:bg-darkSurface text-navy dark:text-white rounded-button group-hover:bg-crimson group-hover:text-white transition-colors duration-300">
                     {tile.icon}
@@ -448,7 +473,7 @@ export const Home = () => {
               <motion.div
                 key={init.id}
                 variants={fadeUp}
-                className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between hover:shadow-subtle hover:border-slate-300 dark:hover:border-darkBorder/80 transition-all"
+                className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300"
               >
                 <div>
                   <div className="flex justify-between items-center mb-3">
@@ -483,27 +508,27 @@ export const Home = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
             <div className="space-y-2">
               <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
+                2,100+
+              </p>
+              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Students Represented</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
                 <CountUp value={21} />
               </p>
-              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Total Members</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
-                <CountUp value={events.length || 4} />
-              </p>
-              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Events Conducted</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
-                <CountUp value={initiatives.length || 2} />
-              </p>
-              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Active Projects</p>
+              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Elected Council Members</p>
             </div>
             <div className="space-y-2">
               <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
                 <CountUp value={6} />
               </p>
-              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Departments Represented</p>
+              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Engineering Departments</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-4xl sm:text-5xl font-display font-extrabold text-gold">
+                1999
+              </p>
+              <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold font-body">Campus Legacy (Est. 1999)</p>
             </div>
           </div>
         </div>
@@ -527,25 +552,27 @@ export const Home = () => {
             </Link>
           </div>
 
-          {/* Real Photo Grid */}
+          {/* Real Photo Grid - Latest First */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 select-none">
-            {galleryData.slice(0, 6).map((img) => (
-              <div
+            {latestGalleryPhotos.map((img) => (
+              <Link
                 key={img.id}
-                className="relative h-56 rounded-card overflow-hidden bg-slate-950 shadow-sm group cursor-pointer border border-border dark:border-darkBorder"
+                to="/events"
+                state={{ tab: 'gallery' }}
+                className="relative h-56 rounded-card overflow-hidden bg-slate-950 shadow-sm group cursor-pointer border border-border dark:border-darkBorder hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 block"
               >
                 <img
                   src={img.src}
                   alt={img.eventName}
                   loading="lazy"
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-102"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-all duration-300" />
                 <div className="absolute bottom-4 left-4 z-10 text-white text-left">
                   <span className="text-2xs uppercase tracking-widest text-gold font-bold">{img.year}</span>
                   <h4 className="font-body font-bold text-sm sm:text-base mt-1 line-clamp-1">{img.eventName}</h4>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

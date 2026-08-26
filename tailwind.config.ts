@@ -28,13 +28,18 @@ export default {
         display: ['"Playfair Display"', 'serif'],
         body: ['"DM Sans"', 'sans-serif'],
       },
+      fontSize: {
+        '2xs': ['0.625rem', { lineHeight: '0.875rem' }],
+      },
       borderRadius: {
         card: '8px',
         button: '4px',
-        tag: '2px',
+        tag: '9999px',
       },
       boxShadow: {
-        subtle: '0 1px 3px rgba(0,0,0,0.08)',
+        subtle: '0 1px 2px rgba(0, 0, 0, 0.04)',
+        card: '0 2px 8px rgba(0, 0, 0, 0.06)',
+        elevated: '0 6px 16px rgba(0, 0, 0, 0.08)',
       },
     },
   },

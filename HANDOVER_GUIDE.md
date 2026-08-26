@@ -27,7 +27,7 @@ The website uses **Web3Forms** for zero-backend email delivery when students sub
    ```bash
    cp .env.example .env
    ```
-2. Get your free access key at [web3forms.com](https://web3forms.com/) by typing `gecpalakkadunion@gmail.com`.
+2. Get your free access key at [web3forms.com](https://web3forms.com/) by typing `collegeunion@gecskp.ac.in`.
 3. Open `.env` and paste your key:
    ```env
    VITE_WEB3FORMS_KEY=your_access_key_here
@@ -291,7 +291,7 @@ If you run into issues, get stuck with code, or the website goes down, reach out
 
 *   **Lead Student Developer (2026-27):** Sabari S (CSE Department) — `pkd23cs055@gecskp.ac.in` | `github.com/userissabari`
 *   **Co-Developer & Web Team:** Aiswarya P (IT Department) — `pkd24it008@gecskp.ac.in`
-*   **College Union Official Email:** `gecpalakkadunion@gmail.com` | `principal@gecskp.ac.in`
+*   **College Union Official Email:** `collegeunion@gecskp.ac.in` | `principal@gecskp.ac.in`
 
 ---
 *Created with ❤️ by the GEC Palakkad College Union Web Team.*

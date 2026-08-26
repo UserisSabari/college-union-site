@@ -224,17 +224,39 @@ export const UnionUpdates = () => {
     <div className="space-y-10 py-8 relative">
       <SEO title="Union Updates" description="Read latest notice notifications, announcements, welfare initiatives, and student updates from GEC Palakkad College Union." />
 
-      {/* Page Hero */}
-      <section className="bg-navy dark:bg-darkSurface text-white py-12 md:py-16 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
-            Union Updates
-          </h1>
-          <nav className="text-xs sm:text-sm font-body font-medium text-slate-400">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span className="mx-2">&gt;</span>
-            <span className="text-slate-200">Updates</span>
-          </nav>
+      {/* Page Hero with bulletin motif */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#16233e] to-slate-900 text-white py-14 md:py-20 select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 border-b border-border/40 dark:border-darkBorder rounded-b-card shadow-md">
+        <div className="absolute top-0 right-1/3 w-80 h-80 bg-crimson/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-10 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-2xs font-semibold uppercase tracking-wider text-gold">
+              <span className="w-1.5 h-1.5 rounded-full bg-crimson animate-ping" />
+              Live Union Bulletin
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
+              News, Notices & <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-crimson">Initiatives</span>
+            </h1>
+            <p className="text-slate-300 text-xs sm:text-sm font-body leading-relaxed">
+              Official circulars, student welfare projects, academic notifications, and campus event dispatches from the Secular College Union.
+            </p>
+            <nav className="text-xs sm:text-sm font-body font-medium text-slate-400 pt-1">
+              <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+              <span className="mx-2">&gt;</span>
+              <span className="text-slate-200">Updates</span>
+            </nav>
+          </div>
+
+          {/* Quick info counter card */}
+          <div className="hidden lg:flex flex-col gap-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-card min-w-[220px]">
+            <div className="text-2xs text-slate-400 uppercase tracking-widest font-bold">Bulletin Stats</div>
+            <div className="text-xl font-display font-bold text-white">{allUpdates.length} Total Dispatches</div>
+            <div className="text-3xs text-slate-400 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              {pinnedUpdates.length} Pinned Priority Items
+            </div>
+          </div>
         </div>
       </section>
 
@@ -306,7 +328,7 @@ export const UnionUpdates = () => {
                 return (
                   <div
                     key={item.id}
-                    className="bg-white dark:bg-darkCard border-l-4 border-[#D4AF37] border-y border-r border-border dark:border-darkBorder rounded-r-card p-6 shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
+                    className="bg-white dark:bg-darkCard border-l-4 border-[#D4AF37] border-y border-r border-border dark:border-darkBorder rounded-r-card p-6 shadow-sm hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex justify-between items-start select-none mb-3">
@@ -388,7 +410,7 @@ export const UnionUpdates = () => {
                   return (
                     <div
                       key={item.id}
-                      className={`bg-white dark:bg-darkCard rounded-card overflow-hidden shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between p-6 border-t-4 ${styles.border}`}
+                      className={`bg-white dark:bg-darkCard rounded-card overflow-hidden shadow-sm hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between p-6 border-t-4 ${styles.border}`}
                     >
                       <div className="space-y-4">
                         <div className="flex justify-between items-start select-none">
@@ -505,7 +527,7 @@ export const UnionUpdates = () => {
                 return (
                   <div
                     key={item.id}
-                    className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card shadow-sm hover:shadow-subtle transition-all duration-300 flex flex-col justify-between"
+                    className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card shadow-sm hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex justify-between items-start select-none mb-3">
@@ -566,15 +588,46 @@ export const UnionUpdates = () => {
               })}
             </div>
           ) : (
-            <div className="text-center py-20 border border-dashed border-border dark:border-darkBorder rounded-card select-none">
-              <svg className="w-12 h-12 text-slate-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <h3 className="font-display font-bold text-navy dark:text-white text-base mb-1">No Updates Found</h3>
-              <p className="text-textSecondary dark:text-slate-400 text-xs font-body max-w-xs mx-auto">
-                Try clearing your search query or choosing another category filter.
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="text-center py-20 border border-dashed border-border dark:border-darkBorder rounded-card select-none"
+            >
+              {/* Illustrated icon */}
+              <div className="relative w-20 h-20 mx-auto mb-6">
+                <div className="w-20 h-20 rounded-full bg-slate-100 dark:bg-darkSurface flex items-center justify-center">
+                  <svg className="w-10 h-10 text-slate-300 dark:text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <motion.div
+                  className="absolute -top-1 -right-1 w-6 h-6 bg-crimson/10 dark:bg-crimson/20 rounded-full flex items-center justify-center"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+                >
+                  <svg className="w-3 h-3 text-crimson" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </motion.div>
+              </div>
+              <h3 className="font-display font-bold text-navy dark:text-white text-lg mb-2">No Updates Found</h3>
+              <p className="text-textSecondary dark:text-slate-400 text-sm font-body max-w-xs mx-auto mb-6 leading-relaxed">
+                No results match your current filters. Try a different category or clear the search.
               </p>
-            </div>
+              <button
+                onClick={() => {
+                  setActiveCategory('all');
+                  setSearchQuery('');
+                }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-button border border-crimson text-crimson text-sm font-semibold hover:bg-crimson hover:text-white transition-all duration-200 font-body"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                Clear All Filters
+              </button>
+            </motion.div>
           )}
 
           {/* Load More Button */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import { submitContactForm } from '../services/formService';
@@ -42,15 +43,29 @@ export const Contact = () => {
         description="Get in touch with the 2026-27 College Union of Government Engineering College Palakkad. Reach office bearers, view location, or submit feedback."
       />
 
-      {/* Hero Section */}
-      <section className="bg-surface dark:bg-darkSurface py-16 md:py-20 text-center select-none border-b border-border dark:border-darkBorder transition-colors duration-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-navy dark:text-white tracking-tight leading-tight mb-4">
-            Get in Touch
-          </h1>
-          <p className="text-base sm:text-lg text-textSecondary dark:text-slate-400 font-body max-w-xl mx-auto">
-            Have questions, feedback, or complaints? Reach out to the College Union office or get in touch directly with our officers.
-          </p>
+      {/* Hero Section with rich brand gradient */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#18233e] to-slate-900 text-white py-12 md:py-16 select-none border-b border-border/40 dark:border-darkBorder">
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-crimson/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-2xs font-semibold uppercase tracking-wider text-gold">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              Union Office & Helplines
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
+              Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-crimson">Touch</span>
+            </h1>
+            <p className="text-slate-300 text-xs sm:text-sm font-body max-w-xl leading-relaxed">
+              Have queries, campus welfare concerns, or need union support? Reach the digital office room or send a direct message.
+            </p>
+            <nav className="text-xs sm:text-sm font-body font-medium text-slate-400 pt-1">
+              <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+              <span className="mx-2">&gt;</span>
+              <span className="text-slate-200">Contact</span>
+            </nav>
+          </div>
         </div>
       </section>
 
@@ -83,7 +98,7 @@ export const Contact = () => {
                   </div>
 
                   {/* Google Maps Link */}
-                  <div className="pl-14">
+                  <div className="pl-14 space-y-3">
                     <a
                       href="https://maps.google.com/?q=Government+Engineering+College,+Palakkad"
                       target="_blank"
@@ -95,6 +110,20 @@ export const Contact = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
+                    {/* Embedded Google Map */}
+                    <div className="rounded-card overflow-hidden border border-border dark:border-darkBorder shadow-sm">
+                      <iframe
+                        title="Government Engineering College Palakkad Location"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7!2d76.6441!3d10.7867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86fd5c4dbb32b%3A0x2d8d372e53f2e14c!2sGovernment%20Engineering%20College%2C%20Sreekrishnapuram%2C%20Palakkad%2C%20Kerala%20678633!5e0!3m2!1sen!2sin!4v1697123456789!5m2!1sen!2sin"
+                        width="100%"
+                        height="200"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full"
+                      />
+                    </div>
                   </div>
 
                   <hr className="border-border dark:border-darkBorder" />
@@ -110,8 +139,8 @@ export const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-body font-bold text-navy dark:text-white text-xs">Email</h4>
-                        <a href="mailto:gecpalakkadunion@gmail.com" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
-                          gecpalakkadunion@gmail.com
+                        <a href="mailto:collegeunion@gecskp.ac.in" className="text-textSecondary dark:text-slate-400 text-xs sm:text-sm hover:text-crimson transition-colors block mt-0.5">
+                          collegeunion@gecskp.ac.in
                         </a>
                       </div>
                     </div>
@@ -150,7 +179,7 @@ export const Contact = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/school/government-engineering-college-sreekrishnapuram"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white transition-colors"
@@ -158,6 +187,17 @@ export const Contact = () => {
                     >
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7h-3.56V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z" />
+                      </svg>
+                    </a>
+                    <a
+                      href="https://github.com/collegeunion-gecpkd/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-textSecondary dark:text-slate-400 hover:text-navy dark:hover:text-white transition-colors"
+                      aria-label="GitHub"
+                    >
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
                       </svg>
                     </a>
                   </div>
@@ -264,7 +304,7 @@ export const Contact = () => {
 
                       {/* Submit */}
                       <div>
-                        <Button type="submit" variant="secondary" fullWidth={true} disabled={isSubmitting}>
+                        <Button type="submit" variant="primary" fullWidth={true} disabled={isSubmitting}>
                           {isSubmitting ? 'Sending Message...' : 'Submit Message'}
                         </Button>
                       </div>
@@ -289,7 +329,7 @@ export const Contact = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Contact 1: Chairperson */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <div className="w-11 h-11 rounded-full bg-crimson/10 dark:bg-crimson/20 text-crimson flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -306,7 +346,7 @@ export const Contact = () => {
             </div>
 
             {/* Contact 2: General Secretary */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <div className="w-11 h-11 rounded-full bg-navy/10 dark:bg-navy/20 text-navy dark:text-white flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -323,7 +363,7 @@ export const Contact = () => {
             </div>
 
             {/* Contact 3: Lady Representative */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <div className="w-11 h-11 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -340,7 +380,7 @@ export const Contact = () => {
             </div>
 
             {/* Contact 4: University Union Councillor (UUC) */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <div className="w-11 h-11 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -363,7 +403,7 @@ export const Contact = () => {
             </div>
 
             {/* Contact 5: College Office Help Desk */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <div className="w-11 h-11 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -380,7 +420,7 @@ export const Contact = () => {
             </div>
 
             {/* Contact 6: Student Grievance Cell */}
-            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="bg-white dark:bg-darkCard border border-border dark:border-darkBorder p-6 rounded-card flex flex-col justify-between items-center text-center space-y-4 shadow-2xs hover:shadow-card hover:-translate-y-0.5 dark:hover:border-slate-700 transition-all duration-300">
               <div className="w-11 h-11 rounded-full bg-crimson/10 dark:bg-crimson/20 text-crimson flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
